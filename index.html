@@ -1,39 +1,23 @@
-<!DOCTYPE html>
-<html>
-<header>
-	<title>Rick van Mook</title>
-	<style>
+---
+layout: default
+---
 
-	</style>
-</header>
-<body>
-<div class="about">
-	<h1>Rick van Mook</h1>
-	<h2>Creative Developer from The Netherlands</h2>
-	<ul>
-		<li>
-			<a href="https://twitter.com/rvmook" target="_blank">Twitter</a>
-		</li>
-		<li>
-			<a href="https://www.linkedin.com/in/rvmook" target="_blank">LinkedIn</a>
-		</li>
-		<li>
-			<a href="mailto:rick@rvmook.com">Email</a>
-		</li>
-	</ul>
+<div class="home">
+
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
 </div>
-<div class="work">
-	<h3>Some of my work</h3>
-	<ul>
-		<li>
-			<h3>Sound City Project</h3>
-			<p>Year: 2014</p>
-			<p>Roll: Lead Developer</p>
-			<p>Agency: Firstborn</p>
-			<p>Recognition: Red Dot Design Award – Grand Prix</p>
-			<a href="" target="_blank">View Project</a>
-		</li>
-	</ul>
-</div>
-</body>
-</html>
