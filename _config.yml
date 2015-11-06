@@ -8,9 +8,6 @@ url: "http://rvmook.com" # the base hostname & protocol for your site
 twitter_username: rvmook
 github_username:  rvmook
 
-source: src
-destination: dist
-
 timezone: America/New_York
 
 # Build settings
