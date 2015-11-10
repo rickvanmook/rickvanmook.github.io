@@ -12,3 +12,6 @@ timezone: America/New_York
 
 # Build settings
 markdown: kramdown
+
+# Outputting
+permalink: none
