@@ -4,4 +4,5 @@ title: About
 permalink: /about/
 ---
 
-About
+<h1>About</h1>
+
