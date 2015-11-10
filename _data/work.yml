@@ -1,0 +1,39 @@
+- title: Tom Preston-Werner
+  year: 2014
+  sub-title: Personal project
+  agency:
+    label: Firstborn
+    url: http://firstborn.com
+  role: Lead Developer
+  recognitions:
+    - a
+    - b
+    - c
+    - d
+- title: Whatsup Dude
+  year: 2013
+  sub-title: Personal project
+  agency:
+    label: Firstborn
+    url: http://firstborn.com
+  role: Lead Developer
+  recognitions:
+    - a
+    - b
+    - c
+    - d
+- title: 5
+  year: 2013
+  sub-title: Personal project
+  role: Lead Developer
+  recognitions:
+    - a
+    - b
+    - c
+    - d
+- title: 4
+  year: 2013
+  agency:
+    label: Firstborn
+    url: http://firstborn.com
+  role: Lead Developer
