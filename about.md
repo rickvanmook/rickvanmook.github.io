@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-{{ page.title }}
-================
+About
+=====
 
 This is about.
