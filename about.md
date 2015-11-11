@@ -1,8 +1,10 @@
 ---
-layout: page
+layout: default
 title: About
 permalink: /about/
 ---
 
-<h1>About</h1>
+{{ page.title }}
+================
 
+This is about.
