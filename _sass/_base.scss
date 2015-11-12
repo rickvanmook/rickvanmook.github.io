@@ -1,6 +1,4 @@
-/**
- * Reset some basic elements
- */
+
 body, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
@@ -8,4 +6,22 @@ dl, dd, ol, ul, figure {
     /* Display & Box Model */
     margin: 0;
     padding: 0;
+}
+
+body {
+
+    /* Display & Box Model */
+    min-width: 480px;
+}
+
+ul {
+
+    /* Appearance */
+    list-style: none;
+}
+
+.wrapper {
+
+    /* Display & Box Model */
+    margin-top: 133px;
 }
