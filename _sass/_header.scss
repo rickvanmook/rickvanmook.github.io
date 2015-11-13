@@ -15,67 +15,46 @@
 .nav {
 
 	/* Display & Box Model */
-	width: 100%;
-	max-width: 1020px;
+	width: 80%;
+	max-width: 1100px;
 	margin: 0 auto;
-	padding: 35px 20px 30px;
-	box-sizing: border-box;
-
-	&:after {
-
-		/* Display & Box Model */
-		display: block;
-		clear: both;
-
-		/* Other */
-		content: "";
-	}
+	padding: 35px 0 30px;
+	overflow: hidden;
 }
 
 .nav__list {
 
 	/* Display & Box Model */
-	float: right;
-	width: 70%;
-
-	/* Appearance */
-	text-align: justify;
-
-	&:after {
-
-		/* Display & Box Model */
-		width: 100%;
-		display: inline-block;
-
-		/* Other */
-		content: "";
-	}
+	width: 100%;
 }
 
 .nav__list__item {
 
 	/* Display & Box Model */
-	display: inline-block;
-	width: 20%;
+	width: 25%;
+	float: left;
 }
 
 .nav__link {
 
 	/* Display & Box Model */
-	display: block;
+	display: inline-block;
 	padding: 15px 0;
 
 	/* Appearance */
 	text-decoration: none;
-	border-bottom: 2px solid #e4e4e4;
+
+	&--list {
+
+		/* Display & Box Model */
+		width: 50%;
+
+		/* Appearance */
+		border-bottom: 2px solid #e4e4e4;
+	}
 
 	&--home {
 
-		/* Display & Box Model */
-		float: left;
-
-		/* Appearance */
-		border: none;
 	}
 
 	&--active {
