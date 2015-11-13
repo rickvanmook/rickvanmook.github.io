@@ -1,0 +1,39 @@
+.post {
+
+
+
+	p {
+
+		width: 60%;
+		max-width: 826px;
+		margin: 0 auto;
+		padding: 0 9.56%;
+		box-sizing: border-box;
+		background: red;
+	}
+
+	.highlight {
+
+		display: block;
+		position: relative;
+		background: #252830;
+
+		&:after, &:before {
+			content: "";
+			display: block;
+			width: 60%;
+			max-width: 826px;
+			margin: 0 auto;
+			box-sizing: border-box;
+			background: red;
+			height: 60px;
+		}
+	}
+}
+
+.post__content {
+
+	//width: 62.7906976744186%;
+	//margin: 0 auto;
+	//background: skyblue;
+}
