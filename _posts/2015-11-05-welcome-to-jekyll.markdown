@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  Welcome to Jekyll...
 date:   2015-11-05 00:52:34
 categories: writing
 ---
@@ -9,6 +9,35 @@ You’ll find this post in your `_posts` directory. Go ahead and edit it and re-
 To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
 
 Jekyll also offers powerful support for code snippets:
+
+{% highlight javascript%}
+
+var globalVar;
+
+/**
+ * Constructor for <code>AjaxRequest</code> class
+ * @param url the url for the request<p/>
+ */
+function AjaxRequest(url) {
+
+  var urls = [ "www.cnn.com", 5, globalVar];
+
+  this.request = new XMLHttpRequest();
+
+  url = url.replace(/^\s*(.*)/, "$1"); // skip leading whitespace
+
+  /* check the url to be in urls */
+  var a = "\u1111\z\n\u11";
+
+  this.foo = new function() {};
+
+  foo();
+
+  #
+}
+{% endhighlight %}
+
+`alert('foo');`
 
 {% highlight ruby %}
 def print_hi(name)

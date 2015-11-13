@@ -1,15 +1,17 @@
 .post {
 
+	background-color: #f3f3f3;
 
 
 	p {
 
+		position: relative;
 		width: 60%;
 		max-width: 826px;
 		margin: 0 auto;
 		padding: 0 9.56%;
 		box-sizing: border-box;
-		background: red;
+		background: #fff;
 	}
 
 	.highlight {
@@ -18,6 +20,24 @@
 		position: relative;
 		background: #252830;
 
+		pre {
+
+			width: 51.4%;
+			margin: 60px auto;
+			border: 2px solid #3e424a;
+			border-radius: 5px;
+
+			code {
+
+
+				display: block;
+				border: 1px solid #3e424a;
+				margin: 40px 18px 20px;
+				overflow: auto;
+				padding: 5%;
+			}
+		}
+
 		&:after, &:before {
 			content: "";
 			display: block;
@@ -25,7 +45,7 @@
 			max-width: 826px;
 			margin: 0 auto;
 			box-sizing: border-box;
-			background: red;
+			background: #fff;
 			height: 60px;
 		}
 	}
