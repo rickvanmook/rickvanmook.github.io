@@ -14,4 +14,4 @@ timezone: America/New_York
 markdown: kramdown
 
 # Outputting
-permalink: none
+permalink: /:categories/:title
