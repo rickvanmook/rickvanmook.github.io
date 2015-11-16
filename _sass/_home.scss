@@ -1,0 +1,43 @@
+.home {
+
+	background-color: #dbdddf;
+}
+
+.home__wrapper {
+
+	position: relative;
+	min-height: 100%;
+}
+
+.home__title {
+
+	background-color: #fff;
+	width: 100%;
+	padding-bottom: 100px;
+}
+
+.home__footer {
+
+
+	display: inline-block;
+	margin-top: -35px;
+}
+
+.home__footer__cta {
+
+	background-color: #dbdddf;
+	color: #fff;
+	padding: 20px 30px;
+}
+
+.home__writing {
+
+	min-height: 100%;
+	background-color: #27292e;
+	position: absolute;
+	top: 0;
+
+	color: #fff;
+	left: 46.5%;
+	width: 45.8%;
+}
