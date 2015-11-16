@@ -22,14 +22,16 @@ layout: default
   <footer class="post__footer">
     <div class="post__footer__content">
       <div class="post__footer__title">What's Next</div>
-      <div class="post__footer__link-wrapper">
-        <a class="post__footer__link" href="{{ page.previous.url | prepend: site.baseurl }}">
-          {{ page.previous.number }} - {{ page.previous.title }}<br>
-        </a>
-        <a class="post__footer__link" href="{{ page.next.url | prepend: site.baseurl }}">
-          {{ page.next.number }} - {{ page.next.title }}
-        </a>
-      </div>
+      <ul class="post__footer__link-wrapper">
+
+        {% for post in site.related_posts limit:2 %}
+        <li class="post__footer__link">
+          <a href="{{ post.url | prepend: site.baseurl }}">
+            {{ post.number }} - {{ post.title }}<br>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
     </div>
   </footer>
 </article>
