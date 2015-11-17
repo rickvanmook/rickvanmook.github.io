@@ -11,10 +11,6 @@
 	min-height: 100%;
 
 	color: #fff;
-	width: 100%;
-	padding: 0 10%;
-	max-width: 1100px;
-	margin: 0 auto;
 
 	/* equal to footer height */
 	margin-bottom: -160px;
@@ -30,13 +26,13 @@
 	height: 160px;
 }
 .about__footer {
+	width: 100%;
 	background: #252830;
 }
 
 .about__footer__cta {
 	display: inline-block;
 	margin-top: 15px;
-	margin-left: 10%;
 	padding: 15px 0 30px;
 	width: 27%;
 	color: #b2bad4;

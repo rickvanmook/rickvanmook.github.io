@@ -1,16 +1,20 @@
 <header class="header">
-  <nav class="nav">
+  <nav class="nav max-width">
     <ul class="nav__list">
       <li class="nav__list__item">
-        <a class="nav__link nav__link--home" href="/">R<span>ick </span>v<span>an </span>Mook</a>
+        <div class="nav__link nav__link--home">
+          R<span>ick </span>v<span>an </span>Mook
+        </div>
       </li>
-      {% for page in site.pages %}
-      {% if page.title %}
       <li class="nav__list__item">
-        <a class="nav__link nav__link--list" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        <a class="nav__link nav__link--list" href="/">Writing</a>
       </li>
-      {% endif %}
-      {% endfor %}
+      <li class="nav__list__item">
+        <a class="nav__link nav__link--list" href="/about/">About</a>
+      </li>
+      <li class="nav__list__item">
+        <a class="nav__link nav__link--list" href="/work/">Work</a>
+      </li>
     </ul>
   </nav>
 </header>
