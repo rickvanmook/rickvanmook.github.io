@@ -9,25 +9,36 @@
 	min-height: 100%;
 }
 
-.home__title {
+.home__header-wrapper {
 
 	background-color: #fff;
 	width: 100%;
-	padding-bottom: 100px;
 }
 
-.home__footer {
+.home__header {
 
+	width: 36.5%;
+	max-width: 420px;
+	margin-left: 10%;
+	padding-right: 20px;
+}
+
+.home__header__title {
+
+}
+
+.home__header__subtitle {
+
+}
+
+.home__header__cta {
 
 	display: inline-block;
-	margin-top: -35px;
-}
-
-.home__footer__cta {
-
 	background-color: #dbdddf;
 	color: #fff;
 	padding: 20px 30px;
+	position: relative;
+	top: 35px;
 }
 
 .home__writing {
