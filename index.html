@@ -16,7 +16,7 @@ class: home
   <div class="home__writing">
     <h3>Latest in Writing</h3>
     <ul>
-      {% for post in site.posts limit:6%}
+      {% for post in site.posts %}
       <li>
         <a href="{{ post.url | prepend: site.baseurl }}">{{ post.number }} - {{ post.title }}</a>
       </li>
