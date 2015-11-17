@@ -1,0 +1,45 @@
+.work {
+
+	.header {
+
+		background-color: #ee5d62;
+	}
+
+	.wrapper {
+
+		background: #252830;
+	}
+}
+
+.work__wrapper {
+
+
+}
+
+.work__label {
+
+	color: #b2bad4;
+	width: 50%;
+	padding-top: 65px;
+	padding-bottom: 20px;
+	padding-right: 12.5%;
+	margin-bottom: 60px;
+	border-bottom: 1px solid #3a3d44;
+}
+
+.work__list {
+
+	overflow: hidden;
+	width: 81.45%;
+
+	max-width: 1120px;
+	margin: 0 auto;
+}
+
+.work__list__item {
+
+	background: #2a2e36;
+	float: left;
+	margin: 0 0.9%;
+	width: 22.75%;
+}

@@ -1,0 +1,43 @@
+---
+layout: default
+title: Work
+permalink: /work/
+class: work
+---
+
+<div class="work__wrapper">
+
+	<div class="max-width">
+		<p class="work__label">Here’s a list of some of the projects that I’m proud off:</p>
+	</div>
+	<ul class="work__list">
+		{% for project in site.data.work %}
+		<li class="work__list__item">
+			<h3>{{ project.title }}</h3>
+			Year: {{ project.year }}<br>
+
+			{% if project.sub-title %}
+			{{ project.sub-title }}<br>
+			{% endif %}
+
+			{% if project.agency %}
+			Agency: <a href="{{ project.agency.url }}" target="_blank">{{ project.agency.label }}</a><br>
+			{% endif %}
+
+			{% if project.role %}
+			Role: {{ project.role }}<br>
+			{% endif %}
+
+			{% if project.recognitions %}
+			Recognition:<br>
+
+			{% for recognition in project.recognitions %}
+			<uL>
+				<li>{{ recognition }}</li>
+			</ul>
+			{% endfor %}
+			{% endif %}
+		</li>
+		{% endfor %}
+	</ul>
+</div>
