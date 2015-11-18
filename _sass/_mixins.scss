@@ -1,0 +1,21 @@
+@mixin mq($point) {
+	@if $point == is-small {
+		@media (min-width: 500px) { @content; }
+	}
+	@else if $point == is-medium {
+		@media (min-width: 768px) { @content; }
+	}
+	@else if $point == is-large {
+		@media (min-width: 1024px) { @content; }
+	}
+}
+
+.u-onlyWide {
+
+	display: none;
+
+	@include mq(is-medium) {
+
+		display: initial;
+	}
+}

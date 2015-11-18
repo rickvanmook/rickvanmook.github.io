@@ -8,10 +8,22 @@
 .post__content p, .post__footer__content, .post__header__content {
 
 	position: relative;
-	width: 60%;
+	@include mq(is-small) {
+
+		width: 80%;
+		padding: 0 9.56%;
+	}
+
+	@include mq(is-large) {
+
+		width: 60%;
+	}
+
+	width: 100%;
+
 	max-width: 826px;
 	margin: 0 auto;
-	padding: 0 9.56%;
+	padding: 0 5%;
 	box-sizing: border-box;
 	background-color: #fff;
 }
@@ -71,10 +83,22 @@
 	p {
 
 		position: relative;
-		width: 60%;
+
+		@include mq(is-small) {
+
+			width: 80%;
+			padding: 0 9.56%;
+		}
+
+		@include mq(is-large) {
+
+			width: 60%;
+		}
+
+		width: 100%;
 		max-width: 826px;
 		margin: 0 auto;
-		padding: 0 9.56%;
+		padding: 0 5%;
 		box-sizing: border-box;
 		background-color: #fff;
 	}
@@ -87,11 +111,17 @@
 
 		pre {
 
-			width: 80%;
-			max-width: 1100px;
-			margin: 60px auto;
 			border: 2px solid #3e424a;
 			border-radius: 5px;
+
+			width: 90%;
+			max-width: 1100px;
+			margin: 60px auto;
+
+			@include mq(is-large) {
+
+				width: 80%;
+			}
 
 			code {
 
@@ -107,7 +137,18 @@
 		&:after, &:before {
 			content: "";
 			display: block;
-			width: 60%;
+
+			@include mq(is-small) {
+
+				width: 80%;
+			}
+
+			@include mq(is-large) {
+
+				width: 60%;
+			}
+
+			width: 100%;
 			max-width: 826px;
 			margin: 0 auto;
 			box-sizing: border-box;

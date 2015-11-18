@@ -21,10 +21,15 @@
 
 .home__header {
 
-	width: 36.5%;
-	max-width: 420px;
-	margin-left: 10%;
-	padding-right: 20px;
+	width: 90%;
+	margin: 0 auto 70px;
+
+	@include mq(is-medium) {
+		width: 36.5%;
+		max-width: 420px;
+		margin-left: 10%;
+		padding-right: 20px;
+	}
 }
 
 .home__header__title {
@@ -47,12 +52,20 @@
 
 .home__writing {
 
-	min-height: 100%;
-	background-color: #27292e;
-	position: absolute;
-	top: 0;
+	position: relative;
+	width: 90%;
+	margin: 0 auto;
 
 	color: #fff;
+	background-color: #27292e;
+
+	@include mq(is-medium) {
+
+		position: absolute;
+	min-height: 100%;
+	top: 0;
+
 	left: 46.5%;
 	width: 45.8%;
+	}
 }

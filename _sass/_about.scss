@@ -1,8 +1,8 @@
 .about {
 
-	& .wrapper, & .header {
+	.wrapper {
 
-		background-color: #ee5d62;
+		height: 100%;
 	}
 }
 
@@ -10,12 +10,8 @@
 
 	min-height: 100%;
 
-	color: #fff;
-
 	/* equal to footer height */
 	margin-bottom: -160px;
-
-	background-color: #ee5d62;
 
 	&:after {
 		content: "";
@@ -31,10 +27,18 @@
 }
 
 .about__footer__cta {
+
+	width: 165px;
+
+	@include mq(is-medium) {
+
+		width: 27%;
+		max-width: 260px;
+	}
+
 	display: inline-block;
 	margin-top: 15px;
 	padding: 15px 0 30px;
-	width: 27%;
 	color: #b2bad4;
 	text-decoration: none;
 	border-bottom: solid 1px #3a3d44;
