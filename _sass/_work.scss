@@ -25,7 +25,13 @@
 .work__list {
 
 	overflow: hidden;
-	width: 81.45%;
+
+	width: 90%;
+
+	@include mq(is-medium) {
+
+		width: 81.45%;
+	}
 
 	max-width: 1120px;
 	margin: 0 auto;
@@ -35,6 +41,40 @@
 
 	background: #2a2e36;
 	float: left;
-	margin: 0 0.9%;
-	width: 22.75%;
+
+	width: 100%;
+	margin: 20px 0;
+
+	@include mq(is-small) {
+
+		&:nth-child(odd) {
+
+			margin-right: 3%;
+		}
+
+		width: 47%;
+	}
+
+
+	@include mq(is-medium) {
+
+		&:nth-child(odd) {
+
+			margin-right: 0.8%;
+		}
+
+		margin: 0 0.8%;
+		width: 31.73%;
+	}
+
+	@include mq(is-large) {
+
+		&:nth-child(odd) {
+
+			margin-right: 0.9%;
+		}
+
+		margin: 0 0.9%;
+		width: 22.75%;
+	}
 }
