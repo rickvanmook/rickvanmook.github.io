@@ -3,7 +3,6 @@
 	.wrapper {
 
 		height: 100%;
-		background-color: #dbdddf;
 	}
 }
 
@@ -15,11 +14,23 @@
 
 .home__header-wrapper {
 
-	background-color: #fff;
 	width: 100%;
+	background-color: #dbdddf;
+
+	@include mq(is-medium) {
+
+		height: 100%;
+		position: fixed;
+	}
 }
 
 .home__header {
+
+	width: 100%;
+	background-color: #fff;
+}
+
+.home__header__labels {
 
 	width: 90%;
 	margin: 0 auto 70px;
@@ -50,7 +61,18 @@
 	top: 35px;
 }
 
+.home__writing__post {
+
+	height: 150px;
+}
+
 .home__writing {
+
+	width: 100%;
+	background: #dbdddf;
+}
+
+.home__writing-inner {
 
 	position: relative;
 	width: 100%;
@@ -62,14 +84,13 @@
 
 		width: 90%;
 		margin: 0 auto;
-
 	}
 
 	@include mq(is-medium) {
 
 		position: absolute;
 		min-height: 100%;
-		top: 0;
+		top: 115px;
 
 		left: 46.5%;
 		width: 45.8%;
