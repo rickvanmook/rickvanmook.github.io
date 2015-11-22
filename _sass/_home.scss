@@ -26,8 +26,22 @@
 
 .home__header {
 
+	position: relative;
+
 	width: 100%;
 	background-color: #fff;
+
+	&:before {
+
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		content: '';
+		width: 100%;
+		height: 64px;
+		background: #dbdddf;
+	}
+
 }
 
 .home__header__labels {
