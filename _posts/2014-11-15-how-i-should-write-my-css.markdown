@@ -1,0 +1,235 @@
+---
+layout: post
+title: How I Should Write My CSS
+date: 2014-11-15 19:33:08
+categories: writing
+number: "02"
+---
+
+The past week I saw and read a bunch of stuff about structuring and organizing your CSS. It got me thinking about the way I write my own styles and it occurred to me that I was writing a lot of unreadable CSS lately. Most of it is hard to decipher and the rest is not really following any structure.
+
+In my opinion readable CSS is not dependent on the framework or school of thought you’re using. It’s mainly about using common sense and keeping yourself from doing things the quick and dirty way. So this post is not about finding my way in picking OOCSS, ACSS, BEM, SMACSS or whatever. It’s about establishing a few ground rules for keeping my CSS readable.
+
+Most (if not all) of these points and examples are from Jen Myers’ talk at Øredev Conference. You should check it out.
+
+[http://vimeo.com/111290459](http://vimeo.com/111290459)
+
+##Common sense
+
+To kick things off let’s start with the basics. These are things I’m already implementing and are in my opinion more common sense than actual tips. Either way, they’re worth pointing out.
+
+###Go for multiline instead of inline
+
+It’s simply harder to read when you put multiple properties in one line.
+
+{% highlight css %}
+/* bad */
+.selector {
+   color: red; font-size: 12px; font-family: sans-serif;
+}
+
+/* good */
+.selector {
+   color: red;
+   font-size: 12px;
+   font-family: sans-serif;
+}
+{% endhighlight %}
+
+###Avoid the use of generic names
+
+Names shouldn’t be too loose or generic. It’s better to be more specific so in the HTML it’s clear what it’s doing and in the CSS you know what it’s styling.
+
+{% highlight css %}
+/* bad */
+.title { ... }
+.container { ... }
+
+/* good */
+.article-title { ... }
+.carousel-container { ... }
+{% endhighlight %}
+
+###Don’t rely on HTML structure too much
+In general your CSS should not depend on HTML structure and the elements location in the markup. Your styles will be more reusable and readable and in most cases will even increase rendering performance.
+
+{% highlight css %}
+/* bad */
+#main-nav ul li ul li div { ... }
+.page-container #stream .stream-item .tweet .tweet-header .username { ... }
+
+/* good */
+.menu-sub-item { ... }
+.tweet-header .username { ... }
+{% endhighlight %}
+
+###Know how your preprocessor compiles
+
+When using preprocessors like SASS or LESS it’s easy to lose track of what actually ends up in your CSS. It might look all semantic and clean in your SASS files but when it’s compiled down to CSS it can still be messed up. So know how your preprocessor compiles your code and keep that in mind while writing your fancy preprocessed selectors.
+
+###Ordering your properties
+
+I usually just smack things together and end up with a bunch of randomly ordered properties. Obviously this is not the way to go. Instead try to order them by type and then define the groups you’re structuring them in. This way your order isn’t only more readable for outsiders you’ll also force them to follow along in your structure.
+
+{% highlight css %}
+/* bad */
+.selector {
+
+   position: absolute;
+   width:100px;
+   height:100px;
+   cursor: pointer;
+   z-index: 10;
+   background-color: #000;
+   font-size: 16px;
+   line-height: 1.4;
+   top: 0;
+   right: 0;
+   margin:10px;
+   padding:10px;
+   color: #fff;
+   display: inline-block;
+   font-family: sans-serif;
+   overflow: hidden;
+}
+
+/* better */
+.selector {
+
+   position: absolute;
+   right: 0;
+   top: 0;
+   z-index: 10;
+
+   display: inline-block;
+   overflow: hidden;
+   width:100px;
+   height:100px;
+   margin:10px;
+   padding:10px;
+
+   background-color: #000;
+   color: #fff;
+
+   font-size: 16px;
+   line-height: 1.4;
+   font-family: sans-serif;
+
+   cursor: pointer;
+}
+
+
+/* best */
+.selector {
+
+   /* Positioning */
+   position: absolute;
+   right: 0;
+   top: 0;
+   z-index: 10;
+
+   /* Display & Box Model */
+   display: inline-block;
+   overflow: hidden;
+   width:100px;
+   height:100px;
+   margin:10px;
+   padding:10px;
+
+   /* Color */
+   background-color: #000;
+   color: #fff;
+
+   /* Text */
+   font-size: 16px;
+   line-height: 1.4;
+   font-family: sans-serif;
+
+   /* Other */
+   cursor: pointer;
+}
+{% endhighlight %}
+
+###Use comments to add structure
+
+I know, good code shouldn’t need comments. But I’m not talking about the kind of comments that explain what it’s doing. But since CSS is kind of opaque, comments can add a lot of clarity to an otherwise hard to read CSS file.
+
+We already talked about comments for your ordered properties in the previous example. Another way of adding more structure as adding some sort of table of contents at the top of your document. Finding things will be much easier and at the same time you’re forcing yourself to not just keep adding selectors to your file and actually think about what its rightful place is in your project.
+
+{% highlight css %}
+// ------------------------------
+// Table of Contents
+//
+// - Sass libraries
+// - Webfonts
+// - Variables
+// - Webfonts
+// - Mixins
+// - Base
+// - Layout
+// - Typography
+//
+// ------------------------------
+
+// ------------------------------
+// !-- Sass libraries
+// ------------------------------
+
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "reset";
+
+
+// ------------------------------
+// !-- Webfonts
+// ------------------------------
+{% endhighlight %}
+
+###Limit the use of shorthands
+
+I’ve never really thought about this but using short hands can make for harder to read CSS. At first I was hesitant to agree with it but after looking at it a couple of time I’m starting to get the reasoning behind it. Everything is nicely separated out and you don’t have to read possibly complex shorthands.
+
+{% highlight css %}
+/* bad */
+.selector {
+   margin: 0 0 10px;
+   background: red url("image.jpg") no-repeat;
+   border-radius: 3px 3px 0 0;
+}
+
+/* good */
+.selector {
+   margin-bottom: 10px;
+   background-color: red;
+   background-image: url("image.jpg");
+   background-repeat: no-repeat;
+   border-top-left-radius: 3px;
+   border-top-right-radius: 3px;
+}
+{% endhighlight %}
+
+Of course shorthands aren’t bad and I’m not saying you should stop using them. I think you should prioritize maintainability over fancy one-liners and go for whatever is more readable.
+
+###Don’t bundle your media queries
+
+In my last couple of projects I’ve been bundling all my media query specific styles in a separate file. In the beginning of a project this is easy enough to maintain but when projects start to grow and more people touch the project, it becomes harder to keep clean.
+
+Therefore I think it makes more sense to keep your media queries near the selectors it’s affecting. This might not be the most semantic approach but again, it’s all about readability.
+
+###Try to make it reusable
+
+Making my CSS reusable is one of the things I struggle with the most. Of course OOCSS, ACSS, BEM or SMACSS can help with this. But at the moment I’m still don’t feel there’s one approach that’s better than the other. It mostly depends on project and team specific needs and you’ll always end up with the same dilemma: Do I sacrifice my semantic markup for more readable CSS, or should I start prefixing and separating all my selectors and make it actually modular.
+
+Whichever you chose, make sure you and your team align on this and everybody is following the same principles.
+
+###File size and performance
+
+I know, most of these guidelines will increase your CSS’s file size and might possibly impact your CSS performance. To be honest, I think CSS file size is (in most cases) not a real issue. When you think of it, a bloated gzipped CSS file is still lower in file size than your average JPEG. Besides that, if you utilize your browser and server caching settings users will only have to download your CSS file once and will never have to deal with it again.
+
+As for the performance, keeping your nesting to a minimum and being aware of [how to write efficient CSS](http://css-tricks.com/efficiently-rendering-css/) is enough to keep your CSS performance fast enough.
+
+###Conclusion
+
+Writing readable CSS is mostly about taking the time to actually make it readable. Best rule of thumb is to just write the CSS you would like to edit.
+
+Once again, most of what’s written here are excerpts from [Jen Myers’ talk at Øredev Conference](http://vimeo.com/111290459). Big up to her for getting me to think about this.
