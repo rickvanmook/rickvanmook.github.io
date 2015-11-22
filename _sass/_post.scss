@@ -5,7 +5,7 @@
 	background-color: #f3f3f3;
 }
 
-.post__content p, .post__footer__content, .post__header__content {
+.post__content h4, .post__content h3, .post__content h2, .post__content p, .post__footer__content, .post__header__content {
 
 	position: relative;
 	@include mq(is-small) {
@@ -82,6 +82,11 @@
 
 	p {
 
+		background-color: #fff;
+	}
+
+	.highlight pre, p {
+
 		position: relative;
 
 		@include mq(is-small) {
@@ -100,37 +105,24 @@
 		margin: 0 auto;
 		padding: 0 5%;
 		box-sizing: border-box;
-		background-color: #fff;
 	}
 
 	.highlight {
 
 		display: block;
 		position: relative;
+		word-wrap: break-word;
 		background-color: #252830;
+		font-size: 12px;
+		line-height: 1.5;
 
 		pre {
 
-			border: 2px solid #3e424a;
-			border-radius: 5px;
-
-			width: 90%;
-			max-width: 1100px;
-			margin: 60px auto;
-
-			@include mq(is-large) {
-
-				width: 80%;
-			}
-
 			code {
 
-
+				position: relative;
 				display: block;
-				border: 1px solid #3e424a;
-				margin: 40px 18px 20px;
-				overflow: auto;
-				padding: 5%;
+				margin: 60px 0;
 			}
 		}
 
