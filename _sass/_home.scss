@@ -47,7 +47,8 @@
 .home__header__labels {
 
 	width: 90%;
-	margin: 0 auto 70px;
+	margin: 0 auto;
+	padding-bottom: 70px;
 
 	@include mq(is-medium) {
 		width: 36.5%;
