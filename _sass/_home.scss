@@ -60,10 +60,12 @@
 
 .home__header__title {
 
+	color: $primary;
 }
 
 .home__header__subtitle {
 
+	color: $copy-home-sub-title;
 }
 
 .home__header__cta {
@@ -78,22 +80,51 @@
 
 .home__writing__post {
 
-	height: 150px;
+	a {
+
+		display: table;
+		width: 100%;
+		border-bottom: 1px solid $dark-bg-border;
+		padding: 7.16% 0;
+	}
+
+	&__number {
+
+		display: table-cell;
+		width: 11%;
+		color: $primary;
+	}
+
+	&__title {
+
+		display: table-cell;
+		padding-right: 11%;
+		color: $white;
+	}
 }
 
 .home__writing {
 
 	width: 100%;
-	background: #dbdddf;
+	background: $light-bg;
+}
+
+.home__writing__label {
+
+	font-weight: normal;
+	padding-bottom: 5.37%;
+	color: $copy-alt;
+	border-bottom: 1px solid $dark-bg-border;
 }
 
 .home__writing-inner {
 
 	position: relative;
 	width: 100%;
+	padding: 3.5%;
 
-	color: #fff;
-	background-color: #27292e;
+	color: $white;
+	background-color: $dark-bg;
 
 	@include mq(is-small) {
 
