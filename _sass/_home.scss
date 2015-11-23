@@ -3,6 +3,27 @@
 	.wrapper {
 
 		height: 100%;
+		background-color: $dark-bg;
+
+
+		@include mq(is-small) {
+
+
+			background-color: $light-bg;
+		}
+
+		&:before {
+
+			content: "";
+			width: 90%;
+			background: $dark-bg;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
 	}
 }
 
@@ -15,7 +36,7 @@
 .home__header-wrapper {
 
 	width: 100%;
-	background-color: #dbdddf;
+	background-color: $light-bg;
 
 	@include mq(is-medium) {
 
