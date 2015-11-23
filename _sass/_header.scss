@@ -9,7 +9,13 @@
 	width: 100%;
 
 	/* Appearance */
-	background-color: #fff;
+	background-color: $white;
+
+	.post & {
+
+		/* Appearance */
+		box-shadow: 0 1px 0 0 $black-opacity-dimmed;
+	}
 }
 
 .nav {
@@ -49,14 +55,20 @@
 		min-width: 60px;
 
 		/* Appearance */
-		border-bottom: 2px solid #e4e4e4;
+		color: $black-opacity;
+		border-bottom: 2px solid $black-opacity-dimmed;
 	}
 
 	&--home {
 
+		/* Appearance */
+		color: $black-opacity-dimmed;
 	}
 
 	&--active {
 
+		/* Appearance */
+		color: $primary;
+		border-bottom-color: $primary;
 	}
 }

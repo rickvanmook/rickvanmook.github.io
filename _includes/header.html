@@ -3,17 +3,17 @@
     <ul class="nav__list">
       <li class="nav__list__item">
         <a class="nav__link nav__link--home" href="/">
-          R<span class="u-onlyWide">ick </span>v<span class="u-onlyWide">an </span>Mook
+          RvMook
         </a>
       </li>
       <li class="nav__list__item">
-        <a class="nav__link nav__link--list" href="/">Writing</a>
+        <a class="nav__link nav__link--list{% if page.class == 'home' or page.class == 'post' %} nav__link--active {% endif %}" href="/">Writing</a>
       </li>
       <li class="nav__list__item">
-        <a class="nav__link nav__link--list" href="/about/">About</a>
+        <a class="nav__link nav__link--list{% if page.class == 'about' %} nav__link--active {% endif %}" href="/about/">About</a>
       </li>
       <li class="nav__list__item">
-        <a class="nav__link nav__link--list" href="/work/">Work</a>
+        <a class="nav__link nav__link--list{% if page.class == 'work' %} nav__link--active {% endif %}" href="/work/">Work</a>
       </li>
     </ul>
   </nav>
