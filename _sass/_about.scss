@@ -10,6 +10,11 @@
 
 	min-height: 100%;
 
+	a {
+
+		color: $primary;
+	}
+
 	/* equal to footer height */
 	margin-bottom: -160px;
 
@@ -42,4 +47,16 @@
 	color: #b2bad4;
 	text-decoration: none;
 	border-bottom: solid 1px #3a3d44;
+}
+
+.about__main {
+
+	width: 85%;
+	font-size: 30px;
+}
+
+.about__sub {
+
+	width: 85%;
+	font-size: 15px;
 }
