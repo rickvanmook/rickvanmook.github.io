@@ -136,20 +136,24 @@
 	padding-bottom: 5.37%;
 	color: $copy-alt;
 	border-bottom: 1px solid $dark-bg-border;
+
+	@include mq(is-medium) {
+		padding-top: 7%;
+	}
 }
 
 .home__writing-inner {
 
 	position: relative;
 	width: 100%;
-	padding: 3.5%;
-
+	padding: 5%;
 	color: $white;
 	background-color: $dark-bg;
 
 	@include mq(is-small) {
 
 		width: 90%;
+		padding: 3.5%;
 		margin: 0 auto;
 	}
 
@@ -158,7 +162,7 @@
 		position: absolute;
 		min-height: 100%;
 		top: 0;
-		padding-top: 15%;
+		padding-top: 115px;
 
 		left: 46.5%;
 		width: 45.8%;
