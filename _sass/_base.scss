@@ -20,7 +20,7 @@ body, html {
 
 a {
 
-    color: inherit;
+    color: $primary;
     text-decoration: none;
 }
 
@@ -46,5 +46,23 @@ ul {
     @include mq(is-medium) {
 
         width: 80%;
+    }
+}
+
+.image-container {
+
+    position: relative;
+    height: 0;
+    width: 100%;
+    overflow: hidden;
+
+    &--16-9 {
+
+        padding-top: 56.25%; /* 16:9 */
+    }
+
+    &--bg {
+
+        background-size: cover;
     }
 }

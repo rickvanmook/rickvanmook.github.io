@@ -12,31 +12,35 @@ class: work
 	</div>
 	<ul class="work__list">
 		{% for project in site.data.work %}
-		<li class="work__list__item">
-			<h3>{{ project.title }}</h3>
-			Year: {{ project.year }}<br>
+		<li class="work__item">
+			<div class="image-container image-container--16-9 image-container--bg" style="background-image:url('http://movieboozer.com/wp-content/uploads/2015/05/my-neighbor-totoro-main-review.jpg');">
+			</div>
+			<div class="work__item__copy">
+				<h3 class="work__item__title">{{ project.title }}</h3>
+				Year: {{ project.year }}<br>
 
-			{% if project.sub-title %}
-			{{ project.sub-title }}<br>
-			{% endif %}
+				{% if project.sub-title %}
+				{{ project.sub-title }}<br>
+				{% endif %}
 
-			{% if project.agency %}
-			Agency: <a href="{{ project.agency.url }}" target="_blank">{{ project.agency.label }}</a><br>
-			{% endif %}
+				{% if project.agency %}
+				Agency: <a href="{{ project.agency.url }}" target="_blank">{{ project.agency.label }}</a><br>
+				{% endif %}
 
-			{% if project.role %}
-			Role: {{ project.role }}<br>
-			{% endif %}
+				{% if project.role %}
+				Role: {{ project.role }}<br>
+				{% endif %}
 
-			{% if project.recognitions %}
-			Recognition:<br>
+				{% if project.recognitions %}
+				Recognition:
 
-			{% for recognition in project.recognitions %}
-			<uL>
-				<li>{{ recognition }}</li>
-			</ul>
-			{% endfor %}
-			{% endif %}
+				{% for recognition in project.recognitions %}
+				<uL>
+					<li>{{ recognition }}</li>
+				</ul>
+				{% endfor %}
+				{% endif %}
+			</div>
 		</li>
 		{% endfor %}
 	</ul>
