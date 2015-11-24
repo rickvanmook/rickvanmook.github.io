@@ -1,39 +1,84 @@
-- title: Tom Preston-Werner
+- title: MtnDew.com
+  year: 2015
+  agency:
+      label: Firstborn
+      url: http://firstborn.com
+  role: Lead Developer
+- title: JS13K - Dutch Dredge
+  year: 2015
+  sub-title: Personal project
+- title: Sound City Project
+  year: 2014
+  sub-title: Personal project together with <a>David Vale</a> and <a>Caco Teixeira</a>
+  role: Lead Developer
+- title: Lunchables - K-Catch
+  year: 2014
+  agency:
+    label: Firstborn
+    url: http://firstborn.com
+  role: Lead Developer
+  recognitions:
+    - Cyber Lions Shortlist
+- title: JS1K - Just a Happy Robot
   year: 2014
   sub-title: Personal project
-  agency:
-    label: Firstborn
-    url: http://firstborn.com
-  role: Lead Developer
-  recognitions:
-    - a
-    - b
-    - c
-    - d
-- title: Whatsup Dude
-  year: 2013
-  sub-title: Personal project
-  agency:
-    label: Firstborn
-    url: http://firstborn.com
-  role: Lead Developer
-  recognitions:
-    - a
-    - b
-    - c
-    - d
-- title: 5
-  year: 2013
-  sub-title: Personal project
-  role: Lead Developer
-  recognitions:
-    - a
-    - b
-    - c
-    - d
-- title: 4
+- title: PSCU - Make Your Money Matter
   year: 2013
   agency:
     label: Firstborn
     url: http://firstborn.com
   role: Lead Developer
+  recognitions:
+    - SXSW – Best Website for Educational Resources
+    - Addy – Silver National Winner
+    - Addy – Gold District Winner
+    - OMMA – Web Site Excellence
+    - Telly – Silver
+    - Awwwards – Site of the Day
+    - FWA – Site of the Day
+- title: Cycle for Survival - Our Battle
+  year: 2013
+  agency:
+    label: Firstborn
+    url: http://firstborn.com
+  role: Lead Developer
+  recognitions:
+    - SXSW – Best Website for Educational Resources
+    - Addy – Silver National Winner
+    - Addy – Gold District Winner
+    - OMMA – Web Site Excellence
+    - Telly – Silver
+    - Awwwards – Site of the Day
+    - FWA – Site of the Day
+- title: AEGON – Speel Je Toekomst
+  year: 2012
+  agency:
+    label: Momkai
+    url: http://momkai.com
+  role: Supporting Developer
+  recognitions:
+    - Red Dot Design Award – Grand Prix
+- title: G-Star – Women’s Night
+  year: 2011
+  agency:
+    label: Momkai
+    url: http://momkai.com
+  role: Lead Developer
+  recognitions:
+    - European Design Award – Gold
+- title: Pete Philly - Open Loops
+  year: 2010
+  agency:
+    label: Momkai
+    url: http://momkai.com
+  role: Lead Developer
+  recognitions:
+    - Red Dot Design Award – Best of the Best
+    - European Design Award – Silver
+    - FWA – Site of The Day
+- title: Nike - Art Challenge
+  year: 2010
+  agency:
+    label: Momkai
+    url: http://momkai.com
+  role: Supporting Developer
