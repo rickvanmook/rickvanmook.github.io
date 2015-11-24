@@ -1,8 +1,18 @@
-.post {
+.post-wrapper {
 
 	position: relative;
-	padding: 80px 0;
-	background-color: #f3f3f3;
+	padding: 11% 0;
+	background-color: $lighter-bg;
+
+	@include mq(is-small) {
+
+		padding: 5.55% 0;
+	}
+
+	@include mq(is-extra-large) {
+
+		padding: 80px 0;
+	}
 }
 
 .post__content h4, .post__content h3, .post__content h2, .post__content p, .post__footer__content, .post__header__content {
@@ -29,8 +39,6 @@
 }
 
 .post__header {
-
-	padding-top: 80px;
 
 	&:before {
 

@@ -8,6 +8,9 @@
 	@else if $point == is-large {
 		@media (min-width: 1024px) { @content; }
 	}
+	@else if $point == is-extra-large {
+		@media (min-width: 1280px) { @content; }
+	}
 }
 
 .u-onlyWide {
