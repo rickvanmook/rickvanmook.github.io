@@ -22,7 +22,7 @@ To kick things off let’s start with the basics. These are things I’m already
 
 It’s simply harder to read when you put multiple properties in one line.
 
-{% highlight css %}
+{% highlight scss %}
 /* bad */
 .selector {
    color: red; font-size: 12px; font-family: sans-serif;
@@ -40,7 +40,7 @@ It’s simply harder to read when you put multiple properties in one line.
 
 Names shouldn’t be too loose or generic. It’s better to be more specific so in the HTML it’s clear what it’s doing and in the CSS you know what it’s styling.
 
-{% highlight css %}
+{% highlight scss %}
 /* bad */
 .title { ... }
 .container { ... }
@@ -53,7 +53,7 @@ Names shouldn’t be too loose or generic. It’s better to be more specific so 
 ###Don’t rely on HTML structure too much
 In general your CSS should not depend on HTML structure and the elements location in the markup. Your styles will be more reusable and readable and in most cases will even increase rendering performance.
 
-{% highlight css %}
+{% highlight scss %}
 /* bad */
 #main-nav ul li ul li div { ... }
 .page-container #stream .stream-item .tweet .tweet-header .username { ... }
@@ -71,7 +71,7 @@ When using preprocessors like SASS or LESS it’s easy to lose track of what act
 
 I usually just smack things together and end up with a bunch of randomly ordered properties. Obviously this is not the way to go. Instead try to order them by type and then define the groups you’re structuring them in. This way your order isn’t only more readable for outsiders you’ll also force them to follow along in your structure.
 
-{% highlight css %}
+{% highlight scss %}
 /* bad */
 .selector {
 
@@ -156,7 +156,7 @@ I know, good code shouldn’t need comments. But I’m not talking about the kin
 
 We already talked about comments for your ordered properties in the previous example. Another way of adding more structure as adding some sort of table of contents at the top of your document. Finding things will be much easier and at the same time you’re forcing yourself to not just keep adding selectors to your file and actually think about what its rightful place is in your project.
 
-{% highlight css %}
+{% highlight scss %}
 // ------------------------------
 // Table of Contents
 //
@@ -189,7 +189,7 @@ We already talked about comments for your ordered properties in the previous exa
 
 I’ve never really thought about this but using short hands can make for harder to read CSS. At first I was hesitant to agree with it but after looking at it a couple of time I’m starting to get the reasoning behind it. Everything is nicely separated out and you don’t have to read possibly complex shorthands.
 
-{% highlight css %}
+{% highlight scss %}
 /* bad */
 .selector {
    margin: 0 0 10px;
