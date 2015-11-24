@@ -82,6 +82,9 @@
 .home__header__title {
 
 	color: $primary;
+	font-size: 136px;
+	line-height: 0.9;
+	font-family: $font-serif;
 }
 
 .home__header__subtitle {
@@ -93,6 +96,7 @@
 
 	display: inline-block;
 	background-color: #dbdddf;
+	font-size: 18px;
 	color: #fff;
 	padding: 20px 30px;
 	position: relative;
@@ -179,5 +183,7 @@
 		display: table-cell;
 		padding-right: 11%;
 		color: $white;
+		font-family: $font-serif;
+		font-size: 36px;
 	}
 }
