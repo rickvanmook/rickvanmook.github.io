@@ -1,84 +1,43 @@
 - title: MtnDew.com
-  year: 2015
-  agency:
-      label: Firstborn
-      url: http://firstborn.com
-  role: Lead Developer
-- title: JS13K - Dutch Dredge
-  year: 2015
-  sub-title: Personal project
+  label: Created at Firstborn in 2015
+  description: Lead Developer responsible for setting up HTML, CSS and JavaScript structure.
+
+- title: JS13K<br>Dutch Dredge
+  label: Personal project in 2015
+  description: JavaScript competition to create a game within 13kb of JavaScript.
+
 - title: Sound City Project
-  year: 2014
-  sub-title: Personal project together with <a>David Vale</a> and <a>Caco Teixeira</a>
-  role: Lead Developer
-- title: Lunchables - K-Catch
-  year: 2014
-  agency:
-    label: Firstborn
-    url: http://firstborn.com
-  role: Lead Developer
-  recognitions:
-    - Cyber Lions Shortlist
-- title: JS1K - Just a Happy Robot
-  year: 2014
-  sub-title: Personal project
-- title: PSCU - Make Your Money Matter
-  year: 2013
-  agency:
-    label: Firstborn
-    url: http://firstborn.com
-  role: Lead Developer
-  recognitions:
-    - SXSW – Best Website for Educational Resources
-    - Addy – Silver National Winner
-    - Addy – Gold District Winner
-    - OMMA – Web Site Excellence
-    - Telly – Silver
-    - Awwwards – Site of the Day
-    - FWA – Site of the Day
-- title: Cycle for Survival - Our Battle
-  year: 2013
-  agency:
-    label: Firstborn
-    url: http://firstborn.com
-  role: Lead Developer
-  recognitions:
-    - SXSW – Best Website for Educational Resources
-    - Addy – Silver National Winner
-    - Addy – Gold District Winner
-    - OMMA – Web Site Excellence
-    - Telly – Silver
-    - Awwwards – Site of the Day
-    - FWA – Site of the Day
-- title: AEGON – Speel Je Toekomst
-  year: 2012
-  agency:
-    label: Momkai
-    url: http://momkai.com
-  role: Supporting Developer
-  recognitions:
-    - Red Dot Design Award – Grand Prix
-- title: G-Star – Women’s Night
-  year: 2011
-  agency:
-    label: Momkai
-    url: http://momkai.com
-  role: Lead Developer
-  recognitions:
-    - European Design Award – Gold
-- title: Pete Philly - Open Loops
-  year: 2010
-  agency:
-    label: Momkai
-    url: http://momkai.com
-  role: Lead Developer
-  recognitions:
-    - Red Dot Design Award – Best of the Best
-    - European Design Award – Silver
-    - FWA – Site of The Day
-- title: Nike - Art Challenge
-  year: 2010
-  agency:
-    label: Momkai
-    url: http://momkai.com
-  role: Supporting Developer
+  label: Personal project together with <a>David Vale</a> and <a>Caco Teixeira</a> in 2014.
+  description: Front end engineer responsible for all things web, including the 3d audio manipulation.
+
+- title: Lunchables<br>K-Catch
+  label: Created at Firstborn in 2014.
+  description: Lead Developer on a nodejs socket server driven mobile game.
+
+- title: JS1K<br>Just a Happy Robot
+  label: Personal project in 2014.
+  description: JavaScript competition to create anything within 1kb of JavaScript.
+
+- title: PSCU<br>Make Your Money Matter
+  label: Created at Firstborn in 2013.
+  description: Lead Developer. Created a custom scroll animation framework and optimised SVG workflow.
+
+- title: Cycle for Survival<br>Our Battle
+  label: Created at Firstborn in 2013.
+  description: Lead Developer created a modular setup to easily tweak and fill the page with pieces of content.
+
+- title: AEGON<br>Speel Je Toekomst
+  label: Created at Momkai in 2012.
+  description: Supporting Developer created base project structure and setup for page transitions.
+
+- title: G-Star<br>Women’s Night
+  label: Created at Momkai in 2011
+  description: Lead Flash Developer responsible for overall project structure and page loading.
+
+- title: Pete Philly<br>Open Loops
+  label: Created at Momkai in 2010
+  description: Lead Flash developer responsible for video- and music player and overal project structure.
+
+- title: Nike<br>Art Challenge
+  label: Created at Momkai in 2010
+  description: Supporting Flash Developer responsible for page transitions and navigation bars.
