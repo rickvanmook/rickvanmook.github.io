@@ -28,7 +28,12 @@ class: post
         {% for post in site.related_posts limit:2 %}
         <li class="post__footer__link">
           <a href="{{ post.url | prepend: site.baseurl }}">
-            {{ post.number }} - {{ post.title }}<br>
+            <div class="post__footer__link__number">
+              {{ post.number }}
+              </div>
+            <div class="post__footer__link__title">
+              {{ post.title }}
+            </div>
           </a>
         </li>
         {% endfor %}

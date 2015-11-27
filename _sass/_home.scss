@@ -82,25 +82,33 @@
 .home__header__title {
 
 	color: $primary;
-	font-size: 136px;
-	line-height: 0.9;
+	font-size: 108px;
 	font-family: $font-serif;
+	line-height: 0.87;
 }
 
 .home__header__subtitle {
 
 	color: $copy-home-sub-title;
+	font-family: $font-alt;
+	font-size: 22px;
+	line-height: 1.18;
+	font-style: italic;
 }
 
 .home__header__cta {
 
 	display: inline-block;
 	background-color: #dbdddf;
-	font-size: 18px;
 	color: #fff;
 	padding: 20px 30px;
 	position: relative;
 	top: 35px;
+
+
+	font-size: 18px;
+	font-family: $font-sans;
+	font-weight: 600;
 }
 
 
@@ -116,6 +124,10 @@
 	font-weight: normal;
 	padding-bottom: 5.37%;
 	color: $copy-alt;
+	font-size: 12px;
+	font-family: $font-sans;
+	text-transform: uppercase;
+	letter-spacing: 2px;
 	border-bottom: 1px solid $dark-bg-border;
 
 	@include mq(is-medium) {
@@ -174,16 +186,21 @@
 	&__number {
 
 		display: table-cell;
+		vertical-align: top;
 		width: 11%;
+		font-family: $font-serif;
+		font-size: 18px;
+		letter-spacing: 1px;
 		color: $primary;
 	}
 
 	&__title {
 
 		display: table-cell;
+		vertical-align: top;
 		padding-right: 11%;
 		color: $white;
 		font-family: $font-serif;
-		font-size: 36px;
+		font-size: 30px;
 	}
 }

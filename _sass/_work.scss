@@ -8,8 +8,10 @@
 
 .work__label {
 
+	font-family: $font-sans;
+	font-size: 18px;
 	color: #b2bad4;
-	width: 50%;
+	width: 73%;
 	padding-top: 5.6%;
 	padding-bottom: 20px;
 	padding-right: 12.5%;
@@ -35,14 +37,16 @@
 
 	float: left;
 
+	position: relative;
 	background: #2a2e36;
 
 	width: 100%;
 	margin: 20px 0;
-	height: 450px;
 
 
 	@include mq(is-small) {
+
+		height: 450px;
 
 		&:nth-child(odd) {
 
@@ -96,7 +100,24 @@
 
 	color: $white;
 	font-style: italic;
+	font-size: 20px;
+	font-family: $font-serif;
 	padding-bottom: 11%;
 	margin-bottom: 11%;
 	border-bottom: 1px solid $white-opacity-dimmed;
+
+
+	@include mq(is-small) {
+
+		min-height: 82px;
+	}
+}
+
+.work__item__description {
+
+	font-size: 14px;
+	color: #8d94ae;
+	font-family: $font-sans;
+	font-weight: 300;
+	margin-bottom: 10px;
 }

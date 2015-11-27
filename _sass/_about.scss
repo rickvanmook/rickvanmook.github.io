@@ -47,16 +47,25 @@
 	color: #b2bad4;
 	text-decoration: none;
 	border-bottom: solid 1px #3a3d44;
+
+
+	/* Copy */
+	font-family: $font-sans;
+	font-weight: 600;
+	font-size: 16px;
 }
 
 .about__main {
 
 	width: 85%;
-	font-size: 30px;
+	font-family: $font-serif;
+	font-size: 44px;
+	line-height: 1.2;
 }
 
 .about__sub {
 
 	width: 85%;
-	font-size: 15px;
+	font-size: 18px;
+	font-family: $font-sans;
 }
