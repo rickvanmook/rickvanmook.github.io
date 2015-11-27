@@ -1,43 +1,55 @@
 - title: MtnDew.com
-  label: Created at Firstborn in 2015
-  description: Lead Developer responsible for setting up HTML, CSS and JavaScript structure.
+  year: 2015
+  agency: Firstborn
+  role: Lead Developer
 
-- title: JS13K<br>Dutch Dredge
-  label: Personal project in 2015
+- title: JS13K<br>Dutch&nbspDredge
+  year: 2015
+  agency: Personal project
   description: JavaScript competition to create a game within 13kb of JavaScript.
 
 - title: Sound City Project
-  label: Personal project together with <a>David Vale</a> and <a>Caco Teixeira</a> in 2014.
-  description: Front end engineer responsible for all things web, including the 3d audio manipulation.
+  year: 2014
+  agency: Personal project
+  role: Front End Engineer
+  description: Worked together with <a>David Vale</a> and <a>Caco Teixeira</a>.
 
 - title: Lunchables<br>K-Catch
-  label: Created at Firstborn in 2014.
-  description: Lead Developer on a nodejs socket server driven mobile game.
+  year: 2014
+  agency: Firstborn
+  role: Lead Developer
 
-- title: JS1K<br>Just a Happy Robot
-  label: Personal project in 2014.
+- title: JS1K<br>Just&nbspa&nbspHappy&nbspRobot
+  year: 2014
+  agency: Personal project
   description: JavaScript competition to create anything within 1kb of JavaScript.
 
-- title: PSCU<br>Make Your Money Matter
-  label: Created at Firstborn in 2013.
-  description: Lead Developer. Created a custom scroll animation framework and optimised SVG workflow.
+- title: PSCU<br>Make&nbspYour Money&nbspMatter
+  year: 2013
+  agency: Firstborn
+  role: Lead Developer
 
-- title: Cycle for Survival<br>Our Battle
-  label: Created at Firstborn in 2013.
-  description: Lead Developer created a modular setup to easily tweak and fill the page with pieces of content.
+- title: Cycle for Survival<br>Our&nbspBattle
+  year: 2013
+  agency: Firstborn
+  role: Lead Developer
 
-- title: AEGON<br>Speel Je Toekomst
-  label: Created at Momkai in 2012.
-  description: Supporting Developer created base project structure and setup for page transitions.
+- title: AEGON<br>Speel&nbspJe&nbspToekomst
+  year: 2012
+  agency: Momkai
+  role: Supporting Developer
 
-- title: G-Star<br>Women’s Night
-  label: Created at Momkai in 2011
-  description: Lead Flash Developer responsible for overall project structure and page loading.
+- title: G-Star<br>Women’s&nbspNight
+  year: 2011
+  agency: Momkai
+  role: Lead Developer
 
-- title: Pete Philly<br>Open Loops
-  label: Created at Momkai in 2010
-  description: Lead Flash developer responsible for video- and music player and overal project structure.
+- title: Pete Philly<br>Open&nbspLoops
+  year: 2010
+  agency: Cretaed at Momkai
+  role: Lead Developer
 
-- title: Nike<br>Art Challenge
-  label: Created at Momkai in 2010
-  description: Supporting Flash Developer responsible for page transitions and navigation bars.
+- title: Nike<br>Art&nbspChallenge
+  year: 2010
+  agency: Momkai
+  role: Supporting Developer

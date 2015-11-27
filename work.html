@@ -17,8 +17,25 @@ class: work
 			</div>
 			<div class="work__item__copy">
 				<h3 class="work__item__title">{{ project.title }}</h3>
-				<p class="work__item__description">{{ project.description }}</p>
-				<p class="work__item__label">{{ project.label }}</p>
+				<p class="work__item__description">
+
+					{% if project.year %}
+						Year: {{ project.year }}<br>
+					{% endif %}
+
+					{% if project.agency %}
+						Created at: {{ project.agency }}<br>
+					{% endif %}
+
+					{% if project.role %}
+						Role: {{ project.role }}<br>
+					{% endif %}
+				</p>
+				{% if project.description %}
+				<p class="work__item__description">
+					{{ project.description }}
+				</p>
+				{% endif %}
 			</div>
 		</li>
 		{% endfor %}
