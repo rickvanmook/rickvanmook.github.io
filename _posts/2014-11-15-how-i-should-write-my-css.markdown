@@ -18,7 +18,7 @@ Most (if not all) of these points and examples are from Jen Myers’ talk at Ør
 
 To kick things off let’s start with the basics. These are things I’m already implementing and are in my opinion more common sense than actual tips. Either way, they’re worth pointing out.
 
-###Go for multiline instead of inline
+##Go for multiline instead of inline
 
 It’s simply harder to read when you put multiple properties in one line.
 
@@ -36,7 +36,7 @@ It’s simply harder to read when you put multiple properties in one line.
 }
 {% endhighlight %}
 
-###Avoid the use of generic names
+##Avoid the use of generic names
 
 Names shouldn’t be too loose or generic. It’s better to be more specific so in the HTML it’s clear what it’s doing and in the CSS you know what it’s styling.
 
@@ -50,7 +50,7 @@ Names shouldn’t be too loose or generic. It’s better to be more specific so 
 .carousel-container { ... }
 {% endhighlight %}
 
-###Don’t rely on HTML structure too much
+##Don’t rely on HTML structure too much
 In general your CSS should not depend on HTML structure and the elements location in the markup. Your styles will be more reusable and readable and in most cases will even increase rendering performance.
 
 {% highlight scss %}
@@ -63,11 +63,11 @@ In general your CSS should not depend on HTML structure and the elements locatio
 .tweet-header .username { ... }
 {% endhighlight %}
 
-###Know how your preprocessor compiles
+##Know how your preprocessor compiles
 
 When using preprocessors like SASS or LESS it’s easy to lose track of what actually ends up in your CSS. It might look all semantic and clean in your SASS files but when it’s compiled down to CSS it can still be messed up. So know how your preprocessor compiles your code and keep that in mind while writing your fancy preprocessed selectors.
 
-###Ordering your properties
+##Ordering your properties
 
 I usually just smack things together and end up with a bunch of randomly ordered properties. Obviously this is not the way to go. Instead try to order them by type and then define the groups you’re structuring them in. This way your order isn’t only more readable for outsiders you’ll also force them to follow along in your structure.
 
@@ -150,7 +150,7 @@ I usually just smack things together and end up with a bunch of randomly ordered
 }
 {% endhighlight %}
 
-###Use comments to add structure
+##Use comments to add structure
 
 I know, good code shouldn’t need comments. But I’m not talking about the kind of comments that explain what it’s doing. But since CSS is kind of opaque, comments can add a lot of clarity to an otherwise hard to read CSS file.
 
@@ -185,7 +185,7 @@ We already talked about comments for your ordered properties in the previous exa
 // ------------------------------
 {% endhighlight %}
 
-###Limit the use of shorthands
+##Limit the use of shorthands
 
 I’ve never really thought about this but using short hands can make for harder to read CSS. At first I was hesitant to agree with it but after looking at it a couple of time I’m starting to get the reasoning behind it. Everything is nicely separated out and you don’t have to read possibly complex shorthands.
 
@@ -210,25 +210,25 @@ I’ve never really thought about this but using short hands can make for harder
 
 Of course shorthands aren’t bad and I’m not saying you should stop using them. I think you should prioritize maintainability over fancy one-liners and go for whatever is more readable.
 
-###Don’t bundle your media queries
+##Don’t bundle your media queries
 
 In my last couple of projects I’ve been bundling all my media query specific styles in a separate file. In the beginning of a project this is easy enough to maintain but when projects start to grow and more people touch the project, it becomes harder to keep clean.
 
 Therefore I think it makes more sense to keep your media queries near the selectors it’s affecting. This might not be the most semantic approach but again, it’s all about readability.
 
-###Try to make it reusable
+##Try to make it reusable
 
 Making my CSS reusable is one of the things I struggle with the most. Of course OOCSS, ACSS, BEM or SMACSS can help with this. But at the moment I’m still don’t feel there’s one approach that’s better than the other. It mostly depends on project and team specific needs and you’ll always end up with the same dilemma: Do I sacrifice my semantic markup for more readable CSS, or should I start prefixing and separating all my selectors and make it actually modular.
 
 Whichever you chose, make sure you and your team align on this and everybody is following the same principles.
 
-###File size and performance
+##File size and performance
 
 I know, most of these guidelines will increase your CSS’s file size and might possibly impact your CSS performance. To be honest, I think CSS file size is (in most cases) not a real issue. When you think of it, a bloated gzipped CSS file is still lower in file size than your average JPEG. Besides that, if you utilize your browser and server caching settings users will only have to download your CSS file once and will never have to deal with it again.
 
 As for the performance, keeping your nesting to a minimum and being aware of [how to write efficient CSS](http://css-tricks.com/efficiently-rendering-css/) is enough to keep your CSS performance fast enough.
 
-###Conclusion
+##Conclusion
 
 Writing readable CSS is mostly about taking the time to actually make it readable. Best rule of thumb is to just write the CSS you would like to edit.
 

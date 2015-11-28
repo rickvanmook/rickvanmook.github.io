@@ -38,16 +38,25 @@
 	background-color: #fff;
 }
 
+.post__quick-nav {
+
+	position: fixed;
+	height: $header-height + 70;
+	top: 0;
+	width: 100%;
+	background-color: $dark-bg;
+}
+
 .post__header {
 
 	&:before {
 
-		content: "";
 		position: absolute;
-		top: 0;
 		height: 355px;
+		content: "";
+		top: 0;
 		width: 100%;
-		background-color: #252830;
+		background-color: $dark-bg;
 	}
 }
 
@@ -99,6 +108,14 @@
 }
 
 .post__content {
+
+	h4, h3, h2 {
+
+		font-family: $font-serif;
+		font-size: 30px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
 
 	p {
 
