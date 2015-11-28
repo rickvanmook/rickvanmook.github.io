@@ -3,27 +3,25 @@ layout: default
 class: home
 ---
 
-<div class="home__header-wrapper">
-  <div class="home__header">
-    <div class="home__header__labels">
-      <h1 class="home__header__title">Rick van Mook.</h1>
-      <h2 class="home__header__subtitle">A creative developer from <a href="https://www.google.com/maps/place/Raamsdonksveer,+Netherlands" target="_blank">The Netherlands</a></h2>
-      <a class="home__header__cta" href="/about/">More About Me</a>
-    </div>
+<div class="home__wrapper">
+  <div class="home__gutter"></div>
+  <div class="home__title">
+      <h1 class="home__title__name">Rick <span class="home__title__name__br">van</span> Mook.</h1>
+      <h2 class="home__title__label">A creative developer<br>from The Netherlands</h2>
+      <a class="home__title__cta" href="/about/">More About Me</a>
   </div>
-</div>
-<div class="home__writing">
-  <div class="home__writing-inner">
+  <div class="home__writing">
     <h3 class="home__writing__label"><b>Latest</b> in Writing</h3>
     <ul>
-      {% for post in site.posts %}
-      <li class="home__writing__post">
-        <a href="{{ post.url | prepend: site.baseurl }}">
-          <div class="home__writing__post__number">{{ post.number }}</div>
-          <div class="home__writing__post__title">{{ post.title }}</div>
-        </a>
-      </li>
-      {% endfor %}
+    {% for post in site.posts %}
+    <li class="home__writing__post">
+      <a href="{{ post.url | prepend: site.baseurl }}">
+      <div class="home__writing__post__number">{{ post.number }}</div>
+      <div class="home__writing__post__title">{{ post.title }}</div>
+      </a>
+    </li>
+    {% endfor %}
     </ul>
   </div>
+  <div class="home__gutter"></div>
 </div>
