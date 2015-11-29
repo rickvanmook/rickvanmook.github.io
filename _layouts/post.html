@@ -6,14 +6,12 @@ class: post
 
   <div class="post__content">
     <header class="post__header">
-      <div class="post__header__content">
-        <div class="post__header__title">
-          <div class="post__header__title__number">{{ page.number }}</div>
-          <h1 class="post__header__title__label">{{ page.title }}</h1>
-        </div>
-        <div class="post__header__date">
-          Written on <b><time>{{ page.date | date: "%b %-d, %Y" }}</time></b>
-        </div>
+      <div class="post__header__title">
+        <div class="post__header__title__number">{{ page.number }}</div>
+        <h1 class="post__header__title__label">{{ page.title }}</h1>
+      </div>
+      <div class="post__header__date">
+        Written on <b><time>{{ page.date | date: "%b %-d, %Y" }}</time></b>
       </div>
     </header>
 
