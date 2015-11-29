@@ -2,54 +2,65 @@
   year: 2015
   agency: Firstborn
   role: Lead Developer
+  image: work-dew.jpg
 
 - title: JS13K<br>Dutch&nbspDredge
   year: 2015
   agency: Personal project
   description: JavaScript competition to create a game within 13kb of JavaScript.
+  image: work-js13k.jpg
 
 - title: Sound City Project
   year: 2014
   agency: Personal project
   role: Front End Engineer
   description: Worked together with <a>David Vale</a> and <a>Caco Teixeira</a>.
+  image: work-scp.jpg
 
 - title: Lunchables<br>K-Catch
   year: 2014
   agency: Firstborn
   role: Lead Developer
+  image: work-kcatch.jpg
 
-- title: JS1K<br>Just&nbspa&nbspHappy&nbspRobot
+- title: JS1K<br>Just&nbspa Happy Robot
   year: 2014
   agency: Personal project
   description: JavaScript competition to create anything within 1kb of JavaScript.
+  image: work-js1k.jpg
 
 - title: PSCU<br>Make&nbspYour Money&nbspMatter
   year: 2013
   agency: Firstborn
   role: Lead Developer
+  image: work-pscu.jpg
 
 - title: Cycle for Survival<br>Our&nbspBattle
   year: 2013
   agency: Firstborn
   role: Lead Developer
+  image: work-cycle.jpg
 
-- title: AEGON<br>Speel&nbspJe&nbspToekomst
+- title: AEGON<br>Speel&nbspJe Toekomst
   year: 2012
   agency: Momkai
   role: Supporting Developer
+  image: work-aegon.jpg
 
 - title: G-Star<br>Women’s&nbspNight
   year: 2011
   agency: Momkai
   role: Lead Developer
+  image: work-g-star.jpg
 
 - title: Pete Philly<br>Open&nbspLoops
   year: 2010
-  agency: Cretaed at Momkai
+  agency: Momkai
   role: Lead Developer
+  image: work-open-loops.jpg
 
 - title: Nike<br>Art&nbspChallenge
   year: 2010
   agency: Momkai
   role: Supporting Developer
+  image: work-nike.jpg
