@@ -4,41 +4,40 @@ class: post
 ---
 <article class="post-wrapper">
 
-  <header class="post__header">
-    <div class="post__quick-nav"></div>
-    <div class="post__header__content">
-      <div class="post__header__title">
-        <div class="post__header__title__number">{{ page.number }}</div>
-        <h1 class="post__header__title__label">{{ page.title }}</h1>
+  <div class="post__content">
+    <header class="post__header">
+      <div class="post__header__content">
+        <div class="post__header__title">
+          <div class="post__header__title__number">{{ page.number }}</div>
+          <h1 class="post__header__title__label">{{ page.title }}</h1>
+        </div>
+        <div class="post__header__date">
+          Written on <b><time>{{ page.date | date: "%b %-d, %Y" }}</time></b>
+        </div>
       </div>
-      <div class="post__header__date">
-        Written on <b><time>{{ page.date | date: "%b %-d, %Y" }}</time></b>
-      </div>
-    </div>
-  </header>
+    </header>
 
-  <section class="post__content">
     {{ content }}
-  </section>
 
-  <footer class="post__footer">
-    <div class="post__footer__content">
-      <div class="post__footer__title">What's Next</div>
-      <ul class="post__footer__link-wrapper">
+    <footer class="post__footer">
+      <div class="post__footer__content">
+        <div class="post__footer__title">What's Next</div>
+        <ul class="post__footer__link-wrapper">
 
-        {% for post in site.related_posts limit:2 %}
-        <li class="post__footer__link">
-          <a href="{{ post.url | prepend: site.baseurl }}">
-            <div class="post__footer__link__number">
-              {{ post.number }}
+          {% for post in site.related_posts limit:2 %}
+          <li class="post__footer__link">
+            <a href="{{ post.url | prepend: site.baseurl }}">
+              <div class="post__footer__link__number">
+                {{ post.number }}
+                </div>
+              <div class="post__footer__link__title">
+                {{ post.title }}
               </div>
-            <div class="post__footer__link__title">
-              {{ post.title }}
-            </div>
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </footer>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </footer>
+  </div>
 </article>
