@@ -2,12 +2,12 @@
 
 	/* Display & Box Model */
 	width: 100%;
-	min-height: 100%;
 
 	@include mq(is-medium) {
 
 		/* Display & Box Model */
 		display: table;
+		height: calc(100vh - #{$header-height});
 	}
 }
 
