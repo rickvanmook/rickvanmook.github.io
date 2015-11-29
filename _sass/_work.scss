@@ -91,10 +91,15 @@
 
 .work__item__copy {
 
-	padding: 12%;
 	color: $copy-alt;
+	padding: 7%;
 
+	@include mq(is-small) {
+
+		padding: 12%;
+	}
 }
+
 .work__item__title {
 
 	color: $white;
@@ -128,13 +133,20 @@
 	bottom: 0;
 	left: 0;
 	padding-top: 20px;
-	margin: 0 12%;
 	height: 68px;
-	width: 76%;
 	text-transform: uppercase;
 	border-top: 1px solid $white-opacity-dimmed;
 
 	font-size: 12px;
 	font-family: $font-sans;
 	letter-spacing: 2px;
+
+	margin: 0 7%;
+	width: 86%;
+
+	@include mq(is-small) {
+
+		margin: 0 12%;
+		width: 76%;
+	}
 }
