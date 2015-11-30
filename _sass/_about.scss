@@ -15,6 +15,7 @@
 		color: $primary;
 	}
 
+	margin-top: 60px;
 	/* equal to footer height */
 	margin-bottom: -160px;
 
@@ -60,12 +61,13 @@
 	width: 85%;
 	font-family: $font-serif;
 	font-size: 44px;
-	line-height: 1.2;
+	line-height: 1.4;
 }
 
 .about__sub {
 
-	width: 85%;
+	width: 80%;
 	font-size: 18px;
 	font-family: $font-sans;
+	margin: 20px 0 63px;
 }
