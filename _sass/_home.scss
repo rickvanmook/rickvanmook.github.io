@@ -7,7 +7,8 @@
 
 		/* Display & Box Model */
 		display: table;
-		height: calc(100vh - #{$header-height});
+		height: calc(100vh - #{$header-height} - 15px);
+		margin-top: 15px;
 	}
 }
 
@@ -16,7 +17,7 @@
 	/* Display & Box Model */
 	display: none;
 
-	@include mq(is-large) {
+	@include mq(is-medium) {
 
 		/* Positioning */
 
@@ -62,7 +63,7 @@
 	/* Display & Box Model */
 	display: block;
 	width: 100%;
-	height: 375px;
+	height: 493px;
 
 	/* Appearance */
 	background: $white;
@@ -75,6 +76,9 @@
 
 	/* Positioning */
 	position: relative;
+
+	/* Display & Box Model */
+	margin-top: 57px;
 
 	/* Appearance */
 	color: $primary;
@@ -98,6 +102,9 @@
 	/* Positioning */
 	position: relative;
 
+	/* Display & Box Model */
+	margin: 32px 0 60px;
+
 	/* Copy */
 	font-family: $font-alt;
 	font-size: 22px;
@@ -112,7 +119,6 @@
 
 	/* Positioning */
 	position: relative;
-	top: 35px;
 
 	/* Display & Box Model */
 	display: inline-block;
@@ -190,15 +196,20 @@
 
 	&__number {
 
+		/* Positioning */
+		position: relative;
+		top: 4px;
+
 		/* Display & Box Model */
 		display: table-cell;
 		vertical-align: top;
-		width: 11%;
+		width: 10%;
 
 		/* Copy */
 		font-family: $font-serif;
 		font-size: 18px;
 		letter-spacing: 1px;
+		text-align: right;
 
 		/* Appearance */
 		color: $primary;
@@ -209,6 +220,7 @@
 		/* Display & Box Model */
 		display: table-cell;
 		padding-right: 11%;
+		padding-left: 5%;
 
 		/* Copy */
 		font-family: $font-serif;
