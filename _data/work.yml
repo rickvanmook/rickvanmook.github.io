@@ -1,14 +1,16 @@
-- title: MtnDew.com
+- title: Mtn Dew<br>mtndew.com
   year: 2015
   agency: Firstborn
   role: Lead Developer
   image: work-dew.jpg
+  url: http://mountaindew.com
 
 - title: JS13K<br>Dutch&nbspDredge
   year: 2015
   agency: Personal project
   description: JavaScript competition to create a game within 13kb of JavaScript.
   image: work-js13k.jpg
+  url: http://js13kgames.com/games/dutch-dredge/index.html
 
 - title: Sound City Project
   year: 2014
@@ -16,51 +18,60 @@
   role: Front End Engineer
   description: Worked together with <a>David Vale</a> and <a>Caco Teixeira</a>.
   image: work-scp.jpg
+  url: http://soundcityproject.com
 
 - title: Lunchables<br>K-Catch
   year: 2014
   agency: Firstborn
   role: Lead Developer
   image: work-kcatch.jpg
+  url: http://www.firstborn.com/work/featured/278/k-catch
 
 - title: JS1K<br>Just&nbspa Happy Robot
   year: 2014
   agency: Personal project
   description: JavaScript competition to create anything within 1kb of JavaScript.
   image: work-js1k.jpg
+  url: http://rvmook.com/JS1K/
 
 - title: PSCU<br>Make&nbspYour Money&nbspMatter
   year: 2013
   agency: Firstborn
   role: Lead Developer
   image: work-pscu.jpg
+  url: http://makeyourmoneymatter.org/
 
 - title: Cycle for Survival<br>Our&nbspBattle
   year: 2013
   agency: Firstborn
   role: Lead Developer
   image: work-cycle.jpg
+  url: http://ourbattle.cycleforsurvival.org/
 
 - title: AEGON<br>Speel&nbspJe Toekomst
   year: 2012
   agency: Momkai
   role: Supporting Developer
   image: work-aegon.jpg
+  url: http://speeljetoekomst.nu
 
 - title: G-Star<br>Women’s&nbspNight
   year: 2011
   agency: Momkai
   role: Lead Developer
   image: work-g-star.jpg
+  url: https://vimeo.com/31965635
 
 - title: Pete Philly<br>Open&nbspLoops
   year: 2010
   agency: Momkai
   role: Lead Developer
   image: work-open-loops.jpg
+  url: http://www.openloop.nl
 
 - title: Nike<br>Art&nbspChallenge
   year: 2010
   agency: Momkai
   role: Supporting Developer
   image: work-nike.jpg
+  url: https://vimeo.com/16612423
