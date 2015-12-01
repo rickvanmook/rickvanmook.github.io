@@ -13,10 +13,10 @@ class: work
 	<ul class="work__list">
 		{% for project in site.data.work %}
 		<li class="work__item">
-			<div class="image-container image-container--16-9 image-container--bg" style="background-image:url('/images/{{ project.image }}');">
-			</div>
+			<a class="image-container image-container--16-9 image-container--bg" target="_blank" href="{{ project.url }}" style="background-image:url('/images/{{ project.image }}');">
+			</a>
 			<div class="work__item__copy">
-				<h3 class="work__item__title">{{ project.title }}</h3>
+				<a class="work__item__title" target="_blank" href="{{ project.url }}">{{ project.title }}</a>
 				<p class="work__item__description">
 
 					{% if project.year %}
@@ -36,7 +36,7 @@ class: work
 					{{ project.description }}
 				</p>
 				{% endif %}
-				<a class="work__item__cta" href="{{ project.url }}">View Project</a>
+				<a class="work__item__cta" target="_blank" href="{{ project.url }}">View Project</a>
 			</div>
 		</li>
 		{% endfor %}
