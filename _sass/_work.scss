@@ -84,8 +84,18 @@
 
 	.image-container--bg {
 
-		background-color: $dark-bg;
+		background-color: rgba(15, 16, 19,1);
 		background-blend-mode: luminosity;
+		-webkit-transition: all 350ms;
+		transition: all 350ms;
+	}
+
+	&:hover {
+
+		.image-container--bg {
+
+			background-color: rgba(15, 16, 19,0);
+		}
 	}
 }
 
