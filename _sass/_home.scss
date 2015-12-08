@@ -20,8 +20,8 @@
 	@include mq(is-medium) {
 
 		/* Positioning */
-
 		position: relative;
+
 		/* Display & Box Model */
 		display: table-cell;
 		width: 10%;
@@ -206,41 +206,41 @@
 		/* Appearance */
 		border-bottom: 1px solid $dark-bg-border;
 	}
+}
 
-	&__number {
+.home__writing__post__number {
 
-		/* Positioning */
-		position: relative;
-		top: 4px;
+	/* Positioning */
+	position: relative;
+	top: 4px;
 
-		/* Display & Box Model */
-		display: table-cell;
-		vertical-align: top;
-		width: 10%;
+	/* Display & Box Model */
+	display: table-cell;
+	vertical-align: top;
+	width: 10%;
 
-		/* Copy */
-		font-family: $font-serif;
-		font-size: 18px;
-		letter-spacing: 1px;
-		text-align: right;
+	/* Copy */
+	font-family: $font-serif;
+	font-size: 18px;
+	letter-spacing: 1px;
+	text-align: right;
 
-		/* Appearance */
-		color: $primary;
-	}
+	/* Appearance */
+	color: $primary;
+}
 
-	&__title {
+.home__writing__post__title {
 
-		/* Display & Box Model */
-		display: table-cell;
-		padding-right: 11%;
-		padding-left: 5%;
+	/* Display & Box Model */
+	display: table-cell;
+	padding-right: 11%;
+	padding-left: 5%;
 
-		/* Copy */
-		font-family: $font-serif;
-		font-size: 30px;
+	/* Copy */
+	font-family: $font-serif;
+	font-size: 30px;
 
-		/* Appearance */
-		color: $white;
-		vertical-align: top;
-	}
+	/* Appearance */
+	color: $white;
+	vertical-align: top;
 }

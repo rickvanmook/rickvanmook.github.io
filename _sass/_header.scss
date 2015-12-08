@@ -52,28 +52,28 @@
 
 	/* Appearance */
 	text-decoration: none;
+}
 
-	&--list {
+.nav__link--list {
 
-		/* Display & Box Model */
-		width: 50%;
-		min-width: 60px;
+	/* Display & Box Model */
+	width: 50%;
+	min-width: 60px;
 
-		/* Appearance */
-		color: $black-opacity;
-		border-bottom: 2px solid $black-opacity-dimmed;
-	}
+	/* Appearance */
+	color: $black-opacity;
+	border-bottom: 2px solid $black-opacity-dimmed;
+}
 
-	&--home {
+.nav__link--home {
 
-		/* Appearance */
-		color: $black-opacity-dimmed;
-	}
+	/* Appearance */
+	color: $black-opacity-dimmed;
+}
 
-	&--active {
+.nav__link--active {
 
-		/* Appearance */
-		color: $primary;
-		border-bottom-color: $primary;
-	}
+	/* Appearance */
+	color: $primary;
+	border-bottom-color: $primary;
 }

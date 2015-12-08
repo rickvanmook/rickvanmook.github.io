@@ -12,13 +12,3 @@
 		@media (min-width: 1280px) { @content; }
 	}
 }
-
-.u-onlyWide {
-
-	display: none;
-
-	@include mq(is-medium) {
-
-		display: initial;
-	}
-}
