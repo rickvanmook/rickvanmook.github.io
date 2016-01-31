@@ -1,16 +1,16 @@
 ---
 layout: post
 title: Maintainable Gulp tasks
-date: 2015-11-29 19:33:08
+date: 2016-01-31 11:33:08
 categories: writing
-number: "XX"
+number: "04"
 ---
 
 <p>
 Like every front-end dev, I've been working on a lot of automated build projects. Either with Grunt, Gulp or whatever.
 </p>
 <p>
-With each project the main `gulpfile.js` tends to get a bit of a mess. It gets bloated with tasks, comments and becomes unreadable for whoever opens the file.
+With each project the main <i>gulpfile.js</i> tends to get a bit of a mess. It gets bloated with tasks, comments and becomes unreadable for whoever opens the file.
 </p>
 <p>
 After a couple of projects dealing with it, I decided to hop on Google and search for some better ways to handle this.
@@ -19,13 +19,17 @@ After a couple of projects dealing with it, I decided to hop on Google and searc
     Turns out, a lot of people had similar problems and they found some pretty neat solutions for it. I took the one I liked the most and made a few little adjustments to it. Here's how my new setup looks:
 </p>
 
-<img src="/assets/">
+<img src="/images/posts/gulp-folder-structure.jpg" width="862" height="477">
 <p>
-    Rather than manage one giant configuration file responsible for creating multiple tasks, each task has been broken out into its own file in `gulp/tasks`. Any file in that folder gets automatically required by the loop in `./gulp/index.js.`
+    Rather than manage one giant configuration file, each task has been broken down into its own file in <i>gulp/tasks</i>. Any file in that folder gets automatically required by the loop in <i>./gulp/index.js.</i>
 </p>
 </div>
 {% highlight javascript %}
 
+
+/**
+ * ./gulp/index.js
+ */
 
 var fs = require('fs'),
 
@@ -49,10 +53,16 @@ tasksFiles.forEach(function(taskFile) {
 {% endhighlight %}
 <div class="post__content">
 <p>
-    The bare minimum code a task in the gulp folder needs looks something like this:
+    To maintain enough flexibility within the tasks/modules I decided to register the task within the module itself.
+    So it'll end up looking something like this:
 </p>
 </div>
 {% highlight javascript %}
+
+/**
+ * ./gulp/tasks/*.js
+ */
+
 var gulp = require('gulp');
 
 module.exports = function(taskName) {
@@ -62,5 +72,7 @@ module.exports = function(taskName) {
 {% endhighlight %}
 <div class="post__content">
 <p>
-What I like the most is a clear overview of what tasks are available just by looking at the folder structure. It's better then scrolling through this one huge file and reading all the comments to figure out how something works.'
+    I really like the clear overview of what tasks are available just by looking at the folder structure. There's still
+    a lot of room for improvement when it comes to tasks who need to communicate together or need some shared configuration.<br>
+    Either way it's a step in a clearer direction.
 </p>
