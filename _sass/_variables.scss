@@ -1,40 +1,17 @@
-
-$primary: #f3866e;
-$secondary: #000;
-
-$light-bg: #dbdddf;
-$lighter-bg: #f3f3f3;
-$dark-bg: #252830;
-$dark-bg-border: #3c3d42;
-$work-item-bg: #2a2e36;
-$work-image-bg: rgba(15, 16, 19, 1);
-$work-item-copy: #8d94ae;
-$work-item-cta: #b2bad4;
-$work-image-bg-hover: rgba(15, 16, 19, 0);
-
-$post-border: #e9e9ea;
-
 $white: #fff;
 $black: #000;
-$black-opacity: rgba(0,0,0,0.7);
-$white-opacity-dimmed: rgba(255,255,255,0.1);
-$black-opacity-dimmed: rgba(0,0,0,0.1);
 
-$copy-body: $dark-bg;
-$copy-title: $dark-bg;
-$copy-home-sub-title: #191919;
-$copy-alt: #c2cae6;
+$gutter: 15px;
 
-$header-height: 140px;
+$zIndexHeader: 10;
 
-$font-serif: 'Adamina', serif;
-$font-sans: 'Raleway', sans-serif;
-$font-alt: Georgia, serif;
-$font-code: 'Source Code Pro', monospace;
-
-$zIndex1: 1;
-$zIndex2: 2;
-$zIndex3: 3;
-$zIndex4: 4;
-$zIndex5: 5;
-$zIndex10: 10;
+$colorBodyBg: #fafafa;
+$colorPrimary: #03A9F4;
+$colorPrimary--dark: #0288D1;
+$colorPrimary--light: #B3E5FC;
+$colorAccent: #FF4081;
+$colorText--on-primary: #fff;
+$colorText: #212121;
+$colorText--secondary: #727272;
+$colorDivider: #e3e3e3;
+$colorHover: #616161;

@@ -1,0 +1,22 @@
+<div class="card">
+	<a class="card__link" href="{{ post.url | prepend: site.baseurl }}">
+		<div class="card__image"  style="background-image:url('{{ post.thumb }}');">
+		</div>
+		<div class="card__content">
+			<div class="card__content__title">
+				{{ post.title }}
+			</div>
+			<div class="card__content__sub-title">
+				{{ post.role }}
+			</div>
+
+		</div>
+	</a>
+	<div class="card__footer">
+	<div class="card__footer__link-wrapper">
+
+		<a class="card__footer__link" href="{{ post.url | prepend: site.baseurl }}">Learn More</a>
+		<a class="card__footer__link" href="{{ post.href }}">Visit Website</a>
+	</div>
+	</div>
+</div>

@@ -1,24 +1,3 @@
-- title: Mtn Dew<br>mtndew.com
-  year: 2015
-  agency: <a href="http://firstborn.com" target="_blank">Firstborn</a>
-  role: Lead Developer
-  image: work-dew.jpg
-  url: http://mountaindew.com
-
-- title: Rolex<br>Calibre 3255
-  year: 2015
-  agency: <a href="http://firstborn.com" target="_blank">Firstborn</a>
-  role: Lead Developer
-  image: work-rolex.jpg
-  url: http://rolex-2015-interactive.rolex.com/en/new-calibre-3255.html
-
-- title: JS13K<br>Dutch&nbspDredge
-  year: 2015
-  agency: Personal project
-  description: JavaScript competition to create a game within 13kb of JavaScript.
-  image: work-js13k.jpg
-  url: http://js13kgames.com/games/dutch-dredge/index.html
-
 - title: Sound City Project
   year: 2014
   agency: Personal project
@@ -27,58 +6,52 @@
   image: work-scp.jpg
   url: http://soundcityproject.com
 
-- title: Lunchables<br>K-Catch
+- title: Just a Happy Robot
   year: 2014
-  agency: <a href="http://firstborn.com" target="_blank">Firstborn</a>
-  role: Lead Developer
-  image: work-kcatch.jpg
-  url: http://www.firstborn.com/work/featured/278/k-catch
-
-- title: JS1K<br>Just&nbspa Happy Robot
-  year: 2014
+  role: JavaScript Golfer
   agency: Personal project
   description: JavaScript competition to create anything within 1kb of JavaScript.
   image: work-js1k.jpg
   url: http://rvmook.com/JS1K/
 
-- title: PSCU<br>Make&nbspYour Money&nbspMatter
+- title: Mountain Dew
+  year: 2015
+  agency: Firstborn
+  role: Lead Front End Engineer
+  image: work-dew.jpg
+  url: http://mountaindew.com
+
+- title: Make Your Money Matter
   year: 2013
-  agency: <a href="http://firstborn.com" target="_blank">Firstborn</a>
-  role: Lead Developer
+  agency: Firstborn
+  role: Lead Front End Developer
   image: work-pscu.jpg
   url: http://makeyourmoneymatter.org/
 
-- title: Cycle for Survival<br>Our&nbspBattle
-  year: 2013
-  agency: <a href="http://firstborn.com" target="_blank">Firstborn</a>
-  role: Lead Developer
-  image: work-cycle.jpg
-  url: http://ourbattle.cycleforsurvival.org/
-
-- title: AEGON<br>Speel&nbspJe Toekomst
+- title: Play Your Future
   year: 2012
-  agency: <a href="http://momkai.com" target="_blank">Momkai</a>
-  role: Supporting Developer
+  agency: Momkai
+  role: Supporting Front End Developer
   image: work-aegon.jpg
   url: http://speeljetoekomst.nu
 
-- title: G-Star<br>Women’s&nbspNight
+- title: G-Star Women’s&nbspNight
   year: 2011
-  agency: <a href="http://momkai.com" target="_blank">Momkai</a>
-  role: Lead Developer
+  agency: Momkai
+  role: Lead Flash Developer
   image: work-g-star.jpg
   url: https://vimeo.com/31965635
 
-- title: Pete Philly<br>Open&nbspLoops
+- title: Pete Philly - Open&nbspLoops
   year: 2010
-  agency: <a href="http://momkai.com" target="_blank">Momkai</a>
-  role: Lead Developer
+  agency: Momkai
+  role: Lead Flash Developer
   image: work-open-loops.jpg
   url: http://www.openloop.nl
 
-- title: Nike<br>Art&nbspChallenge
+- title: Nike Art&nbspChallenge
   year: 2010
-  agency: <a href="http://momkai.com" target="_blank">Momkai</a>
-  role: Supporting Developer
+  agency: Momkai
+  role: Supporting Flash Developer
   image: work-nike.jpg
   url: https://vimeo.com/16612423

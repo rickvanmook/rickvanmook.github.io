@@ -1,20 +1,24 @@
 <header class="header">
-  <nav class="nav max-width">
-    <ul class="nav__list">
-      <li class="nav__list__item">
-        <a class="nav__link nav__link--home" href="/">
-          RvMook
-        </a>
-      </li>
-      <li class="nav__list__item">
-        <a class="nav__link nav__link--list{% if page.class == 'home' or page.class == 'post' %} nav__link--active {% endif %}" href="/">Writing</a>
-      </li>
-      <li class="nav__list__item">
-        <a class="nav__link nav__link--list{% if page.class == 'about' %} nav__link--active {% endif %}" href="/about/">About</a>
-      </li>
-      <li class="nav__list__item">
-        <a class="nav__link nav__link--list{% if page.class == 'work' %} nav__link--active {% endif %}" href="/work/">Work</a>
-      </li>
-    </ul>
-  </nav>
+	<h1 class="header__title">Rick van Mook</h1>
+	<h2 class="header__sub-title">Creative Developer at Firstborn</h2>
+	<a class="header__link" href="https://github.com/rvmook" target="_blank" title="GitHub">
+		<svg class="header__link__icon" width="32" height="32">
+			<use xlink:href="#logo-github"></use>
+		</svg>
+	</a>
+	<a class="header__link" href="http://codepen.io/rvmook" target="_blank" title="CodePen">
+		<svg class="header__link__icon" width="32" height="32">
+			<use xlink:href="#logo-codepen"></use>
+		</svg>
+	</a>
+	<a class="header__link" href="https://twitter.com/rvmook" target="_blank" title="Twitter">
+		<svg class="header__link__icon" width="32" height="32">
+			<use xlink:href="#logo-twitter"></use>
+		</svg>
+	</a>
+	<a class="header__link" href="https://www.linkedin.com/in/rvmook" target="_blank" title="LinkedIn">
+		<svg class="header__link__icon" width="32" height="32">
+			<use xlink:href="#logo-linkedin"></use>
+		</svg>
+	</a>
 </header>

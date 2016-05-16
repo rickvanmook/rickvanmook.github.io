@@ -1,79 +1,73 @@
+@import "variables";
+@import "mixins";
+
 .header {
 
 	/* Positioning */
-	z-index: $zIndex10;
-	position: fixed;
-	top: 0;
+	z-index: $zIndexHeader;
 
 	/* Display & Box Model */
 	width: 100%;
+	@include fluid-value(padding-top, 25px, 50px);
+	@include fluid-value(padding-bottom, 25px, 50px);
 
 	/* Appearance */
-	background-color: $white;
+	color: $colorText--on-primary;
+	background-color: $colorPrimary;
+	@include shadowBottom;
 
-	.post & {
+	/* Text */
+	text-align: center;
+}
 
-		/* Appearance */
-		box-shadow: 0 1px 0 0 $black-opacity-dimmed;
+.header__title {
+
+
+	font-weight: 400;
+
+	@include fluid-value(font-size, 30px, 56px);
+	@include fluid-value(margin-top, -6px, -12px);
+}
+
+.header__sub-title {
+	letter-spacing: 1px;
+	@include fluid-value(font-size, 12px, 25px);
+}
+
+.header__link {
+
+	position: relative;
+	text-decoration: none;
+	fill: $colorText--on-primary;
+	display: inline-block;
+	@include fluid-value(margin-top, 5px, 20px);
+	@include fluid-value(margin-left, 5px, 10px);
+	@include fluid-value(margin-right, 5px, 10px);
+	@include fluid-value(height, 20px, 32px);
+	@include fluid-value(width, 20px, 32px);
+
+	&:hover {
+
+		opacity: 0.65;
 	}
 }
 
-.nav {
+.header__link__icon {
 
-	/* Display & Box Model */
-	padding: 46px 0 38px;
-	overflow: hidden;
-}
-
-.nav__list {
-
-	/* Display & Box Model */
+	height: 100%;
 	width: 100%;
 }
 
-.nav__list__item {
 
-	/* Display & Box Model */
-	width: 25%;
-	min-width: 70px;
-	float: left;
-}
+.header__link__tooltip {
 
-.nav__link {
-
-	/* Display & Box Model */
+	position: absolute;
+	color: $colorText--on-primary;
+	background-color: $colorText--secondary;
+	font-size: 14px;
 	display: inline-block;
-	padding: 15px 0;
-
-	/* Copy */
-	font-family: $font-sans;
-	font-weight: 600;
-	font-size: 16px;
-
-	/* Appearance */
-	text-decoration: none;
-}
-
-.nav__link--list {
-
-	/* Display & Box Model */
-	width: 50%;
-	min-width: 60px;
-
-	/* Appearance */
-	color: $black-opacity;
-	border-bottom: 2px solid $black-opacity-dimmed;
-}
-
-.nav__link--home {
-
-	/* Appearance */
-	color: $black-opacity-dimmed;
-}
-
-.nav__link--active {
-
-	/* Appearance */
-	color: $primary;
-	border-bottom-color: $primary;
+	padding: 0 16px;
+	line-height: 32px;
+	font-weight: 300;
+	letter-spacing: 1px;
 }
