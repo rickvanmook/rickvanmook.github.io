@@ -5,20 +5,26 @@ window.addEventListener('resize', resizeCanvas, false);
 
 
 // module aliases
-var Engine = Matter.Engine,
-	Render = Matter.Render,
-	World = Matter.World,
+var World = Matter.World,
+	Bodies = Matter.Bodies,
 	Body = Matter.Body,
-	Bodies = Matter.Bodies;
+	Engine = Matter.Engine,
+	Render = Matter.Render,
+	Composite = Matter.Composite,
+	Composites = Matter.Composites,
+	Constraint = Matter.Constraint,
+	MouseConstraint = Matter.MouseConstraint,
+	engine = Engine.create(),
+	world = engine.world;
 
-// create an engine
-var engine = Engine.create();
 
 // create a renderer
 var render = Render.create({
 	canvas: canvasEl,
 	engine: engine,
 	options: {
+		showAngleIndicator: true,
+		wireframes: true,
 		width: canvasEl.width,
 		height: canvasEl.height
 	}
@@ -34,19 +40,28 @@ var windowWidth = window.innerWidth,
 	leftWall,
 	rightWall;
 
+init();
 
-// add all of the bodies to the world
-World.add(engine.world, [boxA, boxB]);
+function init() {
 
-// run the engine
-Engine.run(engine);
+	// add all of the bodies to the world
+	World.add(engine.world, [boxA, boxB]);
 
-// run the renderer
-Render.run(render);
+	// add a mouse controlled constraint
+	var mouseConstraint = MouseConstraint.create(engine);
+	World.add(engine.world, mouseConstraint);
 
-createWalls(windowWidth, windowHeight);
-resizeCanvas();
+	// run the engine
+	Engine.run(engine);
 
+	// run the renderer
+	Render.run(render);
+
+
+	createWalls(windowWidth, windowHeight);
+	resizeCanvas();
+	createRope();
+}
 
 
 function resizeCanvas() {
@@ -96,4 +111,38 @@ function createWalls(width, height) {
 			oldRightWall
 		]);
 	}
+}
+
+function createRope() {
+
+	var group = Body.nextGroup(true);
+
+	var ropeA = Composites.stack(
+		130, //xx
+		100, //yy
+		5, //columns
+		1, //rows
+		20, //columnGap
+		0, //rowGap
+		function(x, y) {//callback
+		return Bodies.rectangle(x, y, 50, 20, {isStatic: false});
+	});
+
+	Composites.chain(
+		ropeA,//composite
+		0.5,//xOffsetA
+		0,//yOffsetA
+		-0.5,//xOffsetB
+		0,//yOffsetB
+		{ stiffness: 1, length: 20 }//options
+	);
+
+	Composite.add(ropeA, Constraint.create({
+		bodyB: ropeA.bodies[0],
+		pointA: { x: 110, y: 110 },
+		pointB: { x: -25, y: 0 },
+		stiffness: 0.5
+	}));
+
+	World.add(world, ropeA);
 }
