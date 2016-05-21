@@ -3469,8 +3469,6 @@ var Common = require('../core/Common');
         var initialPointA = constraint.bodyA ? Vector.add(constraint.bodyA.position, constraint.pointA) : constraint.pointA,
             initialPointB = constraint.bodyB ? Vector.add(constraint.bodyB.position, constraint.pointB) : constraint.pointB;
 
-        console.log('initialPointA, initialPointB', initialPointA, initialPointB, options);
-
         var length = Vector.magnitude(Vector.sub(initialPointA, initialPointB));
     
         constraint.length = constraint.length || length || _minLength;
