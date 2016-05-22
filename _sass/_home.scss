@@ -1,11 +1,11 @@
 .home__wrapper {
 
-	/* Display & Box Model */
+	// Display & Box Model
 	width: 100%;
 
 	@include mq(is-medium) {
 
-		/* Display & Box Model */
+		// Display & Box Model
 		display: table;
 		height: calc(100vh - #{$header-height} - 15px);
 		margin-top: 15px;
@@ -14,40 +14,40 @@
 
 .home__gutter {
 
-	/* Display & Box Model */
+	// Display & Box Model
 	display: none;
 
 	@include mq(is-medium) {
 
-		/* Positioning */
+		// Positioning
 
 		position: relative;
-		/* Display & Box Model */
+		// Display & Box Model
 		display: table-cell;
 		width: 10%;
 
-		/* Appearance */
+		// Appearance
 		background-color: $light-bg;
 	}
 }
 
 .home__title {
 
-	/* Positioning */
+	// Positioning
 	position: relative;
 
-	/* Display & Box Model */
+	// Display & Box Model
 	display: block;
 	min-height: 450px;
 	padding: 0 5% 5%;
 
-	/* Appearance */
+	// Appearance
 	vertical-align: top;
 	background-color: $light-bg;
 
 	@include mq(is-medium) {
 
-		/* Display & Box Model */
+		// Display & Box Model
 		display: table-cell;
 		width: 36%;
 		padding-bottom: 0;
@@ -56,41 +56,41 @@
 
 .home__title:before, .home__gutter:before {
 
-	/* Positioning */
+	// Positioning
 	position: absolute;
 	left: 0;
 	top: 0;
 
-	/* Display & Box Model */
+	// Display & Box Model
 	display: block;
 	width: 100%;
 	height: 438px;
 
-	/* Appearance */
+	// Appearance
 	background: $white;
 
-	/* Other */
+	// Other
 	content: "";
 
 	@include mq(is-medium) {
 
-		/* Display & Box Model */
+		// Display & Box Model
 		height: 493px;
 	}
 }
 
 .home__title__name {
 
-	/* Positioning */
+	// Positioning
 	position: relative;
 
-	/* Display & Box Model */
+	// Display & Box Model
 	margin-top: 57px;
 
-	/* Appearance */
+	// Appearance
 	color: $primary;
 
-	/* Copy */
+	// Copy
 	font-size: 108px;
 	font-family: $font-serif;
 	line-height: 0.87;
@@ -98,7 +98,7 @@
 
 .home__title__name__br {
 
-	/* Display & Box Model */
+	// Display & Box Model
 	display: block;
 	margin-top: -20px;
 	margin-bottom: 4px;
@@ -106,88 +106,88 @@
 
 .home__title__label {
 
-	/* Positioning */
+	// Positioning
 	position: relative;
 
-	/* Display & Box Model */
+	// Display & Box Model
 	margin: 32px 0 60px;
 
-	/* Copy */
+	// Copy
 	font-family: $font-alt;
 	font-size: 22px;
 	font-style: italic;
 	line-height: 1.18;
 
-	/* Appearance */
+	// Appearance
 	color: $copy-home-sub-title;
 }
 
 .home__title__cta {
 
-	/* Positioning */
+	// Positioning
 	position: relative;
 
-	/* Display & Box Model */
+	// Display & Box Model
 	display: inline-block;
 	padding: 20px 30px;
 
-	/* Copy */
+	// Copy
 	font-size: 18px;
 	font-family: $font-sans;
 	font-weight: 600;
 
-	/* Appearance */
+	// Appearance
 	background-color: $light-bg;
 	color: $white;
 }
 
 .home__writing__label {
 
-	/* Display & Box Model */
+	// Display & Box Model
 	padding-bottom: 5.37%;
 
-	/* Copy */
+	// Copy
 	font-weight: normal;
 	font-size: 12px;
 	font-family: $font-sans;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 
-	/* Appearance */
+	// Appearance
 	color: $copy-alt;
 	border-bottom: 1px solid $dark-bg-border;
 }
 
 .home__writing {
 
-	/* Display & Box Model */
+	// Display & Box Model
 	display: table-cell;
 	width: 44%;
 	padding: 5%;
 
-	/* Appearance */
+	// Appearance
 	color: $white;
 	background-color: $dark-bg;
 	vertical-align: top;
 
 	@include mq(is-medium) {
 
-		/* Display & Box Model */
+		// Display & Box Model
 		padding-bottom: 2.5%;
 	}
 }
 
 .home__writing-inner {
 
-	/* Positioning */
+	// Positioning
 	position: relative;
 
-	/* Display & Box Model */
+	// Display & Box Model
 	width: 100%;
 
 	@include mq(is-small) {
 
-		/* Display & Box Model */
+		// Display & Box Model
 		width: 90%;
 		padding: 3.5%;
 		margin: 0 auto;
@@ -198,48 +198,48 @@
 
 	a {
 
-		/* Display & Box Model */
+		// Display & Box Model
 		display: table;
 		width: 100%;
 		padding: 7.16% 0;
 
-		/* Appearance */
+		// Appearance
 		border-bottom: 1px solid $dark-bg-border;
 	}
 
 	&__number {
 
-		/* Positioning */
+		// Positioning
 		position: relative;
 		top: 4px;
 
-		/* Display & Box Model */
+		// Display & Box Model
 		display: table-cell;
 		vertical-align: top;
 		width: 10%;
 
-		/* Copy */
+		// Copy
 		font-family: $font-serif;
 		font-size: 18px;
 		letter-spacing: 1px;
 		text-align: right;
 
-		/* Appearance */
+		// Appearance
 		color: $primary;
 	}
 
 	&__title {
 
-		/* Display & Box Model */
+		// Display & Box Model
 		display: table-cell;
 		padding-right: 11%;
 		padding-left: 5%;
 
-		/* Copy */
+		// Copy
 		font-family: $font-serif;
 		font-size: 30px;
 
-		/* Appearance */
+		// Appearance
 		color: $white;
 		vertical-align: top;
 	}

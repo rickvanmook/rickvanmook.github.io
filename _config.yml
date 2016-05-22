@@ -15,3 +15,6 @@ markdown: kramdown
 
 # Outputting
 permalink: /:categories/:title
+
+sass:
+  style: compressed
