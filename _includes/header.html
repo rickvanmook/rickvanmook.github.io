@@ -1,19 +1,22 @@
 <header class="header">
   <nav class="nav max-width">
+    <a class="nav__link nav__link--home js-homeLink" href="/">
+      <span class="foobar">R</span><span class="foo">ick&nbsp;</span><span class="foobar">v</span><span class="bar">an&nbsp;</span><span class="foobar">Mook</span>
+    </a>
     <ul class="nav__list">
       <li class="nav__list__item">
-        <a class="nav__link nav__link--home" href="/">
-          RvMook
+        <a class="nav__link nav__link--list{% if page.class == 'work' %} nav__link--active {% endif %} js-navLink" href="/work/">
+          <div class="nav__link__copy">
+            Work
+          </div>
         </a>
       </li>
       <li class="nav__list__item">
-        <a class="nav__link nav__link--list{% if page.class == 'home' or page.class == 'post' %} nav__link--active {% endif %}" href="/">Writing</a>
-      </li>
-      <li class="nav__list__item">
-        <a class="nav__link nav__link--list{% if page.class == 'about' %} nav__link--active {% endif %}" href="/about/">About</a>
-      </li>
-      <li class="nav__list__item">
-        <a class="nav__link nav__link--list{% if page.class == 'work' %} nav__link--active {% endif %}" href="/work/">Work</a>
+        <a class="nav__link nav__link--list{% if page.class == 'about' %} nav__link--active {% endif %} js-navLink" href="/about/">
+          <div class="nav__link__copy">
+            About
+          </div>
+        </a>
       </li>
     </ul>
   </nav>
