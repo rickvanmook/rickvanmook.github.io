@@ -11,7 +11,7 @@
 	// Appearance
 	background-color: $white;
 
-	.post & {
+	&.is-minimized {
 
 		// Appearance
 		box-shadow: 0 1px 0 0 $black-opacity-dimmed;
@@ -24,6 +24,12 @@
 	@include fluid-value(padding-top, 20px, 46px);
 	@include fluid-value(padding-bottom, 16px, 38px);
 	overflow: hidden;
+
+	.is-minimized & {
+
+		@include fluid-value(padding-top, 7px, 17px);
+		@include fluid-value(padding-bottom, 11px, 27px);
+	}
 }
 
 .nav__list {
@@ -54,6 +60,12 @@
 	display: block;
 	@include fluid-value(padding-top, 10px, 15px);
 	@include fluid-value(padding-bottom, 10px, 15px);
+
+	.is-minimized & {
+
+		@include fluid-value(padding-top, 4px, 6px);
+		@include fluid-value(padding-bottom, 5px, 8px);
+	}
 
 	// Copy
 	font-family: $font-sans;
@@ -100,6 +112,12 @@
 			@include fluid-value(width, 17px, 23px);
 			transition-delay:75ms;
 		}
+	}
+
+	.is-minimized & {
+
+		position: relative;
+		top: 6px;
 	}
 }
 
