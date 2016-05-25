@@ -1,13 +1,11 @@
 var NavLink = require('./header/NavLink'),
-	HomeLink = require('./header/HomeLink'),
+	WorkImage = require('./modules/WorkImage'),
 	NAV_LINK_SELECTOR = 'js-navLink',
-	HOME_LINK_SELECTOR = 'js-homeLink',
+	WORK_IMAGE_SELECTOR = 'js-workImage',
 	doc = document;
 
-
-
 initModules(NAV_LINK_SELECTOR, NavLink);
-initModules(HOME_LINK_SELECTOR, HomeLink);
+initModules(WORK_IMAGE_SELECTOR, WorkImage);
 
 function initModules(className, constructor) {
 

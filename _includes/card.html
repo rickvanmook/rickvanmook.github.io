@@ -1,0 +1,17 @@
+<div class="card">
+	<a class="card__link js-workImage" href="{{ post.url | prepend: site.baseurl }}">
+		<div class="card__image js-workImage__size">
+			<canvas class="card__image__canvas js-workImage__canvas" data-jpg="{{ post.thumb-jpg }}" data-mp4="{{ post.thumb-mp4 }}">
+			</canvas>
+		</div>
+		<div class="card__content">
+			<div class="card__content__title">
+				{{ post.title }}
+			</div>
+			<div class="card__content__sub-title">
+				{{ post.role }}
+			</div>
+
+		</div>
+	</a>
+</div>

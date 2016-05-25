@@ -10,7 +10,7 @@
   "scripts": {
     "watch": "onchange 'js/src/**/*.js' -- npm run build",
     "uglify": "uglifyjs js/bundle.js -m -o js/bundle.min.js --source-map js/bundle.js.map --in-source-map js/bundle.js.map",
-    "browserify": "browserify js/src/main.js -d -p [minifyify --map bundle.js.map --output js/bundle.js.map ] > js/bundle.js",
-    "build": "npm run browserify && npm run uglify"
+    "browserify": "browserify js/src/main.js -d -p [minifyify --map bundle.js.map --output js/bundle.js.map ] > js/bundle.min.js",
+    "build": "npm run browserify"
   }
 }

@@ -3,12 +3,12 @@ var doc = document;
 
 function NavLink(el) {
 
-	el.addEventListener('mouseover', addHover);
+	el.addEventListener('mouseenter', addHover);
 
 	function addHover() {
 
-		el.removeEventListener('mouseover', addHover);
-		console.log('ok');
+		el.removeEventListener('mouseenter', addHover);
+
 		var currentHoverEl;
 
 		currentHoverEl = doc.createElement('div');
@@ -18,19 +18,14 @@ function NavLink(el) {
 		el.appendChild(currentHoverEl);
 		tweenTo(0);
 
-		el.addEventListener('mouseout', onMouseOut);
+		el.addEventListener('mouseleave', onMouseOut);
 
 		function onMouseOut(e) {
 
-			var e = event.toElement || event.relatedTarget;
-			if (e.parentNode == this || e == this) {
-				return;
-			}
-
 			tweenTo(100, true);
 
-			el.addEventListener('mouseover', addHover);
-			el.removeEventListener('mouseout', onMouseOut);
+			el.addEventListener('mouseenter', addHover);
+			el.removeEventListener('mouseleave', onMouseOut);
 		}
 
 		function tweenTo(newX, remove) {
