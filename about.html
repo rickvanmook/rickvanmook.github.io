@@ -7,11 +7,10 @@ class: about
 
 <div class="about__wrapper max-width">
 	<p class="about__main">
-		Hey there! I’m Rick van Mook, a creative developer from <a href="https://www.google.com/maps/place/Raamsdonksveer,+Netherlands" target="_blank">The Netherlands</a>.
-		I started my career as a Flash developer at <a href="http://momkai.com" target="_blank">Momkai in Amsterdam</a>. After three years,
-		I switched my focus to JavaScript and, in 2013, joined <a href="http://firstborn.com" target="_blank">Firstborn in New York</a>.
+		Hey there! I’m Rick van&nbsp;Mook,
+		a <a href="https://www.google.com/maps/place/Raamsdonksveer,+Netherlands" target="_blank">Dutch</a> Creative&nbsp;Developer currently
+		working and living in&nbsp;<a href="http://firstborn.com" target="_blank">New&nbsp;York</a>.
 	</p>
-
 	<p class="about__sub">
 		I like to play around with JavaScript and love to create things from scratch. The intention of this blog will be
 		a documentation of me reinventing wheels and learning things along the way. If you're curious about my work
@@ -19,9 +18,18 @@ class: about
 		For those of you who want to have a peek into my personal life, you can follow me on <a href="https://www.facebook.com/rickvanmook" target="_blank">Facebook</a>,
 		or <a href="https://twitter.com/rvmook" target="_blank">Twitter</a>.
 	</p>
-</div>
-<div class="about__footer">
-	<div class="max-width">
-		<a class="about__footer__cta" href="/work/">My Work</a>
-	</div>
+	<p class="about__sub">
+		<a>CodePen</a>
+		<a>GitHub</a>
+		<a>Twitter</a>
+		<a>LinkedIn</a>
+	</p>
+	<h2 class="about__awards__title">Honors & Awards</h2>
+	<ul class="about__awards__list">
+	{% for award in site.data.awards %}
+		<li>
+			<b>{{award.name}}</b> / {{award.type}} / {{award.project}} / {{award.date}}
+		</li>
+	{% endfor %}
+	</ul>
 </div>

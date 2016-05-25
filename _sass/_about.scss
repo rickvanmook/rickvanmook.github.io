@@ -58,16 +58,34 @@
 
 .about__main {
 
-	width: 85%;
 	font-family: $font-serif;
-	font-size: 44px;
-	line-height: 1.4;
+	line-height: 1.1;
+
+	@include fluid-value(font-size, 20px, 42px);
+	width: 97%;
+	@include fluid-value(max-width, 255px, 800px);
 }
 
 .about__sub {
 
-	width: 80%;
-	font-size: 18px;
 	font-family: $font-sans;
 	margin: 20px 0 63px;
+
+	@include fluid-value(font-size, 12px, 18px);
+	@include fluid-value(max-width, 255px, 650px);
+}
+
+.about__awards__title {
+
+	font-family: $font-serif;
+	line-height: 1.1;
+
+	@include fluid-value(font-size, 20px, 42px);
+}
+
+.about__awards__list {
+
+	font-family: $font-sans;
+	margin-top: 20px;
+	@include fluid-value(font-size, 10px, 16px);
 }
