@@ -75,17 +75,28 @@
 	@include fluid-value(max-width, 255px, 650px);
 }
 
-.about__awards__title {
+.about__title {
 
 	font-family: $font-serif;
 	line-height: 1.1;
-
+	margin: 20px 0;
 	@include fluid-value(font-size, 20px, 42px);
 }
 
-.about__awards__list {
+.about__list {
 
 	font-family: $font-sans;
-	margin-top: 20px;
 	@include fluid-value(font-size, 10px, 16px);
+}
+
+.about__list__item {
+
+	margin-bottom: 10px;
+	line-height: 1.3;
+
+	i {
+		font-style: normal;
+		font-size: 0.9em;
+		color: $color-light-grey;
+	}
 }

@@ -12,23 +12,46 @@ class: about
 		working and living in&nbsp;<a href="http://firstborn.com" target="_blank">New&nbsp;York</a>.
 	</p>
 	<p class="about__sub">
-		I like to play around with JavaScript and love to create things from scratch. The intention of this blog will be
-		a documentation of me reinventing wheels and learning things along the way. If you're curious about my work
-		experience check out the <a href="/work/">work page</a> or my <a href="https://www.linkedin.com/in/rvmook" target="_blank">LinkedIn</a> profile.
-		For those of you who want to have a peek into my personal life, you can follow me on <a href="https://www.facebook.com/rickvanmook" target="_blank">Facebook</a>,
-		or <a href="https://twitter.com/rvmook" target="_blank">Twitter</a>.
+		I like to play around with code. Either by creating something from scratch or making a design
+		come to life. I can spend hours tweaking an animation or completely lose myself optimizing a render loop.<br>
+		<br>
+		I've been lucky to have worked with a lot of talented people.
+		Sometimes we win awards, some times we don't. But we always try to make our mothers proud.<br>
+		<br>
+		Whatever the end result, I just love what I'm doing.
 	</p>
+
+
+
+
+
+		<!--I like to play around with JavaScript and love to create things from scratch. The intention of this blog will be-->
+		<!--a documentation of me reinventing wheels and learning things along the way. If you're curious about my work-->
+		<!--experience check out the <a href="/work/">work page</a> or my <a href="https://www.linkedin.com/in/rvmook" target="_blank">LinkedIn</a> profile.-->
+		<!--For those of you who want to have a peek into my personal life, you can follow me on <a href="https://www.facebook.com/rickvanmook" target="_blank">Facebook</a>,-->
+		<!--or <a href="https://twitter.com/rvmook" target="_blank">Twitter</a>.-->
+	<!--</p>-->
 	<p class="about__sub">
 		<a>CodePen</a>
 		<a>GitHub</a>
 		<a>Twitter</a>
 		<a>LinkedIn</a>
 	</p>
-	<h2 class="about__awards__title">Honors & Awards</h2>
-	<ul class="about__awards__list">
+
+	<h2 class="about__title">Experience</h2>
+	<ul class="about__list">
+		{% for job in site.data.experience %}
+		<li class="about__list__item">
+			<b>{{job.title}}</b><br>
+			<i>{{job.agency}} ({{job.location}}) / {{job.startDate}} – {{job.endDate}}</i>
+		</li>
+		{% endfor %}
+	</ul>
+	<h2 class="about__title">Honors & Awards</h2>
+	<ul class="about__list">
 	{% for award in site.data.awards %}
-		<li>
-			<b>{{award.name}}</b> / {{award.type}} / {{award.project}} / {{award.date}}
+		<li class="about__list__item">
+			<b>{{award.name}}</b> <i>/ {{award.type}} / {{award.project}} / {{award.date}}</i>
 		</li>
 	{% endfor %}
 	</ul>
