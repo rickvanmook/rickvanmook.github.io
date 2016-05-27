@@ -1,3 +1,5 @@
+require('./core/history');
+
 var NavLink = require('./header/NavLink'),
 	WorkImage = require('./modules/WorkImage'),
 	NAV_LINK_SELECTOR = 'js-navLink',
