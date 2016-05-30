@@ -1,40 +1,63 @@
 var resizeCanvas = require('../utils/resizeCanvas');
 
+exports.selector = '.js-workImage';
+exports.constructor = function() {
 
-module.exports = function(el) {
-
-	var _parent = el,
-		_videoEl = document.createElement('video'),
-		_sizingEl = el.getElementsByClassName('js-workImage__size')[0],
-		_canvasEl = el.getElementsByClassName('js-workImage__canvas')[0],
-		_context = _canvasEl.getContext('2d'),
-		_progress = {p:0},
-		_loadedCount = 0,
+	var _parent,
+		_isAlive,
+		_videoEl,
+		_sizingEl,
+		_canvasEl,
+		_context,
+		_progress,
+		_loadedCount,
 		_canvasWidth,
 		_canvasHeight,
-		_imgUrl = _canvasEl.getAttribute('data-jpg'),
+		_imgUrl,
+		_image;
+
+	function init(el) {
+
+		var videoSrc;
+
+		_isAlive = true;
+		_parent = el;
+		_videoEl = document.createElement('video');
+		_sizingEl = el.getElementsByClassName('js-workImage__size')[0];
+		_canvasEl = el.getElementsByClassName('js-workImage__canvas')[0];
+		_context = _canvasEl.getContext('2d');
+		_progress = {p:0};
+		_loadedCount = 0;
+		_imgUrl = _canvasEl.getAttribute('data-jpg');
 		_image = new Image();
 
-	_videoEl.src =  _canvasEl.getAttribute('data-mp4');
-	_videoEl.loop= true;
+		_videoEl.src =  _canvasEl.getAttribute('data-mp4');
+		_videoEl.loop= true;
 
-	_image.onload = onLoaded;
-	_image.src = _imgUrl;
+		_image.onload = onLoaded;
+		_image.src = _imgUrl;
+	}
 
+	function destroy() {
 
-	function onMouseOver(e) {
+		_isAlive = false;
+		_image.onload = null;
+
+		_videoEl = null;
+		TweenLite.killTweensOf(_progress);
+
+		_parent.removeEventListener('mouseenter', onMouseOver);
+		_parent.removeEventListener('mouseleave', onMouseOut);
+		window.removeEventListener('resize', onResize);
+	}
+
+	function onMouseOver() {
 
 		_videoEl.play();
 
 		TweenLite.to(_progress, 0.5, {
 			p:1,
-			ease: Cubic.easeInOut,
-			onComplete:function(){
-
-				//_progress.p = 0;
-				//_currentImage = _hover;
-				//_upcomingImage = _image;
-			}
+			ease: Cubic.easeInOut
 		})
 	}
 
@@ -74,7 +97,10 @@ module.exports = function(el) {
 			drawMask(_progress.p);
 		}
 
-		requestAnimationFrame(redraw);
+		if(_isAlive) {
+
+			requestAnimationFrame(redraw);
+		}
 	}
 
 
@@ -87,33 +113,23 @@ module.exports = function(el) {
 
 		_context.beginPath();
 
-		if(window.isTest) {
+		// start at bottom left
+		_context.moveTo(0, _canvasHeight);
 
-			_context.moveTo(0, _canvasHeight);
-			lineTo(Math.round(_canvasWidth * progress), _canvasHeight);
-			lineTo(Math.round(_canvasWidth * progress), 0);
-			lineTo(0, 0);
+		// absolute line to bottom right, based on firstHalfProgress
+		lineTo(Math.round(_canvasWidth * firstHalfProgress), _canvasHeight);
 
-		} else {
+		// if we passed the first half, we draw two additional lines trying to fill up the screen
+		if(secondHalfProgress) {
 
-			// start at bottom left
-			_context.moveTo(0, _canvasHeight);
-
-			// absolute line to bottom right, based on firstHalfProgress
-			lineTo(Math.round(_canvasWidth * firstHalfProgress), _canvasHeight);
-
-			// if we passed the first half, we draw two additional lines trying to fill up the screen
-			if(secondHalfProgress) {
-
-				lineTo(_canvasWidth, Math.round(_canvasHeight * (1 - secondHalfProgress)));
-				lineTo(Math.round(_canvasWidth * secondHalfProgress), 0);
-			}
-
-
-
-			// absolute line back to top left, based on firstHalfProgress
-			lineTo(0, Math.round(_canvasHeight * (1 - firstHalfProgress)));
+			lineTo(_canvasWidth, Math.round(_canvasHeight * (1 - secondHalfProgress)));
+			lineTo(Math.round(_canvasWidth * secondHalfProgress), 0);
 		}
+
+
+
+		// absolute line back to top left, based on firstHalfProgress
+		lineTo(0, Math.round(_canvasHeight * (1 - firstHalfProgress)));
 
 		// close up our path
 		_context.closePath();
@@ -138,4 +154,7 @@ module.exports = function(el) {
 
 		resizeCanvas(_canvasEl, _canvasWidth, _canvasHeight);
 	}
+
+	this.init = init;
+	this.destroy = destroy;
 };
