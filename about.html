@@ -6,22 +6,63 @@ class: about
 ---
 
 <div class="about__wrapper max-width">
-	<p class="about__main">
-		Hey there! I’m Rick van Mook, a creative developer from <a href="https://www.google.com/maps/place/Raamsdonksveer,+Netherlands" target="_blank">The Netherlands</a>.
-		I started my career as a Flash developer at <a href="http://momkai.com" target="_blank">Momkai in Amsterdam</a>. After three years,
-		I switched my focus to JavaScript and, in 2013, joined <a href="http://firstborn.com" target="_blank">Firstborn in New York</a>.
-	</p>
-
-	<p class="about__sub">
-		I like to play around with JavaScript and love to create things from scratch. The intention of this blog will be
-		a documentation of me reinventing wheels and learning things along the way. If you're curious about my work
-		experience check out the <a href="/work/">work page</a> or my <a href="https://www.linkedin.com/in/rvmook" target="_blank">LinkedIn</a> profile.
-		For those of you who want to have a peek into my personal life, you can follow me on <a href="https://www.facebook.com/rickvanmook" target="_blank">Facebook</a>,
-		or <a href="https://twitter.com/rvmook" target="_blank">Twitter</a>.
-	</p>
-</div>
-<div class="about__footer">
-	<div class="max-width">
-		<a class="about__footer__cta" href="/work/">My Work</a>
+	<div class="about__section about__section--divider">
+		<h1>
+			Hey there! I’m Rick van&nbsp;Mook,
+			a <a href="https://www.google.com/maps/place/Raamsdonksveer,+Netherlands" target="_blank">Dutch</a> Creative&nbsp;Developer currently
+			working and living in&nbsp;<a href="http://firstborn.com" target="_blank">New&nbsp;York</a>.
+		</h1>
+		<p>
+			I like to play around with code. Either by creating something from scratch or making a design come to life. I can spend hours tweaking an animation or completely lose myself optimizing a render loop.
+		</p>
+		<p>
+			I've been lucky to have worked with a lot of talented people. Sometimes we win awards, some times we don't. But we always try to make our mothers proud.
+		</p>
+		<p>
+			Whatever the end result, I just love what I'm doing.
+		</p>
+	</div>
+	<div class="about__section about__section--divider">
+		<a href="https://github.com/rvmook" target="_blank" class="about__section__social">
+			<svg class="about__icon" width="32" height="32">
+				<use xlink:href="#logo-github"></use>
+			</svg>
+		</a>
+		<a href="http://codepen.io/rvmook/" target="_blank" class="about__section__social">
+			<svg class="about__icon" width="32" height="32">
+				<use xlink:href="#logo-codepen"></use>
+			</svg>
+		</a>
+		<a href="https://www.linkedin.com/in/rvmook" target="_blank" class="about__section__social">
+			<svg class="about__icon" width="32" height="32">
+				<use xlink:href="#logo-linkedin"></use>
+			</svg>
+		</a>
+		<a href="https://twitter.com/rvmook" target="_blank" class="about__section__social">
+			<svg class="about__icon" width="32" height="32">
+				<use xlink:href="#logo-twitter"></use>
+			</svg>
+		</a>
+	</div>
+	<div class="about__section about__section--divider">
+		<h2>Experience</h2>
+		<ul class="about__list">
+			{% for job in site.data.experience %}
+			<li class="about__list__item">
+				<b>{{job.title}}</b><br>
+				<i>{{job.agency}} ({{job.location}}) / {{job.startDate}} – {{job.endDate}}</i>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="about__section">
+		<h2>Honors & Awards</h2>
+		<ul class="about__list">
+		{% for award in site.data.awards %}
+			<li class="about__list__item">
+				<b>{{award.name}}</b> <i>/ {{award.type}} / {{award.project}} / {{award.date}}</i>
+			</li>
+		{% endfor %}
+		</ul>
 	</div>
 </div>
