@@ -25,7 +25,7 @@ body, html {
     line-height: 1.5;
 }
 
-.work {
+.home, .work {
 
     background-color: $light-bg;
 }
@@ -45,8 +45,7 @@ ul {
 .wrapper {
 
     // Display & Box Model
-    min-height: 100%;
-    @include fluid-value(padding-top, 74px, 138px);
+    height: 100%;
 }
 
 .max-width {

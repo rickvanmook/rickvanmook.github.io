@@ -2,7 +2,7 @@
 
 	// Positioning
 	z-index: $zIndex10;
-	position: fixed;
+	position: relative;
 	top: 0;
 
 	// Display & Box Model
@@ -145,7 +145,7 @@
 	// Appearance
 	color: $black-opacity;
 
-	&:before {
+	&:after, &:before {
 
 
 		display: block;
@@ -155,7 +155,23 @@
 		content: "";
 		position: absolute;
 		width: 100%;
+	}
+
+	&:before {
+
 		background-color: #e6e6e6;
+	}
+
+	&:after {
+
+		transform: translateX(-100%);
+		background-color: $primary;
+		transition: transform 350ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+	}
+
+	&.is-active:after {
+
+		transform: translateX(0);
 	}
 
 	&:hover {
@@ -165,11 +181,25 @@
 			transform: translateX(5%);
 			transition-delay: 50ms;
 		}
+
+		&.is-active {
+
+			.nav__link__copy {
+
+				transform: translateX(0);
+				transition-delay: 0ms;
+			}
+		}
 	}
 }
 
 .nav__link__copy {
 
 	position: relative;
-	transition: transform 350ms;
+	transition: transform 350ms, color 350ms;
+
+	.is-active & {
+
+		color: $primary;
+	}
 }

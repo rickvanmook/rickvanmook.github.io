@@ -1,5 +1,6 @@
 var ajaxRequest = require('../utils/ajaxRequest'),
 	resizeCanvas = require('../utils/resizeCanvas'),
+	signals = require('./signals'),
 	moduleFactory = require('./moduleFactory');
 
 var _doc = document,
@@ -30,6 +31,8 @@ function init() {
 
 
 function internalLoad(url) {
+
+	signals.HISTORY_CHANGED.dispatch(url);
 
 	hidePage();
 
@@ -105,7 +108,10 @@ function showPage() {
 	tweenMask(0, function(){
 
 		_maskEl.style.display = 'none';
-		moduleFactory.run(_contentEl);
+
+		TweenLite.delayedCall(0.15, function(){
+			moduleFactory.run(_contentEl);
+		})
 	});
 }
 

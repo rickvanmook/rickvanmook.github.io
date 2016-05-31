@@ -5,16 +5,16 @@
     </a>
     <ul class="nav__list">
       <li class="nav__list__item">
-        <a class="nav__link nav__link--list{% if page.class == 'work' %} nav__link--active {% endif %} js-navLink js-moduleIgnore" href="/work/">
+        <a class="nav__link nav__link--list{% if page.modifier == 'about' %} is-active {% endif %} js-navLink js-moduleIgnore" href="/about/">
           <div class="nav__link__copy">
-            Work
+            About
           </div>
         </a>
       </li>
       <li class="nav__list__item">
-        <a class="nav__link nav__link--list{% if page.class == 'about' %} nav__link--active {% endif %} js-navLink js-moduleIgnore" href="/about/">
+        <a class="nav__link nav__link--list{% if page.modifier == 'home' %} is-active {% endif %} js-navLink js-moduleIgnore" href="/">
           <div class="nav__link__copy">
-            About
+            Work
           </div>
         </a>
       </li>

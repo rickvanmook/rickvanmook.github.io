@@ -4,6 +4,7 @@ exports.selector = '.js-workImage';
 exports.constructor = function() {
 
 	var _parent,
+		_videoSrc,
 		_isAlive,
 		_videoEl,
 		_sizingEl,
@@ -18,27 +19,23 @@ exports.constructor = function() {
 
 	function init(el) {
 
-		var videoSrc;
-
-		_isAlive = true;
 		_parent = el;
-		_videoEl = document.createElement('video');
+
 		_sizingEl = el.getElementsByClassName('js-workImage__size')[0];
 		_canvasEl = el.getElementsByClassName('js-workImage__canvas')[0];
 		_context = _canvasEl.getContext('2d');
 		_progress = {p:0};
 		_loadedCount = 0;
 		_imgUrl = _canvasEl.getAttribute('data-jpg');
+		_videoSrc = _canvasEl.getAttribute('data-mp4');
 		_image = new Image();
 
-		_videoEl.src =  _canvasEl.getAttribute('data-mp4');
-		_videoEl.loop= true;
-
-		_image.onload = onLoaded;
-		_image.src = _imgUrl;
+		//_image.onload = onLoaded;
+		//_image.src = _imgUrl;
 	}
 
 	function destroy() {
+
 
 		_isAlive = false;
 		_image.onload = null;
@@ -52,6 +49,9 @@ exports.constructor = function() {
 	}
 
 	function onMouseOver() {
+
+		_isAlive = true;
+		redraw();
 
 		_videoEl.play();
 
@@ -70,12 +70,17 @@ exports.constructor = function() {
 
 				_videoEl.pause();
 				_videoEl.currentTime = 0;
+				_isAlive = false;
 			}
 		})
 	}
 
 
 	function onLoaded() {
+
+		_videoEl = document.createElement('video');
+		_videoEl.loop = true;
+		_videoEl.src = _videoSrc;
 
 		window.addEventListener('resize', onResize);
 		onResize();
@@ -153,6 +158,11 @@ exports.constructor = function() {
 		_canvasHeight = _sizingEl.offsetHeight;
 
 		resizeCanvas(_canvasEl, _canvasWidth, _canvasHeight);
+
+		if(!_isAlive) {
+
+			redraw();
+		}
 	}
 
 	this.init = init;
