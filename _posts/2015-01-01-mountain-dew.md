@@ -2,7 +2,7 @@
 layout: post
 title: Mountain Dew
 thumb-jpg: /images/work-dew.jpg
-thumb-cover: /images/work-nike.jpg
+thumb-cover: /images/work-dew-cover.jpg
 thumb-mp4: /images/work-dew.mp4
 year: 2015
 agency: Firstborn

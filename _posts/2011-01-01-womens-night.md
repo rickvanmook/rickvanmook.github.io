@@ -2,7 +2,7 @@
 layout: post
 title: G-Star Women’s Night
 thumb-jpg: /images/work-g-star.jpg
-thumb-cover: /images/work-nike.jpg
+thumb-cover: /images/work-g-star-cover.png
 thumb-mp4: /images/work-g-star.mp4
 year: 2011
 agency: Momkai

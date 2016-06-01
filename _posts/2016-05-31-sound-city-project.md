@@ -2,7 +2,7 @@
 layout: post
 title: Sound City Project
 thumb-jpg: /images/work-scp.jpg
-thumb-cover: /images/work-nike.jpg
+thumb-cover: /images/work-scp-cover.jpg
 thumb-mp4: /images/work-scp.mp4
 year: 2014
 color: rgb(41, 37, 41)
