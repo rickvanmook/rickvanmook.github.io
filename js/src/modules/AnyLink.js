@@ -20,11 +20,15 @@ exports.constructor = function() {
 
 	function onClick(e) {
 
-		e.preventDefault();
+		// make sure we can actually open up a new tab
+		if(!e.metaKey && !e.ctrlKey) {
 
-		if(_href !== window.location.pathname) {
+			e.preventDefault();
 
-			history.pushState(_href);
+			if(_href !== window.location.pathname) {
+
+				history.pushState(_href);
+			}
 		}
 	}
 
