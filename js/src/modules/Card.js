@@ -1,4 +1,7 @@
-var resizeCanvas = require('../utils/resizeCanvas');
+var resizeCanvas = require('../utils/resizeCanvas'),
+	signals = require('../core/signals'),
+
+	CLASS_IS_VISIBLE = 'is-visible';
 
 var COUNTER = 0;
 
@@ -14,14 +17,12 @@ exports.constructor = function() {
 		_context,
 		_progress,
 		_loadedCount,
+		_windowHeight,
+		_elementHeight,
 		_canvasWidth,
 		_canvasHeight,
 		_imgUrl,
 		_imageEl;
-
-	var _id = COUNTER++;
-
-
 
 	function init(el) {
 
@@ -34,8 +35,25 @@ exports.constructor = function() {
 		_progress = {p:0};
 		_loadedCount = 0;
 		_videoSrc = _canvasEl.getAttribute('data-mp4');
+		_imgUrl = _imageEl.getAttribute('data-src');
 
-		inView();
+		_windowHeight = window.innerHeight;
+
+		signals.SCROLLED.add(onScroll);
+		signals.RESIZED.add(onResize);
+		onResize();
+		onScroll();
+	}
+
+	function onScroll() {
+
+		var scrollTop = window.scrollY,
+			offset = _parent.getBoundingClientRect().top + scrollTop;
+
+		if(_windowHeight + scrollTop > offset && scrollTop < offset + _elementHeight) {
+
+			inView();
+		}
 	}
 
 	function destroy() {
@@ -47,7 +65,8 @@ exports.constructor = function() {
 
 		_parent.removeEventListener('mouseenter', onMouseOver);
 		_parent.removeEventListener('mouseleave', onMouseOut);
-		window.removeEventListener('resize', onResize);
+
+		signals.SCROLLED.remove(onScroll);
 	}
 
 	function onMouseOver() {
@@ -80,17 +99,35 @@ exports.constructor = function() {
 
 	function inView() {
 
-		_videoEl = document.createElement('video');
-		_videoEl.loop = true;
-		_videoEl.src = _videoSrc;
+		_parent.classList.add(CLASS_IS_VISIBLE);
 
-		window.addEventListener('resize', onResize);
-		onResize();
+		loadImage();
+		setupVideo();
 
 		redraw();
 
 		_parent.addEventListener('mouseenter', onMouseOver);
 		_parent.addEventListener('mouseleave', onMouseOut);
+
+		signals.SCROLLED.remove(onScroll);
+	}
+
+	function loadImage() {
+
+		_imageEl.onload = onLoaded;
+		_imageEl.src = _imgUrl;
+
+		function onLoaded() {
+
+			_imageEl.classList.add(CLASS_IS_VISIBLE);
+		}
+	}
+
+	function setupVideo() {
+
+		_videoEl = document.createElement('video');
+		_videoEl.loop = true;
+		_videoEl.src = _videoSrc;
 	}
 
 
@@ -156,11 +193,14 @@ exports.constructor = function() {
 
 	function onResize() {
 
-		_canvasWidth = Math.ceil(_sizingEl.offsetWidth);
-		_canvasHeight = Math.ceil(_sizingEl.offsetHeight);
+		_windowHeight = window.innerHeight;
+		_canvasWidth = _sizingEl.offsetWidth;
+		_canvasHeight = _sizingEl.offsetHeight;
 
 		_imageEl.setAttribute('width', _canvasWidth);
 		_imageEl.setAttribute('height', _canvasHeight);
+
+		_elementHeight = _parent.offsetHeight;
 
 		resizeCanvas(_canvasEl, _canvasWidth, _canvasHeight);
 
