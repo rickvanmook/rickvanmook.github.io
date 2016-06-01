@@ -1,6 +1,8 @@
 var resizeCanvas = require('../utils/resizeCanvas');
 
-exports.selector = '.js-workImage';
+var COUNTER = 0;
+
+exports.selector = '.js-card';
 exports.constructor = function() {
 
 	var _parent,
@@ -15,30 +17,30 @@ exports.constructor = function() {
 		_canvasWidth,
 		_canvasHeight,
 		_imgUrl,
-		_image;
+		_imageEl;
+
+	var _id = COUNTER++;
+
+
 
 	function init(el) {
 
 		_parent = el;
 
-		_sizingEl = el.getElementsByClassName('js-workImage__size')[0];
-		_canvasEl = el.getElementsByClassName('js-workImage__canvas')[0];
+		_sizingEl = el.getElementsByClassName('js-card__size')[0];
+		_canvasEl = el.getElementsByClassName('js-card__canvas')[0];
+		_imageEl = el.getElementsByClassName('js-card__image')[0];
 		_context = _canvasEl.getContext('2d');
 		_progress = {p:0};
 		_loadedCount = 0;
-		_imgUrl = _canvasEl.getAttribute('data-jpg');
 		_videoSrc = _canvasEl.getAttribute('data-mp4');
-		_image = new Image();
 
-		//_image.onload = onLoaded;
-		//_image.src = _imgUrl;
+		inView();
 	}
 
 	function destroy() {
 
-
 		_isAlive = false;
-		_image.onload = null;
 
 		_videoEl = null;
 		TweenLite.killTweensOf(_progress);
@@ -76,7 +78,7 @@ exports.constructor = function() {
 	}
 
 
-	function onLoaded() {
+	function inView() {
 
 		_videoEl = document.createElement('video');
 		_videoEl.loop = true;
@@ -95,7 +97,7 @@ exports.constructor = function() {
 
 	function redraw() {
 
-		_context.drawImage(_image, 0, 0, _canvasWidth, _canvasHeight);
+		_context.clearRect(0, 0, _canvasWidth, _canvasHeight);
 
 		if(_progress.p > 0) {
 
@@ -154,8 +156,11 @@ exports.constructor = function() {
 
 	function onResize() {
 
-		_canvasWidth = _sizingEl.offsetWidth;
-		_canvasHeight = _sizingEl.offsetHeight;
+		_canvasWidth = Math.ceil(_sizingEl.offsetWidth);
+		_canvasHeight = Math.ceil(_sizingEl.offsetHeight);
+
+		_imageEl.setAttribute('width', _canvasWidth);
+		_imageEl.setAttribute('height', _canvasHeight);
 
 		resizeCanvas(_canvasEl, _canvasWidth, _canvasHeight);
 
