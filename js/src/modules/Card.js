@@ -22,6 +22,8 @@ exports.constructor = function() {
 		_canvasWidth,
 		_canvasHeight,
 		_imgUrl,
+		_coverUrl,
+		_coverEl,
 		_imageEl;
 
 	function init(el) {
@@ -31,11 +33,13 @@ exports.constructor = function() {
 		_sizingEl = el.getElementsByClassName('js-card__size')[0];
 		_canvasEl = el.getElementsByClassName('js-card__canvas')[0];
 		_imageEl = el.getElementsByClassName('js-card__image')[0];
+		_coverEl = el.getElementsByClassName('js-card__cover')[0];
 		_context = _canvasEl.getContext('2d');
 		_progress = {p:0};
 		_loadedCount = 0;
 		_videoSrc = _canvasEl.getAttribute('data-mp4');
 		_imgUrl = _imageEl.getAttribute('data-src');
+		_coverUrl = _coverEl.getAttribute('data-src');
 
 		_windowHeight = window.innerHeight;
 
@@ -71,6 +75,11 @@ exports.constructor = function() {
 
 	function onMouseOver() {
 
+		if(!_videoEl) {
+
+			setupVideo();
+		}
+
 		_isAlive = true;
 		redraw();
 
@@ -102,8 +111,6 @@ exports.constructor = function() {
 		_parent.classList.add(CLASS_IS_VISIBLE);
 
 		loadImage();
-		setupVideo();
-
 		redraw();
 
 		_parent.addEventListener('mouseenter', onMouseOver);
@@ -128,6 +135,8 @@ exports.constructor = function() {
 		_videoEl = document.createElement('video');
 		_videoEl.loop = true;
 		_videoEl.src = _videoSrc;
+
+		_coverEl.src = _coverUrl;
 	}
 
 
@@ -180,6 +189,7 @@ exports.constructor = function() {
 
 		_context.clip();
 
+		_context.drawImage(_coverEl, 0, 0, _canvasWidth, _canvasHeight);
 		_context.drawImage(_videoEl, 0, 0, _canvasWidth, _canvasHeight);
 
 
@@ -199,6 +209,9 @@ exports.constructor = function() {
 
 		_imageEl.setAttribute('width', _canvasWidth);
 		_imageEl.setAttribute('height', _canvasHeight);
+
+		_coverEl.setAttribute('width', _canvasWidth);
+		_coverEl.setAttribute('height', _canvasHeight);
 
 		_elementHeight = _parent.offsetHeight;
 

@@ -2,6 +2,7 @@
 layout: post
 title: Play Your Future
 thumb-jpg: /images/work-aegon.jpg
+thumb-cover: /images/work-nike.jpg
 thumb-mp4: /images/work-aegon.mp4
 year: 2012
 agency: Momkai
