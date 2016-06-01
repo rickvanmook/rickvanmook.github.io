@@ -1,6 +1,11 @@
-var resizeCanvas = require('../utils/resizeCanvas');
+var resizeCanvas = require('../utils/resizeCanvas'),
+	signals = require('../core/signals'),
 
-exports.selector = '.js-workImage';
+	CLASS_IS_VISIBLE = 'is-visible';
+
+var COUNTER = 0;
+
+exports.selector = '.js-card';
 exports.constructor = function() {
 
 	var _parent,
@@ -12,43 +17,68 @@ exports.constructor = function() {
 		_context,
 		_progress,
 		_loadedCount,
+		_windowHeight,
+		_elementHeight,
 		_canvasWidth,
 		_canvasHeight,
 		_imgUrl,
-		_image;
+		_coverUrl,
+		_coverEl,
+		_imageEl;
 
 	function init(el) {
 
 		_parent = el;
 
-		_sizingEl = el.getElementsByClassName('js-workImage__size')[0];
-		_canvasEl = el.getElementsByClassName('js-workImage__canvas')[0];
+		_sizingEl = el.getElementsByClassName('js-card__size')[0];
+		_canvasEl = el.getElementsByClassName('js-card__canvas')[0];
+		_imageEl = el.getElementsByClassName('js-card__image')[0];
+		_coverEl = el.getElementsByClassName('js-card__cover')[0];
 		_context = _canvasEl.getContext('2d');
 		_progress = {p:0};
 		_loadedCount = 0;
-		_imgUrl = _canvasEl.getAttribute('data-jpg');
 		_videoSrc = _canvasEl.getAttribute('data-mp4');
-		_image = new Image();
+		_imgUrl = _imageEl.getAttribute('data-src');
+		_coverUrl = _coverEl.getAttribute('data-src');
 
-		//_image.onload = onLoaded;
-		//_image.src = _imgUrl;
+		_windowHeight = window.innerHeight;
+
+		signals.SCROLLED.add(onScroll);
+		signals.RESIZED.add(onResize);
+		onResize();
+		onScroll();
+	}
+
+	function onScroll() {
+
+		var scrollTop = window.scrollY,
+			offset = _parent.getBoundingClientRect().top + scrollTop;
+
+		if(_windowHeight + scrollTop > offset && scrollTop < offset + _elementHeight) {
+
+			inView();
+		}
 	}
 
 	function destroy() {
 
-
 		_isAlive = false;
-		_image.onload = null;
 
 		_videoEl = null;
 		TweenLite.killTweensOf(_progress);
 
 		_parent.removeEventListener('mouseenter', onMouseOver);
 		_parent.removeEventListener('mouseleave', onMouseOut);
-		window.removeEventListener('resize', onResize);
+
+		signals.SCROLLED.remove(onScroll);
 	}
 
 	function onMouseOver() {
+
+		if(!_videoEl) {
+
+			setupVideo();
+		}
 
 		_isAlive = true;
 		redraw();
@@ -76,26 +106,44 @@ exports.constructor = function() {
 	}
 
 
-	function onLoaded() {
+	function inView() {
+
+		_parent.classList.add(CLASS_IS_VISIBLE);
+
+		loadImage();
+		redraw();
+
+		_parent.addEventListener('mouseenter', onMouseOver);
+		_parent.addEventListener('mouseleave', onMouseOut);
+
+		signals.SCROLLED.remove(onScroll);
+	}
+
+	function loadImage() {
+
+		_imageEl.onload = onLoaded;
+		_imageEl.src = _imgUrl;
+
+		function onLoaded() {
+
+			_imageEl.classList.add(CLASS_IS_VISIBLE);
+		}
+	}
+
+	function setupVideo() {
 
 		_videoEl = document.createElement('video');
 		_videoEl.loop = true;
 		_videoEl.src = _videoSrc;
 
-		window.addEventListener('resize', onResize);
-		onResize();
-
-		redraw();
-
-		_parent.addEventListener('mouseenter', onMouseOver);
-		_parent.addEventListener('mouseleave', onMouseOut);
+		_coverEl.src = _coverUrl;
 	}
 
 
 
 	function redraw() {
 
-		_context.drawImage(_image, 0, 0, _canvasWidth, _canvasHeight);
+		_context.clearRect(0, 0, _canvasWidth, _canvasHeight);
 
 		if(_progress.p > 0) {
 
@@ -141,6 +189,7 @@ exports.constructor = function() {
 
 		_context.clip();
 
+		_context.drawImage(_coverEl, 0, 0, _canvasWidth, _canvasHeight);
 		_context.drawImage(_videoEl, 0, 0, _canvasWidth, _canvasHeight);
 
 
@@ -154,8 +203,17 @@ exports.constructor = function() {
 
 	function onResize() {
 
+		_windowHeight = window.innerHeight;
 		_canvasWidth = _sizingEl.offsetWidth;
 		_canvasHeight = _sizingEl.offsetHeight;
+
+		_imageEl.setAttribute('width', _canvasWidth);
+		_imageEl.setAttribute('height', _canvasHeight);
+
+		_coverEl.setAttribute('width', _canvasWidth);
+		_coverEl.setAttribute('height', _canvasHeight);
+
+		_elementHeight = _parent.offsetHeight;
 
 		resizeCanvas(_canvasEl, _canvasWidth, _canvasHeight);
 

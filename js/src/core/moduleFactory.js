@@ -1,7 +1,7 @@
 var _moduleConfigs = [
 		require('../modules/AnyLink'),
 		require('../modules/NavLink'),
-		require('../modules/WorkImage')
+		require('../modules/Card')
 	],
 	_currentModules = [];
 
