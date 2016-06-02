@@ -9,6 +9,7 @@
 .about__wrapper {
 
 	margin: 0 auto;
+	@include fluid-value(margin-top, 10px, 20px);
 	@include fluid-value(margin-bottom, 30px, 60px);
 	min-height: 100%;
 }
