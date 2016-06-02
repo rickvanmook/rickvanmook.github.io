@@ -1,4 +1,5 @@
 var _moduleConfigs = [
+		require('../modules/Analytics'),
 		require('../modules/AnyLink'),
 		require('../modules/NavLink'),
 		require('../modules/Card')

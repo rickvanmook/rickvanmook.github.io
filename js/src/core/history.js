@@ -34,6 +34,14 @@ function internalLoad(url) {
 
 	signals.HISTORY_CHANGED.dispatch(url);
 
+	if(ga) {
+		
+		ga('send', {
+			hitType: 'pageview',
+			page: location.pathname
+		});
+	}
+
 	hidePage();
 
 	ajaxRequest(url, function(response){
