@@ -1,0 +1,19 @@
+<div class="card js-card">
+	<a class="card__link js-analytics" href="{{ post.href }}" target="_blank" data-category="Home" data-label="{{post.title}}">
+		<div class="card__image-wrapper js-card__size" style="background-color:{{ post.color }}">
+			<img class="card__media card__media--image js-card__image" data-src="{{ post.thumb-jpg }}" />
+			<img class="card__media card__media--cover js-card__cover" data-src="{{ post.thumb-cover }}" />
+			<canvas class="card__media js-card__canvas" data-jpg="" data-mp4="{{ post.thumb-mp4 }}">
+			</canvas>
+		</div>
+		<div class="card__content">
+			<div class="card__content__title">
+				{{ post.title }}
+			</div>
+			<div class="card__content__sub-title">
+				{{ post.role }}
+			</div>
+
+		</div>
+	</a>
+</div>

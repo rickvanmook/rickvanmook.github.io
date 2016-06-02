@@ -1,4 +1,4 @@
-
+$gutter: 15px;
 $primary: #f3866e;
 $secondary: #000;
 
@@ -6,14 +6,7 @@ $light-bg: #dbdddf;
 $lighter-bg: #f3f3f3;
 $dark-bg: #252830;
 $dark-bg-border: #3c3d42;
-$work-item-bg: #2a2e36;
-$work-image-bg: rgba(15, 16, 19, 1);
-$work-item-copy: #8d94ae;
-$work-item-cta: #b2bad4;
-$work-image-bg-hover: rgba(15, 16, 19, 0);
-
-$post-border: #e9e9ea;
-
+$color-light-grey: #929292;
 $white: #fff;
 $black: #000;
 $black-opacity: rgba(0,0,0,0.7);
@@ -27,7 +20,8 @@ $copy-alt: #c2cae6;
 
 $header-height: 140px;
 
-$font-serif: 'Adamina', serif;
+//$font-serif: 'Adamina', serif;
+$font-serif: 'Amiri', serif;
 $font-sans: 'Raleway', sans-serif;
 $font-alt: Georgia, serif;
 $font-code: 'Source Code Pro', monospace;

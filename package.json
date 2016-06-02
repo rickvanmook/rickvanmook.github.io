@@ -1,0 +1,16 @@
+{
+  "name": "rvmook.github.io",
+  "version": "1.0.0",
+  "devDependencies": {
+    "browserify": "^13.0.1",
+    "minifyify": "^7.3.3",
+    "onchange": "^2.4.0",
+    "uglify-js": "^2.6.2"
+  },
+  "scripts": {
+    "watch": "onchange 'js/src/**/*.js' -- npm run build",
+    "uglify": "uglifyjs js/bundle.js -m -o js/bundle.min.js --source-map js/bundle.js.map --in-source-map js/bundle.js.map",
+    "browserify": "browserify js/src/main.js -d -p [minifyify --map bundle.js.map --output js/bundle.js.map ] > js/bundle.min.js",
+    "build": "npm run browserify"
+  }
+}

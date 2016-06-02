@@ -2,93 +2,89 @@
 
 	.wrapper {
 
-		/* Display & Box Model */
 		height: 100%;
 	}
 }
 
 .about__wrapper {
 
-	/* Display & Box Model */
+	margin: 0 auto;
+	@include fluid-value(margin-top, 10px, 20px);
+	@include fluid-value(margin-bottom, 30px, 60px);
 	min-height: 100%;
-	margin-top: 60px;
-	margin-bottom: -160px;
+}
 
-	&:after {
 
-		/* Display & Box Model */
-		display: block;
+.about__section {
 
-		/* Other */
-		content: "";
+	width: 97%;
+	@include fluid-value(max-width, 255px, 800px);
+	@include fluid-value(padding-top, 15px, 30px);
+	@include fluid-value(padding-bottom, 15px, 30px);
+
+	&--divider {
+
+		border-bottom: 1px solid #e9e9ea;
+	}
+
+	h1 {
+
+		font-family: $font-serif;
+		line-height: 1.1;
+		@include fluid-value(margin-bottom, 10px, 20px);
+		@include fluid-value(font-size, 20px, 42px);
+	}
+
+	h2 {
+
+		font-family: $font-serif;
+		line-height: 1.1;
+		@include fluid-value(margin-bottom, 10px, 20px);
+		@include fluid-value(font-size, 20px, 42px);
+	}
+
+	p {
+
+		font-family: $font-sans;
+		@include fluid-value(margin-bottom, 10px, 20px);
+		@include fluid-value(font-size, 12px, 18px);
+		@include fluid-value(max-width, 255px, 650px);
 	}
 
 	a {
 
-		/* Appearance */
 		color: $primary;
 	}
 }
 
-.about__footer, .about__wrapper:after {
+.about__section__social {
 
-	/* Display & Box Model */
-	height: 160px;
-}
-.about__footer {
-
-	/* Display & Box Model */
-	width: 100%;
-
-	/* Appearance */
-	background-color: $dark-bg;
-}
-
-.about__footer__cta {
-
-	/* Display & Box Model */
 	display: inline-block;
-	width: 165px;
-	margin-top: 15px;
-	padding: 15px 0 30px;
+	@include fluid-value(margin-right, 10px, 20px);
+	margin-top: 10px;
+}
 
-	/* Appearance */
-	color: #b2bad4;
-	text-decoration: none;
-	border-bottom: solid 1px #3a3d44;
+.about__icon {
 
+	fill: $primary;
+	width: 24px;
+	@include fluid-value(height, 18px, 24px);
+}
 
-	/* Copy */
+.about__list {
+
 	font-family: $font-sans;
-	font-weight: 600;
-	font-size: 16px;
+	@include fluid-value(font-size, 10px, 16px);
+}
 
-	@include mq(is-medium) {
+.about__list__item {
 
-		/* Display & Box Model */
-		width: 27%;
-		max-width: 260px;
+	margin-bottom: 10px;
+	line-height: 1.3;
+
+	i {
+		font-style: normal;
+		font-size: 0.9em;
+		color: $color-light-grey;
 	}
-}
-
-.about__main {
-
-	/* Display & Box Model */
-	width: 85%;
-
-	/* Copy */
-	font-family: $font-serif;
-	font-size: 44px;
-	line-height: 1.4;
-}
-
-.about__sub {
-
-	/* Display & Box Model */
-	width: 80%;
-	margin: 20px 0 63px;
-
-	/* Copy */
-	font-size: 18px;
-	font-family: $font-sans;
 }
