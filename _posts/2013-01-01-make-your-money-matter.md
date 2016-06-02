@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Make Your Money Matter
-thumb-jpg: /images/work-pscu.jpg
+thumb-jpg: /images/work-pscu.png
 thumb-cover: /images/work-pscu-cover.jpg
 thumb-mp4: /images/work-pscu.mp4
 year: 2013
