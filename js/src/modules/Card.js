@@ -51,7 +51,7 @@ exports.constructor = function() {
 
 	function onScroll() {
 
-		var scrollTop = window.pageYOffset || document.scrollTop,
+		var scrollTop = window.pageYOffset || document.scrollTop || 0,
 			offset = _parent.getBoundingClientRect().top + scrollTop;
 
 		if(_windowHeight + scrollTop > offset && scrollTop < offset + _elementHeight) {
