@@ -113,10 +113,26 @@ exports.constructor = function() {
 		loadImage();
 		redraw();
 
+		_parent.addEventListener('touchstart', onTouchStart);
+		_parent.addEventListener('touchend', onTouchEnd);
 		_parent.addEventListener('mouseenter', onMouseOver);
 		_parent.addEventListener('mouseleave', onMouseOut);
 
 		signals.SCROLLED.remove(onScroll);
+	}
+
+	function onTouchStart() {
+
+		console.log('onTouchStart');
+		_parent.removeEventListener('mouseenter', onMouseOver);
+		_parent.removeEventListener('mouseleave', onMouseOut);
+	}
+
+	function onTouchEnd() {
+
+		console.log('onTouchEnd');
+		_parent.addEventListener('mouseenter', onMouseOver);
+		_parent.addEventListener('mouseleave', onMouseOut);
 	}
 
 	function loadImage() {
