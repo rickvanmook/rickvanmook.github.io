@@ -12,7 +12,7 @@ exports.constructor = function() {
 		_el = el;
 		_href = el.getAttribute('href');
 
-		if(!checkIsExternalUrl(_href)) {
+		if(!checkIsTargetBlank(el) && !checkIsExternalLink(_href) && !checkIsMailtoLink(_href)) {
 
 			_el.addEventListener('click', onClick);
 		}
@@ -40,8 +40,19 @@ exports.constructor = function() {
 		_el = null;
 	}
 
+	function checkIsMailtoLink(url) {
 
-	function checkIsExternalUrl(url) {
+		return url.indexOf('mailto:') === 0;
+	}
+
+	function checkIsTargetBlank(el) {
+		
+		var target = el.getAttribute('target');
+		
+		return target === '_blank';
+	}
+	
+	function checkIsExternalLink(url) {
 
 		var PATTERN_FOR_EXTERNAL_URLS = /^(\w+:)?\/\//;
 
