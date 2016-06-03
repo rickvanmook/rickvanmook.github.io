@@ -32,7 +32,7 @@
 		font-family: $font-serif;
 		line-height: 1.1;
 		@include fluid-value(margin-bottom, 10px, 20px);
-		@include fluid-value(font-size, 20px, 42px);
+		@include fluid-value(font-size, 30px, 42px);
 	}
 
 	h2 {
@@ -40,14 +40,14 @@
 		font-family: $font-serif;
 		line-height: 1.1;
 		@include fluid-value(margin-bottom, 10px, 20px);
-		@include fluid-value(font-size, 20px, 42px);
+		@include fluid-value(font-size, 30px, 42px);
 	}
 
 	p {
 
 		font-family: $font-sans;
 		@include fluid-value(margin-bottom, 10px, 20px);
-		@include fluid-value(font-size, 12px, 18px);
+		@include fluid-value(font-size, 16px, 18px);
 		@include fluid-value(max-width, 255px, 650px);
 	}
 
@@ -74,7 +74,7 @@
 .about__list {
 
 	font-family: $font-sans;
-	@include fluid-value(font-size, 10px, 16px);
+	@include fluid-value(font-size, 14px, 16px);
 }
 
 .about__list__item {
