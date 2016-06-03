@@ -123,14 +123,12 @@ exports.constructor = function() {
 
 	function onTouchStart() {
 
-		console.log('onTouchStart');
 		_parent.removeEventListener('mouseenter', onMouseOver);
 		_parent.removeEventListener('mouseleave', onMouseOut);
 	}
 
 	function onTouchEnd() {
 
-		console.log('onTouchEnd');
 		_parent.addEventListener('mouseenter', onMouseOver);
 		_parent.addEventListener('mouseleave', onMouseOut);
 	}
