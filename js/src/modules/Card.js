@@ -69,6 +69,8 @@ exports.constructor = function() {
 
 		_parent.removeEventListener('mouseenter', onMouseOver);
 		_parent.removeEventListener('mouseleave', onMouseOut);
+		_parent.removeEventListener('mouseenter', onMouseOver);
+		_parent.removeEventListener('mouseleave', onMouseOut);
 
 		signals.SCROLLED.remove(onScroll);
 	}

@@ -109,17 +109,18 @@
 		}
 	}
 
+	@media (pointer:fine) {
+		&:hover {
 
-	&:hover {
+			.foo {
 
-		.foo {
+				@include fluid-value(width, 20px, 26px);
+			}
+			.bar {
 
-			@include fluid-value(width, 20px, 26px);
-		}
-		.bar {
-
-			@include fluid-value(width, 17px, 23px);
-			transition-delay:75ms;
+				@include fluid-value(width, 17px, 23px);
+				transition-delay: 75ms;
+			}
 		}
 	}
 
@@ -183,20 +184,22 @@
 		transform: translateX(0);
 	}
 
-	&:hover {
-
-		.nav__link__copy {
-
-			transform: translateX(5%);
-			transition-delay: 50ms;
-		}
-
-		&.is-active {
+	@media (pointer:fine) {
+		&:hover {
 
 			.nav__link__copy {
 
-				transform: translateX(0);
-				transition-delay: 0ms;
+				transform: translateX(5%);
+				transition-delay: 50ms;
+			}
+
+			&.is-active {
+
+				.nav__link__copy {
+
+					transform: translateX(0);
+					transition-delay: 0ms;
+				}
 			}
 		}
 	}
