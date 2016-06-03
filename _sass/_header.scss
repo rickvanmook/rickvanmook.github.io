@@ -70,7 +70,7 @@
 	// Copy
 	font-family: $font-sans;
 	font-weight: 600;
-	@include fluid-value(font-size, 12px, 16px);
+	@include fluid-value(font-size, 13px, 16px);
 
 	// Appearance
 	text-decoration: none;
@@ -101,16 +101,26 @@
 	// Appearance
 	color: $black-opacity-dimmed;
 
-	&:hover {
+	@include mq(is-extra-small) {
 
-		.foo {
+		.foo, .bar {
 
-			@include fluid-value(width, 20px, 26px);
+			display: none;
 		}
-		.bar {
+	}
 
-			@include fluid-value(width, 17px, 23px);
-			transition-delay:75ms;
+	@media (pointer:fine) {
+		&:hover {
+
+			.foo {
+
+				@include fluid-value(width, 20px, 26px);
+			}
+			.bar {
+
+				@include fluid-value(width, 17px, 23px);
+				transition-delay: 75ms;
+			}
 		}
 	}
 
@@ -130,7 +140,8 @@
 	height: 2px;
 
 	background-color: $primary;
-	transform: translate3d(-100%, 0, 0);
+	@include prefixed-transform(translateX(-100%));
+	will-change: transform;
 }
 
 .nav__link--list {
@@ -164,30 +175,34 @@
 
 	&:after {
 
-		transform: translateX(-100%);
+		@include prefixed-transform(translateX(-100%));
 		background-color: $primary;
 		transition: transform 350ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+		will-change: transform;
 	}
 
 	&.is-active:after {
 
-		transform: translateX(0);
+		@include prefixed-transform(translateX(0));
 	}
 
-	&:hover {
-
-		.nav__link__copy {
-
-			transform: translateX(5%);
-			transition-delay: 50ms;
-		}
-
-		&.is-active {
+	@media (pointer:fine) {
+		&:hover {
 
 			.nav__link__copy {
 
-				transform: translateX(0);
-				transition-delay: 0ms;
+
+				@include prefixed-transform(translateX(5%));
+				transition-delay: 50ms;
+			}
+
+			&.is-active {
+
+				.nav__link__copy {
+
+					@include prefixed-transform(translateX(0));
+					transition-delay: 0ms;
+				}
 			}
 		}
 	}
@@ -195,7 +210,9 @@
 
 .nav__link__copy {
 
+
 	position: relative;
+	will-change: transform;
 	transition: transform 350ms, color 350ms;
 
 	.is-active & {
