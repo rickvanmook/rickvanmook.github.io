@@ -141,6 +141,7 @@
 
 	background-color: $primary;
 	transform: translate3d(-100%, 0, 0);
+	will-change: transform;
 }
 
 .nav__link--list {
@@ -177,6 +178,7 @@
 		transform: translateX(-100%);
 		background-color: $primary;
 		transition: transform 350ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+		will-change: transform;
 	}
 
 	&.is-active:after {
@@ -188,6 +190,7 @@
 		&:hover {
 
 			.nav__link__copy {
+
 
 				transform: translateX(5%);
 				transition-delay: 50ms;
@@ -207,7 +210,9 @@
 
 .nav__link__copy {
 
+
 	position: relative;
+	will-change: transform;
 	transition: transform 350ms, color 350ms;
 
 	.is-active & {
