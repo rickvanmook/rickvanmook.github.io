@@ -64,11 +64,17 @@
 	margin-top: 10px;
 }
 
+.about__icon-wrapper {
+
+	width: 24px;
+	@include fluid-value(height, 18px, 24px);
+}
+
 .about__icon {
 
 	fill: $primary;
-	width: 24px;
-	@include fluid-value(height, 18px, 24px);
+	width: 100%;
+	height: 100%;
 }
 
 .about__list {
