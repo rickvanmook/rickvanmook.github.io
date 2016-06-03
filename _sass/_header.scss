@@ -101,6 +101,15 @@
 	// Appearance
 	color: $black-opacity-dimmed;
 
+	@include mq(is-extra-small) {
+
+		.foo, .bar {
+
+			display: none;
+		}
+	}
+
+
 	&:hover {
 
 		.foo {
