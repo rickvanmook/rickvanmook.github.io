@@ -79,7 +79,11 @@ exports.constructor = function() {
 				ease: Cubic.easeInOut,
 				onUpdate: function() {
 
-					currentHoverEl.style.transform = 'translateX(' + currentHoverEl.tween.x + '%)';
+					var transform = 'translateX(' + currentHoverEl.tween.x + '%)';
+
+					currentHoverEl.style.msProperty = transform;
+					currentHoverEl.style.webkitTransform = transform;
+					currentHoverEl.style.transform = transform;
 				},
 				onComplete: function() {
 

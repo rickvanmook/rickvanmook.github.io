@@ -140,7 +140,7 @@
 	height: 2px;
 
 	background-color: $primary;
-	transform: translate3d(-100%, 0, 0);
+	@include prefixed-transform(translateX(-100%));
 	will-change: transform;
 }
 
@@ -175,7 +175,7 @@
 
 	&:after {
 
-		transform: translateX(-100%);
+		@include prefixed-transform(translateX(-100%));
 		background-color: $primary;
 		transition: transform 350ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
 		will-change: transform;
@@ -183,7 +183,7 @@
 
 	&.is-active:after {
 
-		transform: translateX(0);
+		@include prefixed-transform(translateX(0));
 	}
 
 	@media (pointer:fine) {
@@ -192,7 +192,7 @@
 			.nav__link__copy {
 
 
-				transform: translateX(5%);
+				@include prefixed-transform(translateX(5%));
 				transition-delay: 50ms;
 			}
 
@@ -200,7 +200,7 @@
 
 				.nav__link__copy {
 
-					transform: translateX(0);
+					@include prefixed-transform(translateX(0));
 					transition-delay: 0ms;
 				}
 			}
