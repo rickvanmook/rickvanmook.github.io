@@ -1,5 +1,8 @@
 @mixin mq($point) {
-	@if $point == is-small {
+	@if $point == is-extra-small {
+		@media (max-width: 374px) { @content; }
+	}
+	@else if $point == is-small {
 		@media (max-width: 499px) { @content; }
 	}
 	@else if $point == is-medium {
@@ -22,6 +25,15 @@ $default-max-breakpoint: 1100px;
 
 // Utils
 // -----
+
+@mixin prefixed-transform($transform) {
+
+	-ms-transform: $transform;
+	-webkit-transform: $transform;
+	transform: $transform;
+
+}
+
 
 // Clamps the value of a property between two screen sizes.
 @mixin fluid-value(

@@ -8,6 +8,7 @@ var _doc = document,
 	_htmlEl,
 	_contentEl,
 	_maskEl,
+	_shouldShow = false,
 	_pendingClass = false,
 	_pendingContent = false,
 	_isHiding = false;
@@ -42,7 +43,10 @@ function internalLoad(url) {
 		});
 	}
 
-	hidePage();
+	if(!_isHiding) {
+
+		hidePage();
+	}
 
 	ajaxRequest(url, function(response){
 
@@ -56,7 +60,10 @@ function internalLoad(url) {
 			_pendingClass = contentEl.getAttribute('data-class');
 			_pendingContent = contentEl.innerHTML;
 
-			showPage();
+			if(!_isHiding) {
+
+				setupPage();
+			}
 		});
 }
 
@@ -91,19 +98,26 @@ function hidePage() {
 	tweenMask(1, function() {
 
 			_isHiding = false;
+
 			if(_pendingContent) {
 
-				window.scrollTo(0,0);
-				_contentEl.innerHTML = _pendingContent;
-				_htmlEl.className = _pendingClass;
-				_pendingContent = false;
-				//setupPage();
-
-
-				showPage();
+				setupPage();
 			}
 		}
 	)
+}
+
+function setupPage() {
+
+	if(_pendingContent) {
+
+		window.scrollTo(0,0);
+		_contentEl.innerHTML = _pendingContent;
+		_htmlEl.className = _pendingClass;
+		_pendingContent = false;
+
+		showPage();
+	}
 }
 
 function showPage() {
@@ -118,6 +132,7 @@ function showPage() {
 		_maskEl.style.display = 'none';
 
 		TweenLite.delayedCall(0.15, function(){
+
 			moduleFactory.run(_contentEl);
 		})
 	});

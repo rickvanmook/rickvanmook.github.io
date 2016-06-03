@@ -15,10 +15,22 @@ exports.constructor = function() {
 
 		_el = el;
 
+		_el.addEventListener('touchstart', onTouchStart);
+		_el.addEventListener('touchend', onTouchEnd);
 		_el.addEventListener(MOUSE_ENTER_EVENT, addHover);
 		_path = stripSlashes(_el.getAttribute('href'));
 
 		signals.HISTORY_CHANGED.add(onHistoryChanged);
+	}
+
+	function onTouchStart() {
+
+		_el.removeEventListener(MOUSE_ENTER_EVENT, addHover);
+	}
+
+	function onTouchEnd() {
+
+		_el.addEventListener(MOUSE_ENTER_EVENT, addHover);
 	}
 
 	function onHistoryChanged() {
@@ -67,7 +79,11 @@ exports.constructor = function() {
 				ease: Cubic.easeInOut,
 				onUpdate: function() {
 
-					currentHoverEl.style.transform = 'translateX(' + currentHoverEl.tween.x + '%)';
+					var transform = 'translateX(' + currentHoverEl.tween.x + '%)';
+
+					currentHoverEl.style.msProperty = transform;
+					currentHoverEl.style.webkitTransform = transform;
+					currentHoverEl.style.transform = transform;
 				},
 				onComplete: function() {
 

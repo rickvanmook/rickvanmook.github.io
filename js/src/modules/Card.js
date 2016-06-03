@@ -51,7 +51,7 @@ exports.constructor = function() {
 
 	function onScroll() {
 
-		var scrollTop = window.pageYOffset || document.scrollTop,
+		var scrollTop = window.pageYOffset || document.scrollTop || 0,
 			offset = _parent.getBoundingClientRect().top + scrollTop;
 
 		if(_windowHeight + scrollTop > offset && scrollTop < offset + _elementHeight) {
@@ -67,6 +67,8 @@ exports.constructor = function() {
 		_videoEl = null;
 		TweenLite.killTweensOf(_progress);
 
+		_parent.removeEventListener('mouseenter', onMouseOver);
+		_parent.removeEventListener('mouseleave', onMouseOut);
 		_parent.removeEventListener('mouseenter', onMouseOver);
 		_parent.removeEventListener('mouseleave', onMouseOut);
 
@@ -113,10 +115,24 @@ exports.constructor = function() {
 		loadImage();
 		redraw();
 
+		_parent.addEventListener('touchstart', onTouchStart);
+		_parent.addEventListener('touchend', onTouchEnd);
 		_parent.addEventListener('mouseenter', onMouseOver);
 		_parent.addEventListener('mouseleave', onMouseOut);
 
 		signals.SCROLLED.remove(onScroll);
+	}
+
+	function onTouchStart() {
+
+		_parent.removeEventListener('mouseenter', onMouseOver);
+		_parent.removeEventListener('mouseleave', onMouseOut);
+	}
+
+	function onTouchEnd() {
+
+		_parent.addEventListener('mouseenter', onMouseOver);
+		_parent.addEventListener('mouseleave', onMouseOut);
 	}
 
 	function loadImage() {
