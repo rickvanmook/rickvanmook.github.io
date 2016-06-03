@@ -11,6 +11,7 @@ exports.constructor = function() {
 	var _parent,
 		_videoSrc,
 		_isAlive,
+		_isInView,
 		_videoEl,
 		_sizingEl,
 		_canvasEl,
@@ -41,6 +42,7 @@ exports.constructor = function() {
 		_imgUrl = _imageEl.getAttribute('data-src');
 		_coverUrl = _coverEl.getAttribute('data-src');
 
+		_isInView = false;
 		_windowHeight = window.innerHeight;
 
 		signals.SCROLLED.add(onScroll);
@@ -110,6 +112,7 @@ exports.constructor = function() {
 
 	function inView() {
 
+		_isInView = true;
 		_parent.classList.add(CLASS_IS_VISIBLE);
 
 		loadImage();
@@ -236,6 +239,11 @@ exports.constructor = function() {
 		if(!_isAlive) {
 
 			redraw();
+		}
+
+		if(!_isInView) {
+
+			onScroll();
 		}
 	}
 
