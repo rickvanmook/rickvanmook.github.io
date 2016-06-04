@@ -1,14 +1,14 @@
 var ajaxRequest = require('../utils/ajaxRequest'),
-	resizeCanvas = require('../utils/resizeCanvas'),
 	signals = require('./signals'),
 	moduleFactory = require('./moduleFactory');
 
-var _doc = document,
+var ANIMATION_TIME = 0.25,
+
+	_doc = document,
 	_win = window,
 	_htmlEl,
 	_contentEl,
 	_maskEl,
-	_shouldShow = false,
 	_pendingClass = false,
 	_pendingContent = false,
 	_isHiding = false;
@@ -129,9 +129,11 @@ function showPage() {
 
 	tweenMask(0, function(){
 
+		var MODULE_FACTORY_DELAY = 0.15;
+
 		_maskEl.style.display = 'none';
 
-		TweenLite.delayedCall(0.15, function(){
+		TweenLite.delayedCall(MODULE_FACTORY_DELAY, function(){
 
 			moduleFactory.run(_contentEl);
 		})
@@ -151,7 +153,7 @@ function tweenMask(dest, callback) {
 		ease = Cubic.easeIn;
 	}
 
-	TweenLite.to(_maskEl.style, 0.25, {
+	TweenLite.to(_maskEl.style, ANIMATION_TIME, {
 		opacity: dest,
 		ease:ease,
 		onComplete: function(){

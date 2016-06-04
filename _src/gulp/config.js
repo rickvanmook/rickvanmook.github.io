@@ -12,7 +12,7 @@ exports.styles = {
 exports.uglify = {
 	preserveComments: 'some',
 	compress: {
-		drop_console: true
+		drop_console: true// eslint-disable-line
 	}
 };
 

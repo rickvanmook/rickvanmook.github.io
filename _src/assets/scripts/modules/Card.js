@@ -1,9 +1,7 @@
 var resizeCanvas = require('../utils/resizeCanvas'),
 	signals = require('../core/signals'),
-
+	ANIMATION_TIME = 0.5,
 	CLASS_IS_VISIBLE = 'is-visible';
-
-var COUNTER = 0;
 
 exports.selector = '.js-card';
 exports.constructor = function() {
@@ -17,7 +15,6 @@ exports.constructor = function() {
 		_canvasEl,
 		_context,
 		_progress,
-		_loadedCount,
 		_windowHeight,
 		_elementHeight,
 		_canvasWidth,
@@ -37,7 +34,6 @@ exports.constructor = function() {
 		_coverEl = el.getElementsByClassName('js-card__cover')[0];
 		_context = _canvasEl.getContext('2d');
 		_progress = {p:0};
-		_loadedCount = 0;
 		_videoSrc = _canvasEl.getAttribute('data-mp4');
 		_imgUrl = _imageEl.getAttribute('data-src');
 		_coverUrl = _coverEl.getAttribute('data-src');
@@ -89,7 +85,7 @@ exports.constructor = function() {
 
 		_videoEl.play();
 
-		TweenLite.to(_progress, 0.5, {
+		TweenLite.to(_progress, ANIMATION_TIME, {
 			p:1,
 			ease: Cubic.easeInOut
 		})
@@ -97,7 +93,7 @@ exports.constructor = function() {
 
 	function onMouseOut() {
 
-		TweenLite.to(_progress, 0.5, {
+		TweenLite.to(_progress, ANIMATION_TIME, {
 			p:0,
 			ease: Cubic.easeInOut,
 			onComplete:function(){
@@ -179,7 +175,7 @@ exports.constructor = function() {
 	function drawMask(progress) {
 
 		var firstHalfProgress = Math.min(1, progress * 2),
-			secondHalfProgress = Math.max(0, (progress - 0.5) * 2);
+			secondHalfProgress = Math.max(0, (progress - 0.5) * 2);// eslint-disable-line
 
 		_context.save();
 

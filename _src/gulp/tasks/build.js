@@ -5,8 +5,7 @@ module.exports = function(taskName) {
 
 	gulp.task(taskName, function (cb) {
 
-		cb = cb || function (e) {
-		};
+		cb = cb || function() {};
 
 		var args = ['styles', 'browserify'];
 
