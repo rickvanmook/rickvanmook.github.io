@@ -82,8 +82,8 @@
 	}
 }
 
-.foo, .bar, .foobar { display: block; float: left; }
-.foo, .bar {
+.header__name { display: block; float: left; }
+.header__name--first, .header__name--second {
 
 	@include fluid-value(margin-bottom, -5px, -7px);
 
@@ -103,7 +103,7 @@
 
 	@include mq(is-extra-small) {
 
-		.foo, .bar {
+		.header__name--first, .header__name--second {
 
 			display: none;
 		}
@@ -112,11 +112,11 @@
 	@media (pointer:fine) {
 		&:hover {
 
-			.foo {
+			.header__name--first {
 
 				@include fluid-value(width, 20px, 26px);
 			}
-			.bar {
+			.header__name--second {
 
 				@include fluid-value(width, 17px, 23px);
 				transition-delay: 75ms;
