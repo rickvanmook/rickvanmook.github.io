@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Open Loops
-thumb-jpg: /images/work-open-loops.jpg
-thumb-cover: /images/work-open-loops-cover.jpg
-thumb-mp4: /images/work-open-loops.mp4
+thumb-image: /work-open-loops.jpg
+thumb-cover: /work-open-loops-cover.jpg
+thumb-video: /work-open-loops.mp4
 year: 2010
 color: rgb(179, 187, 180)
 agency: Personal project
