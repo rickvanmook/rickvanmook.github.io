@@ -31,12 +31,12 @@
 	}
 
 	opacity: 0;
-	@include prefixed-transform(translateY(15%));
+	transform: translateY(15%);
 
 	&.is-visible {
 
 		opacity: 1;
-		@include prefixed-transform(translateY(0));
+		transform: translateY(0);
 		will-change: opacity;
 		transition: opacity 0.3s cubic-bezier(.25,.8,.25,1), transform 0.3s cubic-bezier(.25,.8,.25,1);
 	}
@@ -98,7 +98,7 @@
 	margin-bottom: 5px;
 	font-family: $font-serif;
 	color: $primary;
-	@include prefixed-transform(translate3d(0,0,0));
+	transform: translate3d(0,0,0);
 	@include fluid-value(font-size, 24px, 26px);
 }
 
@@ -108,6 +108,6 @@
 	font-family: $font-sans;
 	letter-spacing: 1px;
 	color: $copy-body;
-	@include prefixed-transform(translate3d(0, 0,0 ));
+	transform: translate3d(0,0,0);
 	font-size: 12px;
 }

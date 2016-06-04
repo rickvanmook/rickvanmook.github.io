@@ -1,5 +1,3 @@
-exports.clean = ['../assets/scripts/**', '../../assets/styles/**'];
-
 exports.browserify = {
 	entries: ['./assets/scripts/main.js'],
 	bundleName: 'main.js',

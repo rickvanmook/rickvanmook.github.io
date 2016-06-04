@@ -1,10 +1,9 @@
 var gulp = require('gulp'),
-	browserSync = require('../util/browserSync'),
 	runSequence = require('run-sequence');
 
 module.exports = function(taskName) {
 
-	gulp.task(taskName, ['clean'], function (cb) {
+	gulp.task(taskName, function (cb) {
 
 		cb = cb || function (e) {
 		};
@@ -13,16 +12,7 @@ module.exports = function(taskName) {
 
 		if (!global.isProd) {
 
-			browserSync.init({
-				server: {
-					baseDir: "./dist"
-				}
-			});
 			args.push('watch');
-
-		} else {
-
-			args.push('rev');
 		}
 
 		args.push(cb);

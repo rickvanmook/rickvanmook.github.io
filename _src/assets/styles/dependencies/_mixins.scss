@@ -26,15 +26,6 @@ $default-max-breakpoint: 1100px;
 // Utils
 // -----
 
-@mixin prefixed-transform($transform) {
-
-	-ms-transform: $transform;
-	-webkit-transform: $transform;
-	transform: $transform;
-
-}
-
-
 // Clamps the value of a property between two screen sizes.
 @mixin fluid-value(
 	$property,

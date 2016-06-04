@@ -5,11 +5,8 @@ var postcss = require('gulp-postcss'),
 
 	config = require('../config'),
 	gulp = require('gulp'),
-	gulpif = require('gulp-if'),
-	sourcemaps = require('gulp-sourcemaps'),
 	sass = require('gulp-sass'),
-	handleErrors = require('../util/handleErrors'),
-	browserSync = require('../util/browserSync');
+	handleErrors = require('../util/handleErrors');
 
 module.exports = function(taskName) {
 
@@ -23,17 +20,12 @@ module.exports = function(taskName) {
 
 
 		return gulp.src(config.styles.src)
-			.pipe(sourcemaps.init())
 			.pipe(sass({
-				sourceComments: !global.isProd,
-				sourceMap: 'sass',
 				outputStyle: global.isProd ? 'compressed' : 'compact'
 			}))
 			.on('error', handleErrors)
 			.pipe(postcss(processors))
 			.on('error', handleErrors)
-			.pipe(sourcemaps.write('./'))
-			.pipe(gulp.dest(config.styles.dest))
-			.pipe(gulpif(!global.isProd, browserSync.stream()))
+			.pipe(gulp.dest(config.styles.dest));
 	});
 };
