@@ -12,7 +12,7 @@ module.exports = function(taskName) {
 
 		if (!global.isProd) {
 
-			args.push('watch');
+			args.push('watch', 'eslint');
 		}
 
 		args.push(cb);

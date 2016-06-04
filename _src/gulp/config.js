@@ -15,3 +15,5 @@ exports.uglify = {
 		drop_console: true
 	}
 };
+
+exports.eslint = ['./gulp/**/*.js', './assets/scripts/**/*.js', '!./assets/scripts/libs/**/*.js'];
