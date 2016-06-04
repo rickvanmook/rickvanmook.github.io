@@ -1,3 +1,6 @@
+var STATUS_OK= 200,
+	READY_STATE_DONE = 4;
+
 module.exports = function(url, callback, settings) {
 
 	if (!settings) {
@@ -19,9 +22,9 @@ module.exports = function(url, callback, settings) {
 
 		var response;
 
-		if (request.readyState === 4) {
+		if (request.readyState === READY_STATE_DONE) {
 
-			if (request.status === 200) {
+			if (request.status === STATUS_OK) {
 
 				response = request.response;
 

@@ -12,6 +12,8 @@ exports.styles = {
 exports.uglify = {
 	preserveComments: 'some',
 	compress: {
-		drop_console: true
+		drop_console: true// eslint-disable-line
 	}
 };
+
+exports.eslint = ['./gulp/**/*.js', './assets/scripts/**/*.js', '!./assets/scripts/libs/**/*.js'];

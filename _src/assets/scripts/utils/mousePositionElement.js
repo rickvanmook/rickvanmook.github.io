@@ -12,7 +12,8 @@ function mouseTarget(e) {
 		target = e.srcElement;
 	}
 
-	if(target.nodeType == 3) {// defeat Safari bug
+	// defeat Safari bug
+	if(target.nodeType == 3) {// eslint-disable-line
 
 		target = target.parentNode;
 	}
@@ -55,7 +56,8 @@ function findPos(obj) {
 		do {
 			curleft += obj.offsetLeft;
 			curtop += obj.offsetTop;
-		} while (obj = obj.offsetParent);
+			obj = obj.offsetParent;
+		} while (obj.offsetParent);
 	}
 
 	return {

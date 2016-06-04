@@ -62,7 +62,7 @@ exports.constructor = function() {
 
 		_el.addEventListener(MOUSE_LEAVE_EVENT, onMouseOut);
 
-		function onMouseOut(e) {
+		function onMouseOut() {
 
 			tweenTo(100, true);
 
@@ -72,9 +72,10 @@ exports.constructor = function() {
 
 		function tweenTo(newX, remove) {
 
-			var distance = (newX - currentHoverEl.tween.x) / 100;
+			var distance = (newX - currentHoverEl.tween.x) / 100,
+				MAX_ANIMATION_TIME = 0.35;
 
-			TweenLite.to(currentHoverEl.tween, 0.35 * distance, {
+			TweenLite.to(currentHoverEl.tween, MAX_ANIMATION_TIME * distance, {
 				x: newX,
 				ease: Cubic.easeInOut,
 				onUpdate: function() {

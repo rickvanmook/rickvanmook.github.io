@@ -1,5 +1,3 @@
-var history = require('../core/history');
-
 exports.selector = '.js-analytics';
 
 exports.constructor = function() {

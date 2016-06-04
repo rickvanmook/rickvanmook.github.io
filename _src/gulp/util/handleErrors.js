@@ -2,9 +2,11 @@ var notify = require('gulp-notify');
 
 module.exports = function(error) {
 
-  if( !global.isProd ) {
+  var args;
 
-    var args = Array.prototype.slice.call(arguments);
+  if(!global.isProd ) {
+
+    args = Array.prototype.slice.call(arguments);
 
     // Send error to notification center with gulp-notify
     notify.onError({
