@@ -1,0 +1,62 @@
+@mixin mq($point) {
+	@if $point == is-extra-small {
+		@media (max-width: 374px) { @content; }
+	}
+	@else if $point == is-small {
+		@media (max-width: 499px) { @content; }
+	}
+	@else if $point == is-medium {
+		@media (max-width: 767px) { @content; }
+	}
+	@else if $point == is-large {
+		@media (max-width: 1023px) { @content; }
+	}
+	@else if $point == is-extra-large {
+		@media (max-width: 1099px) { @content; }
+	}
+}
+
+// Defaults
+// --------
+
+$default-min-breakpoint: 320px;
+$default-max-breakpoint: 1100px;
+
+
+// Utils
+// -----
+
+// Clamps the value of a property between two screen sizes.
+@mixin fluid-value(
+	$property,
+	$min-value,
+	$max-value,
+	$min-breakpoint: $default-min-breakpoint,
+	$max-breakpoint: $default-max-breakpoint) {
+
+	$diff-value: strip-unit($max-value - $min-value);
+	$diff-breakpoint: strip-unit($max-breakpoint - $min-breakpoint);
+
+	#{$property}: calc(#{$min-value} + #{$diff-value} *((100vw - #{$min-breakpoint}) / #{$diff-breakpoint}));
+
+	@media screen and (max-width: $min-breakpoint) {
+
+		#{$property}: $min-value;
+	}
+
+	@media screen and (min-width: $max-breakpoint) {
+
+		#{$property}: $max-value;
+	}
+}
+
+// Removes the unit of a value
+@function strip-unit($value) {
+
+	@if type-of($value) == 'number' and not unitless($value) {
+
+		@return $value / ($value * 0 + 1);
+	}
+
+	@return $value;
+}

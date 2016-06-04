@@ -1,9 +1,9 @@
 <div class="card js-card">
 	<a class="card__link js-analytics" href="{{ post.href }}" target="_blank" data-category="Home" data-label="{{post.title}}">
 		<div class="card__image-wrapper js-card__size" style="background-color:{{ post.color }}">
-			<img class="card__media card__media--image js-card__image" data-src="{{ post.thumb-jpg }}" />
-			<img class="card__media card__media--cover js-card__cover" data-src="{{ post.thumb-cover }}" />
-			<canvas class="card__media js-card__canvas" data-jpg="" data-mp4="{{ post.thumb-mp4 }}">
+			<img class="card__media card__media--image js-card__image" data-src="/assets/images/{{ post.thumb-image }}" />
+			<img class="card__media card__media--cover js-card__cover" data-src="/assets/images/{{ post.thumb-cover }}" />
+			<canvas class="card__media js-card__canvas" data-mp4="/assets/videos/{{ post.thumb-video }}">
 			</canvas>
 		</div>
 		<div class="card__content">
