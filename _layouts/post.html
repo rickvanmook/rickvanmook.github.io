@@ -7,15 +7,121 @@ class: post
   <div class="post__content">
     <header class="post__header">
       <div class="post__header__title">
+        <div class="post__header__title__number">JUN<br>2014</div>
         <h1 class="post__header__title__label">{{ page.title }}</h1>
       </div>
       <div class="post__header__date">
-        <a href="{{ page.href }}" target="_blank">{{page.href}}</a>
-
+        {% if page.note %}
+        {{ page.note }}<br>
+        {% endif %}
+        {% if page.agency %}
+        <b>Agency:</b> {{ page.agency }}<br>
+        {% endif %}
+        {% if page.client %}
+        <b>Client:</b> {{ page.client }}<br>
+        {% endif %}
+        {% if page.role %}
+        <b>Role:</b> {{ page.role }}<br>
+        {% endif %}
+        <br>
+        <b>{{ page.cta.label }}{% if page.cta.href %}:{% endif %}</b>
+        {% if page.cta.href %}
+        <a href="{{ page.cta.href }}" target="_blank">{{ page.cta.href }}</a>
+        {% endif %}
       </div>
     </header>
-    <p>
-      More info coming soon.
-    </p>
+
+    {% if page.vimeo %}
+      {% include vimeo.html config=page.vimeo %}
+    {% endif %}
+
+    {{ page.content }}
+
+    {% if page.gallery %}
+      {% include gallery.html config=page.gallery %}
+    {% endif %}
+
+    {% if page.awards %}
+      <h2>Honors & Awards</h2>
+      <ul class="about__list">
+        {% for award in page.awards %}
+        <li class="about__list__item">
+          <b>{{award.name}}</b> <i>/ {{award.type}} / {{award.date}}</i>
+        </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <footer class="card-grid">
+
+      <div class="post__footer__content">
+        <div class="post__footer__title">More Projects</div>
+        <ul class="post__footer__link-wrapper">
+
+          {% if page.next == nil %}
+
+            {% for post in site.related_posts limit:2 %}
+              <li class="post__footer__link">
+                {% include card.html
+                  url=post.url
+                  title=post.title
+                  role=post.role
+                  color=post.color
+                  thumb-image=post.thumb-image
+                  thumb-cover=post.thumb-cover
+                  thumb-video=post.thumb-video
+                %}
+              </li>
+            {% endfor %}
+
+          {% else %}
+
+            <li class="post__footer__link">
+              {% include card.html
+              url=page.next.url
+              title=page.next.title
+              role=page.next.role
+              color=page.next.color
+              thumb-image=page.next.thumb-image
+              thumb-cover=page.next.thumb-cover
+              thumb-video=page.next.thumb-video
+              %}
+            </li>
+
+
+            <li class="post__footer__link">
+              {% if page.previous %}
+                {% include card.html
+                  url=page.previous.url
+                  title=page.previous.title
+                  role=page.previous.role
+                  color=page.next.color
+                  thumb-image=page.previous.thumb-image
+                  thumb-cover=page.previous.thumb-cover
+                  thumb-video=page.previous.thumb-video
+                %}
+              {% else %}
+                {% for post in site.related_posts limit:1 %}
+                  {% include card.html
+                    url=post.url
+                    title=post.title
+                    role=post.role
+                    color=post.color
+                    thumb-image=post.thumb-image
+                    thumb-cover=post.thumb-cover
+                    thumb-video=post.thumb-video
+                  %}
+                {% endfor %}
+              {% endif %}
+            </li>
+
+          {% endif %}
+          </li>
+
+
+
+        </ul>
+      </div>
+    </footer>
   </div>
 </article>

@@ -10,6 +10,10 @@
   type: Food & Beverage Site Honoree
   project: Mountain Dew
   date: 2015
+- name: The Webby Awards
+  type: Technical Achievement - Official honoree
+  project: Sound City Project
+  date: 2015
 
 - name: Addy
   type: Gold District Winner
@@ -50,10 +54,6 @@
 - name: SXSW
   type: People’s Choice, Shortlist
   project: Make Your Money Matter
-  date: 2014
-- name: The Webby Awards
-  type: Technical Achievement - Official honoree
-  project: Sound City Project
   date: 2014
 
 - name: Awwwards

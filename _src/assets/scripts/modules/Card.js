@@ -62,14 +62,20 @@ exports.constructor = function() {
 
 		_isAlive = false;
 
-		_videoEl = null;
 		TweenLite.killTweensOf(_progress);
 
+		_videoEl = null;
+		_sizingEl = null;
+		_canvasEl = null;
+		_imageEl = null;
+		_coverEl = null;
+
 		_parent.removeEventListener('mouseenter', onMouseOver);
 		_parent.removeEventListener('mouseleave', onMouseOut);
 		_parent.removeEventListener('mouseenter', onMouseOver);
 		_parent.removeEventListener('mouseleave', onMouseOut);
 
+		signals.RESIZED.remove(onResize);
 		signals.SCROLLED.remove(onScroll);
 	}
 
@@ -176,6 +182,11 @@ exports.constructor = function() {
 
 		var firstHalfProgress = Math.min(1, progress * 2),
 			secondHalfProgress = Math.max(0, (progress - 0.5) * 2);// eslint-disable-line
+
+		if(!_coverEl || !_videoEl) {
+			
+			return;
+		}
 
 		_context.save();
 

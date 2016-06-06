@@ -23,11 +23,18 @@
 	margin: 0 $gutter #{$gutter * 2};
 	position: relative;
 	float: left;
+
 	width: calc(50% - #{$gutter * 2});
 
 	@include mq(is-medium) {
 
 		width: calc(100% - #{$gutter * 2});
+	}
+
+	.post__footer__link & {
+
+		margin: 0;
+		width: 100%;
 	}
 
 	opacity: 0;
@@ -88,7 +95,13 @@
 
 .card__content {
 
+
 	padding: 14px 20px 20px;
+
+	.post__footer__link & {
+
+		padding: 14px 0 20px;
+	}
 
 }
 

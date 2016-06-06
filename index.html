@@ -10,6 +10,15 @@ modifier: home
 </div>
 <div class="card-grid">
   {% for post in site.posts %}
-  {% include card.html %}
+  {% include card.html
+    url=post.url
+    title=post.title
+    role=post.role
+    color=post.color
+    thumb-image=post.thumb-image
+    thumb-cover=post.thumb-cover
+    thumb-video=post.thumb-video
+  %}
   {% endfor %}
+
 </div>

@@ -1,12 +1,42 @@
 ---
 layout: post
-title: Play Your Future
-thumb-image: /work-aegon.jpg
-thumb-cover: /work-aegon-cover.jpg
-thumb-video: /work-aegon.mp4
+
 year: 2012
+title: Play Your Future
+
 agency: Momkai
-color: rgb(211, 204, 188)
+client: AEGON
 role: Supporting Front End Developer
-href: http://speeljetoekomst.nu
+cta:
+  label: Visit Website
+  href: http://speeljetoekomst.nu
+
+color: rgb(211, 204, 188)
+thumb-image: aegon/thumb-image.jpg
+thumb-cover: aegon/thumb-frame.jpg
+thumb-video: aegon/thumb-video.mp4
+
+vimeo:
+  id: 53425566
+  credit: Video by Momkai
+gallery:
+  path-prefix: aegon/gallery-
+  images: [1.jpg,2.jpg,3.jpg,4.jpg,5.jpg]
+awards:
+  - name: Red Dot Design Award
+    type: Grand Prix - Website
+    date: 2013
+  - name: Red Dot Design Award
+    type: Best of the Best - Interface Design
+    date: 2013
+  - name: Red Dot Design Award
+    type: Best of the Best - Online Communication
+    date: 2013
 ---
+Description:
+------------
+AEGON launched an online platform that was created to help people learn more about how events and choices in life affect their pension.
+
+Role:
+-----
+I was one of three supporting developers on this project responsible for the base structure of the website and the navigation between sections.

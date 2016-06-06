@@ -1,17 +1,18 @@
 <div class="card js-card">
-	<a class="card__link js-analytics" href="{{ post.href }}" target="_blank" data-category="Home" data-label="{{post.title}}">
-		<div class="card__image-wrapper js-card__size" style="background-color:{{ post.color }}">
-			<img class="card__media card__media--image js-card__image" data-src="/assets/images/{{ post.thumb-image }}" />
-			<img class="card__media card__media--cover js-card__cover" data-src="/assets/images/{{ post.thumb-cover }}" />
-			<canvas class="card__media js-card__canvas" data-mp4="/assets/videos/{{ post.thumb-video }}">
+
+	<a class="card__link js-analytics" href="{{ include.url }}" data-category="Home" data-label="{{include.title}}">
+		<div class="card__image-wrapper js-card__size" style="background-color:{{ include.color }}">
+			<img class="card__media card__media--image js-card__image" data-src="/assets/media/{{ include.thumb-image }}" />
+			<img class="card__media card__media--cover js-card__cover" data-src="/assets/media/{{ include.thumb-cover }}" />
+			<canvas class="card__media js-card__canvas" data-mp4="/assets/media/{{ include.thumb-video }}">
 			</canvas>
 		</div>
 		<div class="card__content">
 			<div class="card__content__title">
-				{{ post.title }}
+				{{ include.title }}
 			</div>
 			<div class="card__content__sub-title">
-				{{ post.role }}
+				{{ include.role }}
 			</div>
 
 		</div>
