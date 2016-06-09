@@ -15,6 +15,10 @@ color: rgb(180, 180, 186)
 thumb-image: scp/thumb-image.jpg
 thumb-cover: scp/thumb-frame.jpg
 thumb-video: scp/thumb-video.mp4
+
+gallery:
+  path-prefix: scp/gallery-
+  images: [1.jpg,2.jpg,3.jpg,4.jpg,5.jpg]
 awards:
   - name: The Webby Awards
     type: Technical Achievement - Official honoree
@@ -43,7 +47,4 @@ We built a custom “soundhead,” complete with four 3D printed ears, that allo
 
 What I Did:
 -----------
-I was responsible for all web related development. Including a custom Google Maps implementation, 3D audio engine with complex WebAudio manipulation plus all HTML, CSS and interface animations.
-
-
-### *3D rotating audio demo*
+I was responsible for all web related development. Including a 3D audio engine with complex WebAudio manipulation, a custom Google Maps implementation plus all HTML, CSS and interface animations.

@@ -35,13 +35,26 @@ class: post
       {% include vimeo.html config=page.vimeo %}
     {% endif %}
 
+    {% if page.description %}
+      <h2>About the Project</h2>
+      <p>{{ page.description }}</p>
+    {% endif %}
+
+    {% if page.work %}
+      <h2>What I Did</h2>
+      <p>{{ page.work }}</p>
+    {% endif %}
+
     {{ page.content }}
 
     {% if page.gallery %}
-      {% include gallery.html config=page.gallery %}
+      <div class="content__divider">
+        {% include gallery.html config=page.gallery %}
+      </div>
     {% endif %}
 
     {% if page.awards %}
+    <div class="content__divider">
       <h2>Honors & Awards</h2>
       <ul class="about__list">
         {% for award in page.awards %}
@@ -50,11 +63,12 @@ class: post
         </li>
         {% endfor %}
       </ul>
+    </div>
     {% endif %}
 
     <footer class="card-grid">
 
-      <div class="post__footer__content">
+      <div class="post__footer__content content__divider">
         <div class="post__footer__title">More Projects</div>
         <ul class="post__footer__link-wrapper">
 

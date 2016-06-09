@@ -33,10 +33,11 @@ awards:
     type: Best of the Best - Online Communication
     date: 2013
 ---
-Description:
-------------
+
+About the Project
+-----------------
 AEGON launched an online platform that was created to help people learn more about how events and choices in life affect their pension.
 
-Role:
------
-I was one of three supporting developers on this project responsible for the base structure of the website and the navigation between sections.
+What I Did
+----------
+I was one of three supporting developers on this project responsible for the base structure of the website, the navigation between sections and managing the speech bubbles of the guide.

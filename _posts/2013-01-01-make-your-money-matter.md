@@ -15,9 +15,9 @@ thumb-image: pscu/thumb-image.png
 thumb-cover: pscu/thumb-frame.jpg
 thumb-video: pscu/thumb-video.mp4
 
-vimeo:
-  id: 115935312
-  credit: Video by Firstborn
+gallery:
+  path-prefix: pscu/gallery-
+  images: [1.jpg,2.jpg,3.jpg,4.jpg]
 awards:
   - name: Addy
     type: Gold District Winner
@@ -44,12 +44,11 @@ awards:
     type: Site of The Day
     date: 2013
 ---
-Description:
-------------
-The Make Your Money Matter movement highlights the positive social impact that credit unions make. An interactive narrative experience that follows the journey of a typical deposit through big banks versus credit unions.
 
-Role:
------
-Lead developer for this website, developing a custom scrolling animation framework and optimised SVG pipeline.
+About the Project
+-----------------
+The Make Your Money Matter movement highlights the positive social impact that credit unions make. We developed an animated scrolling experience that follows the journey of a typical deposit through big banks versus credit unions.
 
-### *Animation framework*
+What I Did
+----------
+As Lead Developer for this website I was responsible for developing the custom scrolling animation framework for tablet and desktop browsers. With it, I was able to quickly animate and fine-tune all the different scenes of the project.

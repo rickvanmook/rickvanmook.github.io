@@ -1,7 +1,5 @@
 <div class="gallery">
 	{% for image in include.config.images %}
-	<div class="content__media-wrapper">
-		<img class="gallery__slide content__media" src="/assets/media/{{ include.config.path-prefix }}{{ image }}" />
-	</div>
+	<img class="gallery__image" src="/assets/media/{{ include.config.path-prefix }}{{ image }}" />
 	{% endfor %}
 </div>

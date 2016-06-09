@@ -37,10 +37,10 @@ awards:
     date: 2011
 ---
 
-Description:
-------------
-Momkai and musician Pete Philly harnessed the power of sharing and work to maintain the audience's focus by releasing a new track and hi-def super slow-mo video every week for 14 weeks.
+About the Project
+-----------------
+Musician Pete Philly wanted his first solo album to be available for free online. We developed a concept to maintain the audience's focus by releasing a new track and hi-def super slow-mo video every week for 14 weeks.
 
-Role:
------
-Lead Flash developer. Responsible for the site architecture, full canvas background video, page transitions, multi-language support, audio player, HD video player and overall performance optimizations.
+What I Did
+----------
+As Lead Flash Developer I was responsible for the front-end architecture, full canvas background video, page transitions, multi-language support, audio player, video player and overall performance optimizations.

@@ -26,10 +26,11 @@ awards:
     type: Gold
     date: 2012
 ---
-Description:
-------------
+
+About the Project
+-----------------
 This site was built to promote the 2011 G-Star global women’s night. Women all over the world were able to locate their locale party, register their attendance and come back afterwards to see if they made it into the wall-to-wall interactive gallery.
 
-Role:
------
-Lead Flash Developer. Responsible for the base architecture of the website, navigation between sections, the sign-up form and overseeing the development of the other sections of the project.
+What I Did
+----------
+As Lead Flash Developer I was responsible for the base architecture of the website, lazy loading sub-sections and the sign-up form.

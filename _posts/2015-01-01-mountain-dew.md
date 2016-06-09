@@ -26,13 +26,12 @@ awards:
     type: Food & Beverage Site Honoree
     date: 2015
 ---
-About the Project:
-------------
-Redesign for the entire Mountain Dew universe of programs, products and content with a mobile-first approach.
 
-What I Did:
------
-Lead frontend developer, responsible for setting up HTML, CSS and JavaScript structure.
+About the Project
+-----------------
+Redesign for official Mountain Dew website with a mobile-first approach.
 
-### *Responsive pods*
+What I Did
+----------
+As Lead Frontend Developer I responsible for setting up the HTML, CSS and JavaScript structure of the site.
 

@@ -16,13 +16,16 @@ thumb-image: js1k/thumb-image.png
 thumb-cover: js1k/thumb-frame.png
 thumb-video: js1k/thumb-video.mp4
 ---
-Description:
-------------
+
+About the Project
+-----------------
 This is my submission for the 2014 JS1K competition. It's a code golfing competition where you have to create a demo within 1024 bytes of JavaScript.
 
-Role:
------
-I thought it would be more fun to minify the code by hand rather than using a minifier. So I started out writing entry.js with the minifications in mind.
+What I Did
+----------
+Instead of using a minifier I thought it would be more fun to minify the code by hand. I ended up writing a little 'game-engine' that supports:
 
-
-### *Drawing rectangles*
+- Walking, jumping and swimming animation
+- Hit detection
+- Endless scrolling world
+- Expending sea when resizing the browser
