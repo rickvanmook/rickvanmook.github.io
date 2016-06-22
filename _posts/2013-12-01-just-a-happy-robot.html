@@ -1,0 +1,50 @@
+---
+layout: post
+
+year: 2014
+month: Mar
+title: Just a Happy Robot
+
+agency: Personal Project
+client: JS1K
+role: JavaScript Golfer
+cta:
+  label: View on CodePen
+  href: http://codepen.io/rvmook/pen/wGOgLr
+
+color: rgb(15, 15, 15)
+thumb-image: js1k/thumb-image.png
+thumb-cover: js1k/thumb-frame.png
+thumb-video: js1k/thumb-video.mp4
+---
+
+<h2 id="about-the-project">About the Project</h2>
+<p>
+This is my submission for the 2014 JS1K competition. It's a code golfing competition where you have to create a demo within 1024 bytes of JavaScript.
+</p>
+<h2 id="what-i-did">What I Did</h2>
+<p>Instead of using a minifier I thought it would be more fun to minify the code by hand. I ended up writing a little 'game-engine' that supports:
+</p>
+<ul>
+  <li>Walking, jumping and swimming animation</li>
+  <li>Hit detection</li>
+  <li>Endless scrolling world</li>
+  <li>Expending sea when resizing the browser</li>
+</ul>
+
+</div>
+
+{% highlight javascript %}
+/**
+ * An entry for JS1K 2014, a competition to create
+ * a JavaScript demo within 1kb.
+ *
+ * Unminified code is up on Github:
+ * https://github.com/rvmook/js1k-just-a-happy-robot
+ */
+function d(e,f,g){i=0;while(k=e.match(/\w\d*/g)[i++]){c.fillStyle=l[k[0]]||'000';c.f((+k[1]*G+((G-1)*-5)+f)*4,4*(+k[2]+g),4*G*((k[3]|0)+1),4*((k[4]|0)+1))}return d}m=n=o=p=q=r=0;l={37:-1,39:t=j=1,32:'if(!n)n=o=-4;0',w:'#fff',1:v='057w',2:'1702w26w354w542w63b64',3:'6702w56w054',4:v+'022w1104b12w432w5202b53w34',5:v+'1004w012b11'};b.onkeyup=b.onkeydown=function(e){j=(p=e.type[6]?eval(l[e.keyCode])^0||p:e.keyCode>36?0:p)||j};c.f=c.fillRect;u='w18w7';v='00245300241115430000254300243';setInterval("w=a.width/4;c.f(B=0,0,w*4,x=a.height);y=(Math.max(232,w+32)/8)|0;z=(x/8|0)-9;F=m+p;G=Math.floor(1+(s+F)/8)%y;while(G<0)G=y+G;E=!+v[G];_=+(t%18<9);if(E&&r==z||r<z){m=F;q=E?z:z-9}r+=r>z?-r:o++;if(r>q&&o>0){n=o=0;r=q}G=j;d('w1063b4101b6101'+['w29w69',u+7,u+8,u+9][H=n?2:p?t%4:0],C=s-4,D=+'6645'[H]+r+(E?_:0))('w106w2142b51b421',C,+'5455'[H]+D)('w00w80',C,+'7676'[H]+D);G=1;while(B<y){A=B++*8-m;while(A<-16)A+=y*8;while(A>w+8)A-=y*8;eval('d(\"b0777w'+(l[v[B]]||['081w271w481w671b069','291w081w691w481'][_])+'b\",A,z+3)')}t++",s=82)
+{% endhighlight %}
+
+<div class="post__content">
+
+    <iframe src="/assets/demos/js1k.html"></iframe>
