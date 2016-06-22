@@ -2,6 +2,7 @@
 layout: post
 
 year: 2013
+month: Dec
 title: Make Your Money Matter
 
 agency: Firstborn

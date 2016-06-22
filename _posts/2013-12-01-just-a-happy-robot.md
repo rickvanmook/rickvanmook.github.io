@@ -2,6 +2,7 @@
 layout: post
 
 year: 2014
+month: Mar
 title: Just a Happy Robot
 
 agency: Personal Project

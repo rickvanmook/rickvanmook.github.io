@@ -2,6 +2,7 @@
 layout: post
 
 year: 2010
+month: Oct
 title: Open Loops
 
 agency: Momkai

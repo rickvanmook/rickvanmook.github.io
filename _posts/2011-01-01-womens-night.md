@@ -2,6 +2,7 @@
 layout: post
 
 year: 2011
+month: Nov
 title: G-Star Women’s Night
 
 agency: Momkai

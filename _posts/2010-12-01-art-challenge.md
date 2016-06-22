@@ -2,6 +2,7 @@
 layout: post
 
 year: 2010
+month: Nov
 title: Nike Art Challenge
 
 agency: Personal project

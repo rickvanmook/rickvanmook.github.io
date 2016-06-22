@@ -2,6 +2,7 @@
 layout: post
 
 year: 2012
+month: Nov
 title: Play Your Future
 
 agency: Momkai

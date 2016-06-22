@@ -2,6 +2,7 @@
 layout: post
 
 year: 2014
+month: Oct
 title: Sound City Project
 
 agency: Personal Project
