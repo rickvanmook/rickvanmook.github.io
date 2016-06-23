@@ -2,7 +2,7 @@
 	<title>Just a Happy Robot Demo</title>
 	<meta charset="utf-8">
 	<style>
-		html, body { margin: 0; padding: 0; border: 0; }
+		html, body { margin: 0; padding: 0; border: 0; background-color: #000; }
 		#c { display: block; } /* kill scrollbars from hell */
 	</style>
 </head>
@@ -45,10 +45,15 @@
 </script>
 <script>
 
-	/* Added f.preventDefault();f.stopPropagation(); to key listeners to prevent conflicts in iFrame */
+	/*
+		Adjusted original script For better iFrame support:
+			- Added f.preventDefault();f.stopPropagation(); to key listeners to prevent scroll conflicts
+			- Added D=x/2-8 for better responsive robot positioning on resize
+	*/
 
 	// start of submission //
-	function d(f,g,h){i=0;while(j=f.match(/\w\d*/g)[i++]){c.fillStyle=k[j[0]]||'#000';c.f(4*(+j[1]*l+((l-1)*-5)+g),4*(+j[2]+h),4*l*((j[3]|0)+1),4*((j[4]|0)+1))}return d}m=n=o=p=q=r=0;k={37:-1,39:s=t=1,32:'if(!n)n=o=-4;0',w:'#fff',1:u='057w',2:'1702w26w354w542w63b64',3:'6702w56w054',4:u+'022w1104b12w432w5202b53w34',5:u+'1004w012b11'};b.onkeyup=b.onkeydown=function(f){f.preventDefault();f.stopPropagation();t=(p=f.type[6]?eval(k[f.keyCode])^0||p:f.keyCode>36?0:p)||t};c.f=c.fillRect;v='w18w7';w='00245300241115430000254300243';setInterval("x=a.width/4;y=(Math.max(232,x+32)/8)|0;c.f(z=0,0,x*4,A=a.height);B=m+p;C=Math.floor(1+(D+B)/8)%y;while(C<0)C=y+C;E=!+w[C];F=(A/8|0)-9;if(E&&r==F||r<F){m=B;q=E?F:F-9}r+=r>F?-r:o++;if(r>q&&o>0){n=o=0;r=q}G=s%18<9;l=t;d('w1063b4101b6101'+['w29w69',v+7,v+8,v+9][H=n?2:p?s%4:0],I=D-4,J=+'6645'[H]+r+(E&&G))('w106w2142b51b421',I=D-4,+'5455'[H]+J)('w00w80',I=D-4,+'7676'[H]+J);l=1;while(z<y){K=z++*8-m;while(K<-16)K+=y*8;while(K>x+8)K-=y*8;d('b0777w'+(k[w[z]]||['081w271w481w671b069','291w081w691w481'][+G])+'b',K,F+3)}s++",D=82)
+
+	function d(f,g,h){i=0;while(j=f.match(/\w\d*/g)[i++]){c.fillStyle=k[j[0]]||'#000';c.f(4*(+j[1]*l+((l-1)*-5)+g),4*(+j[2]+h),4*l*((j[3]|0)+1),4*((j[4]|0)+1))}return d}m=n=o=p=q=r=0;k={37:-1,39:s=t=1,32:'if(!n)n=o=-4;0',w:'#fff',1:u='057w',2:'1702w26w354w542w63b64',3:'6702w56w054',4:u+'022w1104b12w432w5202b53w34',5:u+'1004w012b11'};b.onkeyup=b.onkeydown=function(f){f.preventDefault();f.stopPropagation();t=(p=f.type[6]?eval(k[f.keyCode])^0||p:f.keyCode>36?0:p)||t};c.f=c.fillRect;v='w18w7';w='00245300241115430000254300243';setInterval("x=a.width/4;D=x/2-8;y=(Math.max(232,x+32)/8)|0;c.f(z=0,0,x*4,A=a.height);B=m+p;C=Math.floor(1+(D+B)/8)%y;while(C<0)C=y+C;E=!+w[C];F=(A/8|0)-9;if(E&&r==F||r<F){m=B;q=E?F:F-9}r+=r>F?-r:o++;if(r>q&&o>0){n=o=0;r=q}G=s%18<9;l=t;d('w1063b4101b6101'+['w29w69',v+7,v+8,v+9][H=n?2:p?s%4:0],I=D-4,J=+'6645'[H]+r+(E&&G))('w106w2142b51b421',I=D-4,+'5455'[H]+J)('w00w80',I=D-4,+'7676'[H]+J);l=1;while(z<y){K=z++*8-m;while(K<-16)K+=y*8;while(K>x+8)K-=y*8;d('b0777w'+(k[w[z]]||['081w271w481w671b069','291w081w691w481'][+G])+'b',K,F+3)}s++",82);
 	// end of submission //
 </script>
 
