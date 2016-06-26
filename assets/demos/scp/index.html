@@ -1,0 +1,61 @@
+<html><head>
+	<title>Sound City Project Demo</title>
+	<meta charset="utf-8">
+	<style>
+		html, body { margin: 0; padding: 0; border: 0; background-color: #000; }
+	</style>
+</head>
+<body>
+
+	<script>
+
+		/*
+
+		    TODO: BLOG TASKS
+
+			1. Show how to create multi channel audio
+			2. Play audio with buffers
+			3. Play individual channels
+			4. Rotate audio
+			5. Cut up audio
+			6. Load cut up audio
+
+
+			1. Play audio with buffers
+
+			TODO: CODING TASKS
+
+			2. Play individual channels
+			3. Rotate audio
+			4. Load cut up audio
+		 */
+
+
+		function noop() {}
+	</script>
+
+	<script src="audioContext.js"></script>
+	<script src="supportsAudioFormat.js"></script>
+	<script src="q.js"></script>
+	<script src="ajaxRequest.js"></script>
+	<script src="soundLoader.js"></script>
+	<script src="audioPlayer.js"></script>
+<script>
+
+	var mainGain = audioContext.createGain(),
+		merger = audioContext.createChannelMerger(2);
+
+	merger.connect(mainGain);
+	mainGain.connect(audioContext.destination);
+
+	function updateSource(newSource) {
+
+		newSource.connect(merger);
+	}
+
+	loadNextSound('soundscape');
+
+
+</script>
+</body>
+</html>
