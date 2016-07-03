@@ -33,27 +33,19 @@
 		position: relative;
 		word-wrap: break-word;
 		background-color: #252830;
-		padding: 120px 0;
-		margin: -60px 0;
 		font-size: 12px;
 		line-height: 1.5;
+
+		@include fluid-value(padding-top, 60px, 120px);
+		@include fluid-value(padding-bottom, 60px, 120px);
+		@include fluid-value(margin-top, -30px, -60px);
+		@include fluid-value(margin-bottom, -30px, -60px);
 
 		pre, p {
 
 			position: relative;
 
-			@include mq(is-small) {
-
-				width: 80%;
-				padding: 0 9.56%;
-			}
-
-			@include mq(is-large) {
-
-				width: 60%;
-			}
-
-			width: 100%;
+			width: 90%;
 			max-width: 826px;
 			margin: 0 auto;
 			padding: 0 5%;
@@ -90,6 +82,11 @@
 	@include fluid-value(margin-top, 15px, 30px);
 	@include fluid-value(padding-top, 15px, 30px);
 	border-top: 1px solid #e9e9ea;
+
+	&:last-child {
+
+		margin-bottom: 0;
+	}
 }
 
 .content__credit {
@@ -97,8 +94,7 @@
 	font-family: $font-sans;
 	width: 80%;
 	@include fluid-value(font-size, 10px, 12px);
-	@include fluid-value(margin-top, 5px, 10px);
-	@include fluid-value(margin-left, 5px, 10px);
+	@include fluid-value(margin-top, 10px, 15px);
 	font-style: italic;
 }
 
@@ -179,7 +175,7 @@
 		font-family: $font-sans;
 		list-style: initial;
 		@include fluid-value(padding-left, 25px, 50px);
-		@include fluid-value(font-size, 10px, 16px);
+		@include fluid-value(font-size, 12px, 16px);
 	}
 }
 
@@ -243,7 +239,6 @@
 
 .post__footer__content {
 
-	@include fluid-value(margin-top, 27px, 54px);
 	@include fluid-value(margin-bottom, 15px, 30px);
 }
 
