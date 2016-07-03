@@ -20,6 +20,8 @@ thumb-video: open-loops/thumb-video.mp4
 vimeo:
   id: 17209164
   credit: Video by Momkai
+description: <p>Musician Pete Philly wanted his first solo album to be available for free online. We developed a concept to maintain the audience's focus by releasing a new track and hi-def super slow-mo video every week for 14 weeks.</p>
+work: <p>As Lead Flash Developer I was responsible for the front-end architecture, full canvas background video, page transitions, multi-language support, audio player, video player and overall performance optimizations.</p>
 gallery:
   path-prefix: open-loops/gallery-
   images: [1.jpg,2.jpg,3.jpg,4.jpg,5.jpg]
@@ -37,11 +39,3 @@ awards:
     type: Official Honoree
     date: 2011
 ---
-
-About the Project
------------------
-Musician Pete Philly wanted his first solo album to be available for free online. We developed a concept to maintain the audience's focus by releasing a new track and hi-def super slow-mo video every week for 14 weeks.
-
-What I Did
-----------
-As Lead Flash Developer I was responsible for the front-end architecture, full canvas background video, page transitions, multi-language support, audio player, video player and overall performance optimizations.

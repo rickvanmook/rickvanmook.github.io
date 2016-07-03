@@ -32,26 +32,44 @@ class: post
     </header>
 
     {% if page.vimeo %}
+    <div class="content__divider">
       {% include vimeo.html config=page.vimeo %}
+    </div>
+    {% endif %}
+
+    {% if page.demo %}
+    <div class="content__divider">
+      <div class="image-container image-container--16-9 image-container--js1k">
+        <iframe src="{{ page.demo.src }}"></iframe>
+      </div>
+      <div class="content__credit">{{ page.demo.description }}</div>
+    </div>
     {% endif %}
 
     {% if page.description %}
+    <div class="content__divider">
       <h2>About the Project</h2>
-      <p>{{ page.description }}</p>
+      {{ page.description }}
+    </div>
     {% endif %}
 
     {% if page.work %}
+    <div class="content__divider">
       <h2>What I Did</h2>
-      <p>{{ page.work }}</p>
+      {{ page.work }}
+    </div>
+    {% endif %}
+
+    {% if page.gallery %}
+    <div class="content__divider">
+        {% for image in page.gallery.images %}
+        <img class="gallery-image" src="/assets/media/{{ page.gallery.path-prefix }}{{ image }}"/>
+        {% endfor %}
+    </div>
     {% endif %}
 
     {{ page.content }}
 
-    {% if page.gallery %}
-      <div class="content__divider">
-        {% include gallery.html config=page.gallery %}
-      </div>
-    {% endif %}
 
     {% if page.awards %}
     <div class="content__divider">

@@ -16,24 +16,14 @@ color: rgb(15, 15, 15)
 thumb-image: js1k/thumb-image.png
 thumb-cover: js1k/thumb-frame.png
 thumb-video: js1k/thumb-video.mp4
+
+demo:
+    src: /assets/demos/js1k.html
+    description: Use left and right keys to move and space bar to jump. There's no goal, the robot is just happy to skip around his tiny little world.
+description: <p>This is my submission for the 2014 JS1K competition. It's a code golfing competition where you have to create a demo within 1024 bytes of JavaScript.</p>
+work: <p>Instead of using a minifier I thought it would be more fun to minify the code by hand. I ended up writing a little 'game-engine' that supports:</p><ul><li>Walking</li><li>jumping and swimming animation</li><li>Hit detection</li><li>Endless scrolling world</li><li>Expending sea when resizing the browser</li></ul>
 ---
-
-<h2 id="about-the-project">About the Project</h2>
-<p>
-This is my submission for the 2014 JS1K competition. It's a code golfing competition where you have to create a demo within 1024 bytes of JavaScript.
-</p>
-<h2 id="what-i-did">What I Did</h2>
-<p>Instead of using a minifier I thought it would be more fun to minify the code by hand. I ended up writing a little 'game-engine' that supports:
-</p>
-<ul>
-  <li>Walking, jumping and swimming animation</li>
-  <li>Hit detection</li>
-  <li>Endless scrolling world</li>
-  <li>Expending sea when resizing the browser</li>
-</ul>
-
 </div>
-
 {% highlight javascript %}
 /**
  * An entry for JS1K 2014, a competition to create
@@ -46,8 +36,3 @@ function d(e,f,g){i=0;while(k=e.match(/\w\d*/g)[i++]){c.fillStyle=l[k[0]]||'000'
 {% endhighlight %}
 
 <div class="post__content">
-
-    <div class="image-container image-container--16-9 image-container--js1k">
-        <iframe src="/assets/demos/js1k.html" class=""></iframe>
-    </div>
-
