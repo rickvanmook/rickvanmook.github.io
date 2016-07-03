@@ -37,6 +37,15 @@ class: post
     </div>
     {% endif %}
 
+    {% if page.demo %}
+    <div class="content__divider">
+      <div class="image-container image-container--16-9 image-container--js1k">
+        <iframe src="{{ page.demo.src }}"></iframe>
+      </div>
+      <div class="content__credit">{{ page.demo.description }}</div>
+    </div>
+    {% endif %}
+
     {% if page.description %}
     <div class="content__divider">
       <h2>About the Project</h2>

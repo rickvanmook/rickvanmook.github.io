@@ -92,6 +92,16 @@
 	border-top: 1px solid #e9e9ea;
 }
 
+.content__credit {
+
+	font-family: $font-sans;
+	width: 80%;
+	@include fluid-value(font-size, 10px, 12px);
+	@include fluid-value(margin-top, 5px, 10px);
+	@include fluid-value(margin-left, 5px, 10px);
+	font-style: italic;
+}
+
 .content__media {
 
 
