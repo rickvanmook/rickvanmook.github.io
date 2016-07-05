@@ -1,0 +1,89 @@
+<html><head>
+	<title>Make Your Money Matter Demo</title>
+	<meta charset="utf-8">
+	<link href="preloader.css" rel="stylesheet">
+	<link href="svg.css" rel="stylesheet">
+	<link href="desktop.css" rel="stylesheet">
+	<style>
+		.seeds-beet {
+			background-position: 50%;
+			background-repeat: no-repeat;
+			background-size: contain;
+			max-width: 100%;
+			max-height: 90%;
+		}
+
+		.seeds-copy {
+			width: 80%;
+			height: 100%;
+			position: relative;
+			top: -5%;
+			left: -3%;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: 50%;
+			margin: 0 auto;
+		}
+
+		.seeds-dirt {
+
+			background-position: 50%;
+			background-size: contain;
+			max-width: 680px;
+			min-height: 800px;
+			top: 50%;
+			left: 50%;
+			transform-origin: 0 290px;
+		}
+	</style>
+</head>
+<body class="is-abs">
+	<div class="layer seeds is-abs">
+		<div class="seeds-soil has-svg svg-soil is-abs"></div>
+		<div class="is-abs sprite" type="slide" start="0.4" toY="-50" easing="cubicInOut">
+			<div class="sprite seeds-beet has-svg svg-beet" type="scale" start="0.15" end="0.85" fromX="1.2" toX="0.89" fromY="1" toY="1.1" postFix="translate(-50%, -50%)" easing="backInOut"></div>
+		</div>
+		<div class="is-abs sprite seeds-dirt has-svg svg-dirtSpots" type="scale" postFix="translate(-50%, -50%)" start="0.4" end="0.9" fromX="0.89" toX="1.2" fromY=".89" toY="1.2" easing="backInOut"></div>
+		<div class="seeds-copy sprite has-svg svg-seedsCopy has-svg" easing="cubicIn" start="0.5" end="0.8" type="slide" toY="30" unit="px" fadeTo="0"></div>
+	</div>
+</body>
+<script>window.prototypes = {};</script>
+<script src="scripts/TweenLite.js"></script>
+<script src="scripts/modernizr.custom.10285.js"></script>
+<script src="scripts/modernizrPrefixed.js"></script>
+<script src="scripts/signals.js"></script>
+<script src="scripts/pscuSignals.js"></script>
+<script src="scripts/easingProgress.js"></script>
+<script src="scripts/parseAnimationObjects.js"></script>
+<script src="scripts/AbstractAnimation.js"></script>
+<script src="scripts/shared/grow.js"></script>
+<script src="scripts/shared/remove.js"></script>
+<script src="scripts/shared/scale.js"></script>
+<script src="scripts/shared/slide.js"></script>
+
+<script>
+	var progressUpdated = signals.progressUpdated,
+		progress = {p:0};
+
+	window.prototypes.default = AbstractAnimationObject;
+
+	parseAnimationObjects.parse(document, 'layer', progressUpdated);
+	progressUpdated.dispatch(0);
+
+	window.addEventListener('mousemove', onMouseMove);
+
+	function onMouseMove(e) {
+
+		e.preventDefault();
+
+		TweenLite.to(progress, 0.35, {
+			p: e.x / window.innerWidth,
+			onUpdate:function(){
+
+				progressUpdated.dispatch(progress.p);
+			}
+		});
+
+	}
+</script>
+</html>

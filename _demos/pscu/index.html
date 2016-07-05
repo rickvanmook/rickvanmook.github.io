@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>Make Your Money Matter Demo</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- Beets -->
+			<div class="scene" start="0" end="0.5">
+				<div class="seeds-soil has-svg svg-soil is-abs"></div>
+				<div class="is-abs layer" (type="slide", start=.4, toY=-50, easing="cubicInOut")></div>
+				<div class="layer seeds-beet.has-svg.svg-beet(type="scale", start=.15, end=.85,fromX=1.2, toX=.89,fromY=1, toY=1.1, postFix="translate(-50%, -50%)", easing="backInOut")></div>
+				<div class="is-abs layer seeds-dirt has-svg svg-dirtSpots" (type="scale", start=.4, end=.9,fromX=.89, toX=1.2,fromY=.89, toY=1.2, easing="backInOut")></div>
+				<div class="seeds-copy has-svg svg-seedsCopy" ></div>
+			</div>
+			<div class="scene" start="0.5" end="1">
+				<div class="layer"></div>
+			</div>
+		</div>
+	</body>
+</html>
