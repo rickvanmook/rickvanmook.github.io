@@ -26,13 +26,92 @@ work: <p>Instead of using a minifier I thought it would be more fun to minify th
 </div>
 {% highlight javascript %}
 /**
- * An entry for JS1K 2014, a competition to create
- * a JavaScript demo within 1kb.
- *
- * Unminified code is up on Github:
- * https://github.com/rvmook/js1k-just-a-happy-robot
+ * Here's the minified result.
  */
 function d(e,f,g){i=0;while(k=e.match(/\w\d*/g)[i++]){c.fillStyle=l[k[0]]||'000';c.f((+k[1]*G+((G-1)*-5)+f)*4,4*(+k[2]+g),4*G*((k[3]|0)+1),4*((k[4]|0)+1))}return d}m=n=o=p=q=r=0;l={37:-1,39:t=j=1,32:'if(!n)n=o=-4;0',w:'#fff',1:v='057w',2:'1702w26w354w542w63b64',3:'6702w56w054',4:v+'022w1104b12w432w5202b53w34',5:v+'1004w012b11'};b.onkeyup=b.onkeydown=function(e){j=(p=e.type[6]?eval(l[e.keyCode])^0||p:e.keyCode>36?0:p)||j};c.f=c.fillRect;u='w18w7';v='00245300241115430000254300243';setInterval("w=a.width/4;c.f(B=0,0,w*4,x=a.height);y=(Math.max(232,w+32)/8)|0;z=(x/8|0)-9;F=m+p;G=Math.floor(1+(s+F)/8)%y;while(G<0)G=y+G;E=!+v[G];_=+(t%18<9);if(E&&r==z||r<z){m=F;q=E?z:z-9}r+=r>z?-r:o++;if(r>q&&o>0){n=o=0;r=q}G=j;d('w1063b4101b6101'+['w29w69',u+7,u+8,u+9][H=n?2:p?t%4:0],C=s-4,D=+'6645'[H]+r+(E?_:0))('w106w2142b51b421',C,+'5455'[H]+D)('w00w80',C,+'7676'[H]+D);G=1;while(B<y){A=B++*8-m;while(A<-16)A+=y*8;while(A>w+8)A-=y*8;eval('d(\"b0777w'+(l[v[B]]||['081w271w481w671b069','291w081w691w481'][_])+'b\",A,z+3)')}t++",s=82)
+{% endhighlight %}
+
+<div class="post__content">
+    <h2>How it Works</h2>
+    <p>
+        Obviously this code doesn't make any sense. To be honest, unminified it still isn't very readable.
+        So I'd like to talk highlight some of the things I thought were cool.
+    </p>
+    <div class="content__divider">
+        <h2>Basic JavaScript Golfing</h2>
+        <p>
+            I didn't know it was called golfing when I started with this, but apparently it's a thing in coding.
+            Basically it's a competition where you try to make something with the shortest source code possible.
+        </p>
+        <p>
+            When Googling around for some good JavaScript golfing tips, I came accross
+            <a href="http://www.claudiocc.com/javascript-golfing/" target="_blank">claudiocc.com/javascript-golfing</a>.
+        </p>
+        <p>
+            Pretty much my whole demo was set up with these tips and tricks in mind. So definitely give it a look if you want to see the basics behind JavaScript golfing.
+        </p>
+    </div>
+    <div class="content__divider">
+        <h2>Drawing Engine</h2>
+        <p>
+            The main component of the demo is the way I'm drawing squares on the screen. By parsing a pre defined string I'm able to draw specific patterns on the canvas. This string looks something like this: `w1702w26w354w542w63b64`. That string is basically a series of squares with:
+        </p>
+        <ul>
+            <li>a color value ('w' or 'b')</li>
+            <li>x position</li>
+            <li>y position</li>
+            <li>optional width</li>
+            <li>optional height</li>
+        </ul>
+        <p>
+            Since the x and y values need to be single digit, I would be confining myself in a 9x9 grid without some adjustments. Therefore we're passing additional x and y offsets to give us the freedom to draw a 9x9 square anywhere on the canvas.
+        </p>
+    </div>
+</div>
+{% highlight javascript %}
+
+function drawSquare(charString,offsetX,offsetY) {
+
+    i=0;
+
+    // With a regex we're breaking up the charString into chunks of squares.
+    // The while loop ends when we run out of squares to parse.
+    while(square=charString.match(/\w\d*/g)[i++]){
+
+        // Checking for color in the global referenceObj.
+        // When there is none, we fill with black instead.
+        context.fillStyle=referenceObj[square[0]]||'#000';
+
+        // context.f is a shorthand to context.fillRect
+        context.f(
+
+            // Multiplying all values by 4 to create the blocky pixelated look.
+
+            // x
+            // `+square[1]` casts the string into a number.
+            // `drawDirection` can horizontally flip the drawing.
+            4*(+square[1]*drawDirection+((drawDirection-1)*-5)+offsetX),
+
+            // y
+            4*(+square[2]+offsetY),
+
+            // width
+            // `square[3]|0` is a golfing way of saying `parseInt(square[3])`.
+            // By adding `+1` width and height will always at least be `1`.
+            // This way, they become optional.
+            4*drawDirection*((square[3]|0)+1),
+
+            // height
+            4*((square[4]|0)+1)
+        )
+    }
+
+    // returning a reference to itself so we can chain draw calls.
+    return drawSquare;
+}
+
+/* Minified the above snippet looks like this: */
+function d(f,g,h){i=0;while(j=f.match(/\w\d*/g)[i++]){c.fillStyle=k[j[0]]||'#000';c.f(4*(+j[1]*l+((l-1)*-5)+g),4*(+j[2]+h),4*l*((j[3]|0)+1),4*((j[4]|0)+1))}return d}
 {% endhighlight %}
 
 <div class="post__content">

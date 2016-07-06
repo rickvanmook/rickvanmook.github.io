@@ -33,7 +33,7 @@
 		position: relative;
 		word-wrap: break-word;
 		background-color: #252830;
-		font-size: 12px;
+		@include fluid-value(font-size, 9px, 12px);
 		line-height: 1.5;
 
 		@include fluid-value(padding-top, 60px, 120px);
@@ -176,6 +176,7 @@
 		list-style: initial;
 		@include fluid-value(padding-left, 25px, 50px);
 		@include fluid-value(font-size, 12px, 16px);
+		@include fluid-value(margin-bottom, 10px, 20px);
 	}
 }
 
