@@ -115,3 +115,31 @@ function d(f,g,h){i=0;while(j=f.match(/\w\d*/g)[i++]){c.fillStyle=k[j[0]]||'#000
 {% endhighlight %}
 
 <div class="post__content">
+    <h2>Key Handling</h2>
+    <p>Do the magic</p>
+</div>
+{% highlight javascript %}
+
+var referenceObj = {
+
+    // left keycode
+    37: -1,
+
+    // right keycode
+    39: 1,
+
+    // space keycode
+    32:'if(!isJumping)isJumping=velY=-4;0',
+}
+
+b.onkeyup=b.onkeydown=function(e){
+
+// determine keyup or keydown with checking existence of 6th char
+// velX is based on evaling the keycode, making it 0 by default by ^0
+// if velX ends up to be 0, keep it the same
+    robotDirection = (velX=e.type[6] ? eval(referenceObj[e.keyCode])^0 || velX:e.keyCode>36?0:velX) || robotDirection
+};
+
+/* Minified the above snippet looks like this: */
+b.onkeyup=b.onkeydown=function(f){f.preventDefault();f.stopPropagation();t=(p=f.type[6]?eval(k[f.keyCode])^0||p:f.keyCode>36?0:p)||t};
+{% endhighlight %}
