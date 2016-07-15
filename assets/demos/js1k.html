@@ -5,6 +5,48 @@
 		html, body { margin: 0; padding: 0; border: 0; background-color: #000; }
 		#c { display: block; } /* kill scrollbars from hell */
 	</style>
+	<script>
+/*
+		// a couple of
+		var referenceObj = {
+
+			// left keycode
+			37: -1,
+
+			// right keycode
+			39: 1,
+
+			// space keycode
+			32:'if(!isJumping)isJumping=velY=-4;0'
+		};
+
+		b.onkeyup=b.onkeydown=function(e){
+
+			// determine keyup or keydown with checking existence of 6th char
+			// velX is based on evaling the keycode, making it 0 by default by ^0
+			// if velX ends up to be 0, keep it the same
+			robotDirection = (velX=e.type[6] ? eval(referenceObj[e.keyCode])^0 || velX:e.keyCode>36?0:velX) || robotDirection
+		};
+*/
+
+	// if key down
+//	if(e.type[6]) {
+//
+//		velX = eval(referenceObj[e.keyCode]) || velX;
+//
+//	} else if(e.keyCode>36) {
+//
+//		velX = 0;
+//
+//	} else {
+//
+//		velX = velX;
+//	}
+//
+//	robotDirection = (velX = e.type[6] ? (eval(referenceObj[e.keyCode]) || velX) : (e.keyCode>36 ? 0 : velX)) || robotDirection
+
+
+</script>
 </head>
 <body>
 <canvas id="c" width="1108" height="654" style="width: 1108px; height: 654px;"></canvas>
@@ -45,16 +87,186 @@
 </script>
 <script>
 
-	/*
-		Adjusted original script For better iFrame support:
-			- Added f.preventDefault();f.stopPropagation(); to key listeners to prevent scroll conflicts
-			- Added D=(x<164)?32:82; for better responsive robot positioning on resize
-	*/
+	function drawSquare(charString,offsetY) {
 
-	// start of submission //
+		i=0;
 
-	function d(f,g,h){i=0;while(j=f.match(/\w\d*/g)[i++]){c.fillStyle=k[j[0]]||'#000';c.f(4*(+j[1]*l+((l-1)*-5)+g),4*(+j[2]+h),4*l*((j[3]|0)+1),4*((j[4]|0)+1))}return d}m=n=o=p=q=r=0;k={37:-1,39:s=t=1,32:'if(!n)n=o=-4;0',w:'#fff',1:u='057w',2:'1702w26w354w542w63b64',3:'6702w56w054',4:u+'022w1104b12w432w5202b53w34',5:u+'1004w012b11'};b.onkeyup=b.onkeydown=function(f){f.preventDefault();f.stopPropagation();t=(p=f.type[6]?eval(k[f.keyCode])^0||p:f.keyCode>36?0:p)||t};c.f=c.fillRect;v='w18w7';w='00245300241115430000254300243';setInterval("x=a.width/4;D=(x<164)?32:82;y=(Math.max(232,x+32)/8)|0;c.f(z=0,0,x*4,A=a.height);B=m+p;C=Math.floor(1+(D+B)/8)%y;while(C<0)C=y+C;E=!+w[C];F=(A/8|0)-9;if(E&&r==F||r<F){m=B;q=E?F:F-9}r+=r>F?-r:o++;if(r>q&&o>0){n=o=0;r=q}G=s%18<9;l=t;d('w1063b4101b6101'+['w29w69',v+7,v+8,v+9][H=n?2:p?s%4:0],I=D-4,J=+'6645'[H]+r+(E&&G))('w106w2142b51b421',I=D-4,+'5455'[H]+J)('w00w80',I=D-4,+'7676'[H]+J);l=1;while(z<y){K=z++*8-m;while(K<-16)K+=y*8;while(K>x+8)K-=y*8;d('b0777w'+(k[w[z]]||['081w271w481w671b069','291w081w691w481'][+G])+'b',K,F+3)}s++",82);
-	// end of submission //
+		while(square=charString.match(/\w\d*/g)[i++]){
+
+
+			c.fillStyle=referenceObj[square[0]]||'#000';
+
+			c.f(
+
+					// x
+					4*(+square[1]*drawDirection+((drawDirection-1)*-5)+drawX),
+
+					// y
+					4*(+square[2]+offsetY),
+
+					// width
+					4*drawDirection*((square[3]|0)+1),
+
+					// height
+					4*((square[4]|0)+1)
+			)
+		}
+	}
+
+	// global variables
+	worldOffset=isJumping=velY=velX=destY=posY=0;
+
+	referenceObj={
+
+		/*
+		 key handlers
+		 */
+
+		//left
+		37:-1,
+
+		//right
+		39:counter=robotDirection=1,
+
+		//space
+		32:'if(!isJumping)isJumping=velY=-4;0',
+
+
+		/*
+		 colors
+		 */
+
+		// black is being caught by the fill
+		// b:'000'
+		w:'#fff',
+
+
+		/*
+		 tiles
+		 */
+
+		//0:water is set below based on counterStep
+
+		// empty tile
+		1:emptyTile='057w',
+
+		// left edge (with one flower)
+		2:'1702w26w354w542w63b64',
+
+		// right edge
+		3:'6702w56w054',
+
+		// a lot of flowers
+		4:emptyTile+'022w1104b12w432w5202b53w34',
+
+		// just one flower
+		5:emptyTile+'1004w012b11'
+
+	};
+
+	// key handling
+	b.onkeyup=b.onkeydown=function(e){
+
+		// determine keyup or keydown with checking existence of 6th char
+		// velX is based on evaling the keycode, making it 0 by default by ^0
+		// if velX ends up to be 0, keep it the same
+		robotDirection=(velX=e.type[6]?eval(referenceObj[e.keyCode])^0||velX:e.keyCode>36?0:velX)||robotDirection
+	};
+
+
+	c.f=c.fillRect;
+	feetPart='w18w7';
+	tiles='00245300241115430000254300243';
+
+	setInterval(function(){
+
+
+		quarterCanvasWidth=a.width/4;
+		worldWidth=(Math.max(232,quarterCanvasWidth+32)/8)|0;
+
+		// clear canvas with fill, is cheaper then clearRect
+		c.f(tileIndex=0,0,quarterCanvasWidth*4,canvasHeight=a.height);
+
+
+		// determine robot position in world
+		newWorldOffset=worldOffset+velX;
+		robotWorldX=Math.floor(1+(posX+newWorldOffset)/8)%worldWidth;
+
+		while(robotWorldX<0)robotWorldX=worldWidth+robotWorldX;
+
+		robotIsInWater=!+tiles[robotWorldX];
+
+
+		/*
+		 wall detection and gravity
+		 */
+
+		swimDestY=(canvasHeight/8|0)-9;
+
+		if(robotIsInWater&&posY==swimDestY||posY<swimDestY){
+			worldOffset=newWorldOffset;
+			destY=robotIsInWater?swimDestY:swimDestY-9
+		}
+
+		posY+=posY>swimDestY?-posY:velY++;
+
+		if(posY>destY&&velY>0){
+
+			isJumping=velY=0;
+			posY=destY
+		}
+
+
+		// makes water animate and robot float
+		waterFrame=counter%18<9;
+
+
+		/*
+		 robot drawing
+		 */
+
+		drawDirection=robotDirection;
+		drawX=posX;
+		drawSquare(
+				'w1063b4101b6101'+['w29w69',feetPart+7,feetPart+8,feetPart+9][robotFrame=isJumping?2:velX?counter%4:0],
+				robotY=+'6645'[robotFrame]+posY+(robotIsInWater&&waterFrame)
+		);
+
+		drawSquare(
+				'w106w2142b51b421',
+				+'5455'[robotFrame]+robotY
+		);
+
+		drawSquare(
+				'w00w80',
+				+'7676'[robotFrame]+robotY
+		);
+
+
+		/*
+		 world drawing
+		 */
+
+		drawDirection=1;
+
+		while(tileIndex<worldWidth){
+
+			tileX=tileIndex++*8-worldOffset;
+			while(tileX<-16)tileX+=worldWidth*8;
+			while(tileX>quarterCanvasWidth+8)tileX-=worldWidth*8;
+			drawX=tileX;
+
+			// draw world tiles, of tiles[tileIndex] is 0 or undefined draw the water tile
+			// start the tile with 'b0777w' to make sure the tiles are covering the robot
+			// end the string with 'b' so the fillStyle is black when we're clearing the canvas at the beginning of the redraw
+			drawSquare(
+					'b0777w'+(referenceObj[tiles[tileIndex]]||['081w271w481w671b069','291w081w691w481'][+waterFrame])+'b',
+					swimDestY+3)
+		}
+
+		counter++
+
+	},posX=82)
 </script>
 
 
