@@ -2,7 +2,7 @@
 layout: post
 title: Fuel Your Titan
 thumb-image: /work-fuel.jpg
-thumb-cover: /work-fuel-cover.png
+thumb-cover: /work-fuel-cover.jpg
 thumb-video: /work-fuel.mp4
 year: 2016
 color: rgb(32, 33, 37)
