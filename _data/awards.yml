@@ -1,5 +1,14 @@
 - name: FWA
   type: Site of the Day
+  project: Fuel Your Titan
+  date: 2016
+- name: Awwwards
+  type: Site of the Day
+  project: Fuel Your Titan
+  date: 2016
+
+- name: FWA
+  type: Site of the Day
   project: Mountain Dew
   date: 2015
 - name: W3

@@ -8,6 +8,7 @@ exports.constructor = function() {
 
 	var _parent,
 		_videoSrc,
+		_videoIsSetup,
 		_isAlive,
 		_isInView,
 		_videoEl,
@@ -38,6 +39,7 @@ exports.constructor = function() {
 		_imgUrl = _imageEl.getAttribute('data-src');
 		_coverUrl = _coverEl.getAttribute('data-src');
 
+		_videoIsSetup = false;
 		_isInView = false;
 		_windowHeight = window.innerHeight;
 
@@ -61,6 +63,7 @@ exports.constructor = function() {
 	function destroy() {
 
 		_isAlive = false;
+		_videoIsSetup = false;
 
 		_videoEl = null;
 		TweenLite.killTweensOf(_progress);
@@ -75,7 +78,7 @@ exports.constructor = function() {
 
 	function onMouseOver() {
 
-		if(!_videoEl) {
+		if(!_videoIsSetup) {
 
 			setupVideo();
 		}
@@ -83,7 +86,10 @@ exports.constructor = function() {
 		_isAlive = true;
 		redraw();
 
-		_videoEl.play();
+		if(_videoEl) {
+
+			_videoEl.play();
+		}
 
 		TweenLite.to(_progress, ANIMATION_TIME, {
 			p:1,
@@ -98,8 +104,11 @@ exports.constructor = function() {
 			ease: Cubic.easeInOut,
 			onComplete:function(){
 
-				_videoEl.pause();
-				_videoEl.currentTime = 0;
+				if(_videoEl) {
+
+					_videoEl.pause();
+					_videoEl.currentTime = 0;
+				}
 				_isAlive = false;
 			}
 		})
@@ -147,11 +156,16 @@ exports.constructor = function() {
 
 	function setupVideo() {
 
-		_videoEl = document.createElement('video');
-		_videoEl.loop = true;
-		_videoEl.src = _videoSrc;
+		if(_videoSrc) {
+
+			_videoEl = document.createElement('video');
+			_videoEl.loop = true;
+			_videoEl.src = _videoSrc;
+		}
 
 		_coverEl.src = _coverUrl;
+
+		_videoIsSetup = true;
 	}
 
 
@@ -205,7 +219,11 @@ exports.constructor = function() {
 		_context.clip();
 
 		_context.drawImage(_coverEl, 0, 0, _canvasWidth, _canvasHeight);
-		_context.drawImage(_videoEl, 0, 0, _canvasWidth, _canvasHeight);
+
+		if(_videoEl) {
+
+			_context.drawImage(_videoEl, 0, 0, _canvasWidth, _canvasHeight);
+		}
 
 
 		_context.restore();
