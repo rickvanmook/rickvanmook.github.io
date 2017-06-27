@@ -88,7 +88,8 @@ exports.constructor = function() {
 
 		if(_videoEl) {
 
-			_videoEl.play();
+			_videoEl.play()
+				.catch(function(){});
 		}
 
 		TweenLite.to(_progress, ANIMATION_TIME, {
